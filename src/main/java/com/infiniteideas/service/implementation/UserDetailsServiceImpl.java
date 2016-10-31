@@ -1,4 +1,4 @@
-package com.infiniteideas.service;
+package com.infiniteideas.service.implementation;
 
 import com.infiniteideas.model.Role;
 import com.infiniteideas.model.User;

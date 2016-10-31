@@ -32,7 +32,7 @@
         </form>
 
         <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
-
+        <h2>view <a href="${contextPath}/listIdeas">ideas</a></h2>
     </c:if>
 
 </div>

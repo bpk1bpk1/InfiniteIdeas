@@ -1,8 +1,9 @@
-package com.infiniteideas.service;
+package com.infiniteideas.service.implementation;
 
 import com.infiniteideas.model.User;
 import com.infiniteideas.repository.RoleRepository;
 import com.infiniteideas.repository.UserRepository;
+import com.infiniteideas.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

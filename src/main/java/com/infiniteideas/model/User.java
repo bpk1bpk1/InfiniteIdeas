@@ -38,7 +38,7 @@ public class User {
         this.password = password;
     }
 
-    @Transient
+    @Transient // When we need to indicate a field is not to be persisted in the database
     public String getPasswordConfirm() {
         return passwordConfirm;
     }
