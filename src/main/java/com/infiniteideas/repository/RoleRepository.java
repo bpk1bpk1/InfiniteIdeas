@@ -1,6 +1,6 @@
-package com.hellokoding.auth.repository;
+package com.infiniteideas.repository;
 
-import com.hellokoding.auth.model.Role;
+import com.infiniteideas.model.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface RoleRepository extends JpaRepository<Role, Long>{

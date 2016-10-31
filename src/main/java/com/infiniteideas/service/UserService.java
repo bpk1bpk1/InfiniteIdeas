@@ -1,6 +1,6 @@
-package com.hellokoding.auth.service;
+package com.infiniteideas.service;
 
-import com.hellokoding.auth.model.User;
+import com.infiniteideas.model.User;
 
 public interface UserService {
     void save(User user);

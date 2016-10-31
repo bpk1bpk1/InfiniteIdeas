@@ -1,7 +1,7 @@
-package com.hellokoding.auth.validator;
+package com.infiniteideas.validator;
 
-import com.hellokoding.auth.model.User;
-import com.hellokoding.auth.service.UserService;
+import com.infiniteideas.model.User;
+import com.infiniteideas.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;

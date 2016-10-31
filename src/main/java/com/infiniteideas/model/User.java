@@ -1,10 +1,10 @@
-package com.hellokoding.auth.model;
+package com.infiniteideas.model;
 
 import javax.persistence.*;
 import java.util.Set;
 
 @Entity
-@Table(name = "user")
+@Table(name = "login_master")
 public class User {
     private Long id;
     private String username;
