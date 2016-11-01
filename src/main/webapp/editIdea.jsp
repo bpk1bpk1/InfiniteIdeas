@@ -19,11 +19,11 @@
     <table class="table table-bordered">
         <tbody>
         <tr><th>Idea Name</th><td><input type="text" name="name" required="required" value="${Idea.name}"></td></tr>
-        <tr><th>Idea Description</th><td><input type="text" name="desc" value="${Idea.description}"></td></tr>
+        <tr><th>Idea Description</th><td><input type="text" name="description" value="${Idea.description}"></td></tr>
 
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-        <tr><td colspan="2"><input type="submit" value="Edit Person" class="btn btn-success"></tr>
+        <tr><td colspan="2"><input type="submit" value="Edit Idea" class="btn btn-success"></tr>
         </tbody>
     </table>
 </form>
