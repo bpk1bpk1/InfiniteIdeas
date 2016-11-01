@@ -6,4 +6,8 @@ import java.util.List;
 public interface IdeaService {
 
     List<Idea> findAll();
+
+    Idea findById(Long id);
+
+    Idea save(Idea idea);
 }

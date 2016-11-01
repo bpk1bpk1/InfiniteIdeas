@@ -21,4 +21,15 @@ public class IdeaServiceImpl implements IdeaService {
     public List<Idea> findAll() {
         return ideaRepository.findAll();
     }
+
+    @Override
+    public Idea findById(Long Id) {
+        return ideaRepository.findOne(Id);
+    }
+
+    @Override
+    public Idea save(Idea idea) {
+       return ideaRepository.save(idea);
+    }
+
 }

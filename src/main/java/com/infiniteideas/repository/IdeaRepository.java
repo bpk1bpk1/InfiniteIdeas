@@ -9,4 +9,8 @@ import java.util.List;
 @Repository
 public interface IdeaRepository extends JpaRepository<Idea, Long> {
     List<Idea> findAll();
+
+    Idea findOne(Long id);
+
+    Idea save(Idea idea);
 }
