@@ -35,6 +35,13 @@ public class IdeaController {
     }
 
 
+    @RequestMapping(value = "view/{id}", method = RequestMethod.GET)
+    public String view(@PathVariable Long id, Model model){
+        model.addAttribute("Idea",ideaService.findById(id));
+        return "viewIdea";
+    }
+
+
     @RequestMapping(value = "update",method = RequestMethod.POST)
     public String update(Idea idea){
         ideaService.save(idea);

@@ -25,6 +25,7 @@
         <tr>
             <td>${idea.name}</td>
             <td><a href="${contextPath}/Ideas/edit/${idea.id}" class="btn btn-warning">Edit</a> </td>
+            <td><a href="${contextPath}/Ideas/view/${idea.id}" class="btn btn-warning">View Details</a> </td>
         </tr>
     </c:forEach>
     </tbody>
