@@ -30,7 +30,7 @@ public class IdeaController {
 
     @RequestMapping(value = "edit/{id}", method = RequestMethod.GET)
     public String edit(@PathVariable Long id, Model model){
-        model.addAttribute("person",ideaService.findById(id));
+        model.addAttribute("Idea",ideaService.findById(id));
         return "editIdea";
     }
 
