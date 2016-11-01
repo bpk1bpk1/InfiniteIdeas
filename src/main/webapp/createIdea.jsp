@@ -2,35 +2,32 @@
   Created by IntelliJ IDEA.
   User: Srikanth
   Date: 11/1/2016
-  Time: 2:13 AM
+  Time: 3:55 AM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+
 <html>
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Editing the ideas</title>
-
+    <title>Title</title>
 </head>
 <body>
 
-<form action="${contextPath}/Ideas/update" method="post">
-    <input type="hidden" name="id" value="${Idea.id}">
+<h2>Create new Idea</h2>
+<form action="${contextPath}/Ideas/save" method="post">
     <table class="table table-bordered">
         <tbody>
-        <tr><th>Idea Name</th><td><input type="text" name="name" required="required" value="${Idea.name}"></td></tr>
-        <tr><th>Idea Description</th><td><input type="text" name="description" value="${Idea.description}"></td></tr>
+        <tr><th>Name</th><td><input type="text" name="name" required="required"></td></tr>
+        <tr><td colspan="2"><input type="submit" value="Add Idea" class="btn btn-success"></tr>
 
         <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
 
-        <tr><td colspan="2"><input type="submit" value="Edit Idea" class="btn btn-success"></tr>
         </tbody>
     </table>
-
-
 </form>
-
-<a href="${contextPath}/Ideas/list" class="btn btn-success">Back</a>
+<a href="/person/index" class="btn btn-success">Back</a>
 
 </body>
 
@@ -39,5 +36,4 @@
 
 <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
 <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
-
 </html>

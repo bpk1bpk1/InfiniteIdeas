@@ -41,4 +41,15 @@ public class IdeaController {
         return "redirect:/welcome";
     }
 
+    @RequestMapping(value = "create",  method = RequestMethod.GET)
+    public String create(){
+        return "createIdea";
+    }
+
+    @RequestMapping(value = "save", method = RequestMethod.POST)
+    public String save(Idea idea){
+        ideaService.save(idea);
+        return "redirect:/welcome";
+    }
+
 }

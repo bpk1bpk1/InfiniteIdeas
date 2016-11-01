@@ -30,7 +30,7 @@
     </tbody>
 
 </table>
-<a href="/person/create" class="btn btn-success">Add Person</a>
+<a href="${contextPath}/Ideas/create" class="btn btn-success">Add Person</a>
 
 <script type="application/javascript" src="js/jquery.js"></script>
 <script type="application/javascript" src="js/bootstrap.js"></script>
