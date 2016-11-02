@@ -13,4 +13,6 @@ public interface IdeaRepository extends JpaRepository<Idea, Long> {
     Idea findOne(Long id);
 
     Idea save(Idea idea);
+
+
 }
