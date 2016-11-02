@@ -29,11 +29,136 @@
 
 $(document).ready(function() {
 
-        alert("hi")
+        //alert("hi")
         createGallery();
+
+
+    $(".add-to-cartP").click(function() {
+
+        alert("inside add to cartP")
+
+        event.preventDefault(); //prevent default action
+
+        var funds = parseInt(globalQty);
+        if(funds == 0 || globalQty == '')
+        {
+            alert("please add a quantity before adding to cart")
+            return;
+        }
+
+
+
+        addItemTocart('1','1',funds);  //adding to cart
+
+        var modal = document.getElementById('myModal');
+        modal.style.display = "block";
+
+        var span = document.getElementsByClassName("close")[0];
+        span.onclick = function() {
+            modal.style.display = "none";
+        }
+        // When the user clicks anywhere outside of the modal, close it
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+
+    });
 
 });
 
+// ----------------global variables------------
+
+
+var globalQty = ''
+cart = []
+
+
+var Item = function(ideadId, userId, funds) {
+    this.ideaID = ideadId;
+    this.userId = userId;
+    this.funds = funds;
+
+};
+
+
+//==============================================
+
+
+
+
+//-------------------- Cart Functions-----------
+
+//$(document).on('click', '.add-to-cartP', function () {
+
+
+//});
+
+
+
+    function addItemTocart(ideaId,userId,funds) {
+        //alert("product: " + product)
+        //alert("cart: " + cart)
+      /* for ( var i in cart) {
+            //alert(cart[i].product.catalogDswStyle)
+
+            if(cart.length > 0)
+            {
+                console.log(cart[i]);
+                console.log(product)
+
+                if (cart[i].ideaID == product.catalogDswStyle.styleId) {
+                    cart[i].count += parseInt(count);
+                    cart[i].product.totalCost = cart[i].count * Math.round(cart[i].product.catalogDSWOrder.estimatedCost * 100)/100;
+                    saveCart();
+                    return;
+                }
+            }
+        }*/
+        var item = new Item(ideaId,userId,funds);
+        cart.push(item);
+        saveCart();
+    }
+
+
+    $(document).on('change', '.Quantity', function () {
+        event.preventDefault();
+        globalQty = $(this).val();
+
+        if((!$.isNumeric(globalQty) || globalQty < 0 ) &&  globalQty!='')
+        {
+            alert("Please enter positive numbers only")
+            $(this).val('')
+            globalQty = 0
+        }
+
+        globalQtyID =  $(this).attr("id");
+        //console.log("Quantity--- " + globalQty)
+
+    });
+
+    function clearCart() {
+        cart = [];
+        saveCart();
+    }
+
+
+    function saveCart() {
+        localStorage.setItem("shoppingCart", JSON.stringify(cart));
+    }
+    function loadCart() {
+        if(JSON.parse ( localStorage.getItem("shoppingCart") ) != null  )
+            cart = JSON.parse ( localStorage.getItem("shoppingCart") );
+        else
+            cart = []
+
+    }
+
+
+
+//==============================================
 
 function createGallery() {
     var output = ""
@@ -63,6 +188,28 @@ function createGallery() {
 </script>
 
 <body>
+
+
+<div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <div class="modal-header">
+            <span class="close">Ã</span>
+            <h2></h2>
+        </div>
+        <div class="modal-body">
+            <p>
+                <strong>Item added to cart</strong>
+            </p>
+            <br>
+            <p>Checkout to place order or Continue to browse the products</p>
+        </div>
+        <div class="modal-footer">
+            <h3></h3>
+        </div>
+    </div>
+</div>
 
 <!--
 
