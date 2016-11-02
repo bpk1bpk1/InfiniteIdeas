@@ -53,6 +53,12 @@ public class IdeaController {
         return "createIdea";
     }
 
+
+    @RequestMapping(value = "header",  method = RequestMethod.GET)
+    public String header(){
+        return "header";
+    }
+
     @RequestMapping(value = "save", method = RequestMethod.POST)
     public String save(Idea idea){
         ideaService.save(idea);

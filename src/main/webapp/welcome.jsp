@@ -33,6 +33,8 @@
 
         <h2>Welcome ${pageContext.request.userPrincipal.name} | <a onclick="document.forms['logoutForm'].submit()">Logout</a></h2>
         <h2>view <a href="${contextPath}/Ideas/list">ideas</a></h2>
+
+        <h2>view <a href="${contextPath}/Ideas/header">header</a></h2>
     </c:if>
 
 </div>
