@@ -10,6 +10,7 @@ public class User {
     private String username;
     private String password;
     private String passwordConfirm;
+    private String email;
     private Set<Role> roles;
 
     @Id
@@ -55,5 +56,13 @@ public class User {
 
     public void setRoles(Set<Role> roles) {
         this.roles = roles;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
     }
 }
