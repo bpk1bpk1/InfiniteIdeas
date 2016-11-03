@@ -37,6 +37,8 @@
         <h2>view <a href="${contextPath}/Ideas/header">header</a></h2>
 
         <h2>view <a href="${contextPath}/cart/checkout">Checkout</a></h2>
+
+        <h2>view <a href="${contextPath}/history">Transaction History</a></h2>
     </c:if>
 
 </div>

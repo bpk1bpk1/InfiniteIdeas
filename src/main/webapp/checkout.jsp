@@ -157,7 +157,6 @@
                     if(data.status == 'OK') {
                         location.replace("${contextPath}/welcome")
                     }
-
                     else alert('Failed adding person: ' + data.status + ', ' + data.errorMessage);
                 }
             });
