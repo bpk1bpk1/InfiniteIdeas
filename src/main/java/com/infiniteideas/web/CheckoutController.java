@@ -19,13 +19,11 @@ import java.util.Map;
 public class CheckoutController {
 
     private IdeaService ideaService;
-    private UserService userService;
     private CheckoutService checkoutService;
 
     @Autowired
     public CheckoutController(IdeaService ideaService, UserService userService, CheckoutService checkoutService){
         this.ideaService = ideaService;
-        this.userService = userService;
         this.checkoutService = checkoutService;
     }
 
@@ -39,7 +37,7 @@ public class CheckoutController {
     public JsonResponse fund(@RequestBody Map<String, ShoppingCartItem> cart, Principal principal){
         System.out.println(cart);
         System.out.println(principal.getName());
-        checkoutService.makeTransactions(cart, principal.getName(), userService);
+        checkoutService.makeTransactions(cart, principal.getName());
         return new JsonResponse("OK", "");
     }
 }

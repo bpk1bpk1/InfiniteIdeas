@@ -1,9 +1,11 @@
 package com.infiniteideas.service.implementation;
 
 import com.infiniteideas.model.Funding;
+import com.infiniteideas.model.Idea;
 import com.infiniteideas.model.ShoppingCartItem;
 import com.infiniteideas.repository.FundingRepository;
 import com.infiniteideas.service.CheckoutService;
+import com.infiniteideas.service.IdeaService;
 import com.infiniteideas.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -15,15 +17,19 @@ import java.util.Map;
 public class CheckoutServiceImpl implements CheckoutService {
 
     private FundingRepository fundingRepository;
+    private IdeaService ideaService;
+    private UserService userService;
 
     @Autowired
-    public CheckoutServiceImpl(FundingRepository fundingRepository) {
+    public CheckoutServiceImpl(FundingRepository fundingRepository, IdeaService ideaService, UserService userService) {
         this.fundingRepository = fundingRepository;
+        this.ideaService = ideaService;
+        this.userService = userService;
     }
 
 
     @Override
-    public void makeTransactions(Map<String, ShoppingCartItem> itemMap, String userName, UserService userService) {
+    public void makeTransactions(Map<String, ShoppingCartItem> itemMap, String userName) {
         List<Funding> fundingList = new ArrayList<>();
         Long userId = userService.findByUsername(userName).getId();
 
@@ -35,7 +41,19 @@ public class CheckoutServiceImpl implements CheckoutService {
             fundingList.add(funding);
         });
 
-        save(fundingList);
+        List<Funding> validation = save(fundingList);
+        if (validation.size() == fundingList.size()){
+            makeIdeaUpdate(validation);
+        }
+
+    }
+
+    private void makeIdeaUpdate(List<Funding> validation) {
+        validation.forEach(s -> {
+            Idea idea = ideaService.findById(s.getIdeaId());
+            idea.setCollectedFunds(idea.getCollectedFunds() + s.getFunded());
+            ideaService.save(idea);
+        });
     }
 
     @Override

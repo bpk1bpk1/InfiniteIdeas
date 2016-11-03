@@ -8,6 +8,11 @@ public class Idea {
     private Long id;
     private String name;
     private String description;
+    @Column(name = "funds_required")
+    private Double fundsRequired;
+    @Column(name = "collected_funds")
+    private Double collectedFunds;
+
 
     public String getDescription() {
         return description;
@@ -35,4 +40,19 @@ public class Idea {
         this.name = name;
     }
 
+    public Double getFundsRequired() {
+        return fundsRequired;
+    }
+
+    public void setFundsRequired(Double fundsRequired) {
+        this.fundsRequired = fundsRequired;
+    }
+
+    public Double getCollectedFunds() {
+        return collectedFunds;
+    }
+
+    public void setCollectedFunds(Double collectedFunds) {
+        this.collectedFunds = collectedFunds;
+    }
 }

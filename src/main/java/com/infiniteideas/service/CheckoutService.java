@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Map;
 
 public interface CheckoutService {
-    void makeTransactions(Map<String, ShoppingCartItem> itemMap, String userName, UserService userService);
+    void makeTransactions(Map<String, ShoppingCartItem> itemMap, String userName);
 
     List<Funding> save(List<Funding> fundingList);
 }
