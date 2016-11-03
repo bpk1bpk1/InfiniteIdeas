@@ -14,13 +14,11 @@
             $.ajax({
                 type: "POST",
                 url: "/cart/fund",
-                data: JSON.stringify({sc1: { id: "1", name: "Gerry", funds: "10" },
-                    sc2 :{ id: "2", name: "Tim", funds: "100" }}),
+                data: JSON.stringify({sc1: { id: "1", name: "IU idea", funds: "100" },
+                    sc2 :{ id: "10", name: "PU idea", funds: "50" }}),
                 contentType: 'application/json',
                 success: function(data) {
                     if(data.status == 'OK') {
-//                        alert('Person has been added');
-//                        window.location.href=welcome;
                         location.replace("${contextPath}/welcome")
                     }
 

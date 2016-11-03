@@ -1,6 +1,6 @@
 package com.infiniteideas.model;
 
-public class ShoppingCart {
+public class ShoppingCartItem {
     private Long id;
     private String name;
     private Double funds;
