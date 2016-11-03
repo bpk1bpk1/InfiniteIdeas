@@ -31,14 +31,14 @@
                         </li>
 
 
-                      <!--  <li class="cart">
+                        <li class="cart">
                             <div>
-                                &nbsp;&nbsp;&nbsp;&nbsp;<a href="checkout.htm"><img alt=""
-                                                                                    src="portal_image/cart-2.png" /></a>
+                                &nbsp;&nbsp;&nbsp;&nbsp;<a href="${contextPath}/cart/checkout"><img class="imge" alt=""
+                                                                                    src="${contextPath}/resources/images/logo.jpg" /></a>
                             </div>
                         </li>
 
-                        <a href="${contextPath}/Ideas/list" class="btn btn-success">Back</a>-->
+                      <!--  <a href="${contextPath}/Ideas/list" class="btn btn-success">Back</a>-->
 
 
                     </ul>

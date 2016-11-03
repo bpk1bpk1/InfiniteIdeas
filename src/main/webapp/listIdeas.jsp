@@ -39,7 +39,7 @@ $(document).ready(function() {
 
         event.preventDefault(); //prevent default action
 
-        var funds = parseInt(globalQty);
+        var funds = globalQty;
         if(funds == 0 || globalQty == '')
         {
             alert("please add a quantity before adding to cart")
@@ -47,8 +47,13 @@ $(document).ready(function() {
         }
 
 
+        console.log('${pageContext.request.userPrincipal.name}')
 
-        addItemTocart('1','1',funds);  //adding to cart
+        //idea_name = $(this).attr("data-name");
+        idea_id  =  $(this).attr("data-id");
+        idea_name = $(this).attr("data-name")
+
+        addItemTocart(idea_id,idea_name,funds);  //adding to cart
 
         var modal = document.getElementById('myModal');
         modal.style.display = "block";
@@ -73,12 +78,12 @@ $(document).ready(function() {
 
 
 var globalQty = ''
-cart = []
+cart = {}
 
 
-var Item = function(ideadId, userId, funds) {
-    this.ideaID = ideadId;
-    this.userId = userId;
+var Item = function(id, name, funds) {
+    this.id = id;
+    this.name = name;
     this.funds = funds;
 
 };
@@ -91,14 +96,9 @@ var Item = function(ideadId, userId, funds) {
 
 //-------------------- Cart Functions-----------
 
-//$(document).on('click', '.add-to-cartP', function () {
 
 
-//});
-
-
-
-    function addItemTocart(ideaId,userId,funds) {
+    function addItemTocart(ideaId,ideaName,funds) {
         //alert("product: " + product)
         //alert("cart: " + cart)
       /* for ( var i in cart) {
@@ -117,8 +117,9 @@ var Item = function(ideadId, userId, funds) {
                 }
             }
         }*/
-        var item = new Item(ideaId,userId,funds);
-        cart.push(item);
+        var item = new Item(ideaId,ideaName,funds);
+        itemId = 'ideaId' + ideaId
+        cart[itemId] = item
         saveCart();
     }
 
@@ -140,7 +141,7 @@ var Item = function(ideadId, userId, funds) {
     });
 
     function clearCart() {
-        cart = [];
+        cart = {};
         saveCart();
     }
 
@@ -152,7 +153,7 @@ var Item = function(ideadId, userId, funds) {
         if(JSON.parse ( localStorage.getItem("shoppingCart") ) != null  )
             cart = JSON.parse ( localStorage.getItem("shoppingCart") );
         else
-            cart = []
+            cart = {}
 
     }
 
@@ -162,8 +163,14 @@ var Item = function(ideadId, userId, funds) {
 
 function createGallery() {
     var output = ""
-    <c:forEach items="${ideas}" var="idea" varStatus="itr">
 
+
+    allItems = {}
+
+    <c:forEach items="${ideas}" var="idea" varStatus="itr">
+    item ={}
+    item['name'] = '${idea.name}'
+    allItems[${idea.id}] = item
     output += "<div>"
             + "<div " + "class='gallery-left gallery-Item col-md-3 grid-stn simpleCart_shelfItem' style='margin:0 0px 10px ;border:1px solid #F7F2F2 ;padding-bottom:3px;' >"
             + "<div  class='ih-item square effect3 bottom_to_top'  >"
@@ -176,12 +183,17 @@ function createGallery() {
             + "<input " + "id="+ ${idea.id} + " " + " value = '' "  +" class='Quantity' style='width:90px;height:25px; font-weight:bold;border-style: solid; border-radius: 8px;padding-left:3px;border-color:#828689;'> </input> </div>"
             + "<div class='quick-view' data-name="+  '${idea.name}' +" data-price="+ '100'  +"> "
             + "<div style='padding-right:5px;float:left;padding-bottom:30px;'><button class = 'quick-view-btn btn btn-info' data-sku="+ " action='#' >Quick view</button></div>"
-            + "<div style='float:left;padding-bottom:30px;'><button class = 'add-to-cartP btn-success btn'  data-toggle='modal' data-styleid ="+ ${idea.id} +" data-target='#basicModal' data-name="+  '${idea.name}' + ">Add to Cart</button></div>"
+            + "<div style='float:left;padding-bottom:30px;'><button class = 'add-to-cartP btn-success btn'  data-toggle='modal' data-id ="+ ${idea.id} +" data-target='#basicModal' data-name="+  '${idea.name}' + ">Add to Cart</button></div>"
             + "</div></div></div>"
+
+
 
     </c:forEach>
 
     output += "<div class='clearfix'></div>"
+
+    localStorage.setItem("AllItems" , JSON.stringify(allItems));
+
 
     $("#products-gallery").html(output);
 }
