@@ -1,10 +1,14 @@
 package com.infiniteideas.service;
 
 import com.infiniteideas.model.Funding;
+import com.infiniteideas.model.Idea;
 
 import java.util.List;
+import java.util.Map;
 
 public interface HistoryService {
 
-    List<Funding> findAllTransactions(String name);
+    Map<Funding, Idea> findAllTransactions(String name);
+
+    Map<Funding, Idea> getUserIdeas(List<Funding> fundHistory);
 }

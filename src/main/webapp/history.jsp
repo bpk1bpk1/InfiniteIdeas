@@ -7,6 +7,8 @@
 <head>
     <title>Investor History</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
     <script type="application/javascript">
         $(document).ready(function() {
             $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
@@ -32,25 +34,49 @@
                     <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
                     <div class="caption">
                         <h4 class="group inner list-group-item-heading">
-                            Product title</h4>
+                            ${transaction.value.name}
+                        </h4>
                         <h6 class="group inner list-group-item-heading">
-                            Transaction Id: ${transaction.id}</h6>
+                            Transaction Id: ${transaction.key.id}
+                        </h6>
                         <p class="group inner list-group-item-text">
-                            Product description... Lorem ipsum dolor sit amet, consectetuer adipiscing elit,
-                            sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+                            ${transaction.value.description}
+                        </p>
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <p class="lead">
-                                    $${transaction.funded}</p>
+                                    $${transaction.key.funded}
+                                </p>
                             </div>
                             <div class="col-xs-12 col-md-6">
-                                <a class="btn btn-success" href="http://www.jquery2dotnet.com">View Idea</a>
+                                <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">View Idea</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </c:forEach>
+
+        <div data-role="popup" id="myPopup" class="ui-content">
+            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+            <p>I have a close button at the top right corner.</p>
+            <p><b>Tip:</b> You can also click outside to close me.</p>
+            <p>I have a close button at the top right corner.</p>
+            <p><b>Tip:</b> You can also click outside to close me.</p>
+            <p>I have a close button at the top right corner.</p>
+            <p><b>Tip:</b> You can also click outside to close me.</p>
+            <p>I have a close button at the top right corner.</p>
+            <p><b>Tip:</b> You can also click outside to close me.</p>
+            <p>I have a close button at the top right corner.</p>
+            <p><b>Tip:</b> You can also click outside to close me.</p>
+            <p>I have a close button at the top right corner.</p>
+            <p><b>Tip:</b> You can also click outside to close me.</p>
+            <p>I have a close button at the top right corner.</p>
+            <p><b>Tip:</b> You can also click outside to close me.</p>
+            <p>I have a close button at the top right corner.</p>
+            <p><b>Tip:</b> You can also click outside to close me.</p>
+        </div>
+    </div>
     </div>
 </div>
 </body>
@@ -58,4 +84,5 @@
 <script src="${contextPath}/resources/js/bootstrap.min.js"></script>
 <link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">
 <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+<link href="${contextPath}/resources/css/product.display.css" rel="stylesheet">
 </html>
