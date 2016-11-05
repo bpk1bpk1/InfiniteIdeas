@@ -18,12 +18,10 @@ import java.util.Map;
 @RequestMapping(value = "/cart")
 public class CheckoutController {
 
-    private IdeaService ideaService;
     private CheckoutService checkoutService;
 
     @Autowired
-    public CheckoutController(IdeaService ideaService, UserService userService, CheckoutService checkoutService){
-        this.ideaService = ideaService;
+    public CheckoutController(CheckoutService checkoutService){
         this.checkoutService = checkoutService;
     }
 
@@ -35,8 +33,6 @@ public class CheckoutController {
     @ResponseBody
     @RequestMapping(value = "/fund", method = RequestMethod.POST, headers = {"Content-type=application/json"})
     public JsonResponse fund(@RequestBody Map<String, ShoppingCartItem> cart, Principal principal){
-        System.out.println(cart);
-        System.out.println(principal.getName());
         checkoutService.makeTransactions(cart, principal.getName());
         return new JsonResponse("OK", "");
     }
