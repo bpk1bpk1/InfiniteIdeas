@@ -2,8 +2,6 @@ package com.infiniteideas.web;
 
 import com.infiniteideas.model.ShoppingCartItem;
 import com.infiniteideas.service.CheckoutService;
-import com.infiniteideas.service.IdeaService;
-import com.infiniteideas.service.UserService;
 import com.infiniteideas.utils.JsonResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -11,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+
 import java.security.Principal;
 import java.util.Map;
 
