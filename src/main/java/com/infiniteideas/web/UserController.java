@@ -65,6 +65,12 @@ public class UserController {
         return "login";
     }
 
+    @RequestMapping(value = "/map", method = RequestMethod.GET)
+    public String test(Model model){
+        model.addAttribute("locations", userPersonalDetailsService.getCustomerLocations());
+        return "map";
+    }
+
     @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
     public String welcome() {
         return "welcome";

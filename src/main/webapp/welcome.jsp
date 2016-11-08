@@ -39,6 +39,8 @@
         <h2>view <a href="${contextPath}/cart/checkout">Checkout</a></h2>
 
         <h2>view <a href="${contextPath}/history">Transaction History</a></h2>
+
+        <h2>view <a href="${contextPath}/map">Map</a> of all our users</h2>
     </c:if>
 
 </div>
