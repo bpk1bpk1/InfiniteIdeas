@@ -6,7 +6,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 
-<jsp:include page="${contextPath}/header.jsp" />
+
 
 
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
@@ -175,7 +175,7 @@ function createGallery() {
             + "<div " + "class='gallery-left gallery-Item col-md-3 grid-stn simpleCart_shelfItem' style='margin:0 0px 10px ;border:1px solid #F7F2F2 ;padding-bottom:3px;' >"
             + "<div  class='ih-item square effect3 bottom_to_top'  >"
             + "<div  class='bottom-2-top'>"
-            + "<div  class='img'><img style = 'width:120px;height:90px;' src='${contextPath}/resources/images/logo.jpg' alt='/' class='img-responsive gri-wid'/></div>"
+            + "<div  class='img'><img style = 'width:120px;height:90px;' src='${contextPath}/resources/images/logo.png' alt='/' class='img-responsive gri-wid'/></div>"
             + "<div> <span><strong>Idea: <span style='color:#A5040E ;'>" + '${idea.name}' + "</span></strong></span><br>"
             + "<span> <strong>Funds Required: $<span style='color:#A5040E; font-style:bold;'>"+ '100' +"</span></strong></span><br> </div>"
             + "</div> </div>"
@@ -201,7 +201,7 @@ function createGallery() {
 
 <body>
 
-
+<jsp:include page="${contextPath}/header.jsp" />
 <div id="myModal" class="modal">
 
     <!-- Modal content -->

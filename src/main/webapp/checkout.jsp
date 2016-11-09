@@ -72,7 +72,7 @@
                     +  "<div "+ " qid = " + qid +" id=" + id + " " + "class='close1' ></div>"
                     +  "<li class='ring-in'>"
                     +  "<a href='singleProduct.htm'>"
-                    +  "<img src='${contextPath}/resources/images/logo.jpg' "+ "' class='img-responsive' alt='' style='width:150px;height:120px;float:left;'>"
+                    +  "<img src='${contextPath}/resources/images/logo.png' "+ "' class='img-responsive' alt='' style='width:150px;height:120px;float:left;'>"
                     +  "</a></li>"
                     +  "<li><span class='name'>"  + " " + qid+ " </span></li>"
                     +  "<li><span class='name'>"  + " " + allItems[qid]['name']+ " </span></li>"
