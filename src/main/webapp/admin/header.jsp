@@ -1,6 +1,6 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <link href="${contextPath}/resources/css/header.css" rel="stylesheet">
+<!-- Bootstrap Core CSS -->
+<link href="${contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
 <div class="header_top">
     <div class="container">

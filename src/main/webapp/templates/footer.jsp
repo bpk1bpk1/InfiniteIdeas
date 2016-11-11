@@ -32,6 +32,10 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="${contextPath}/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
 
+<!-- Custom Fonts -->
+<link href="${contextPath}/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
 <!-- Plugin JavaScript -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
