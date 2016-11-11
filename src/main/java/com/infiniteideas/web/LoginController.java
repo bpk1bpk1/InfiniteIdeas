@@ -62,4 +62,14 @@ public class LoginController {
 
         return "login";
     }
+
+    @RequestMapping(value = "/header", method = RequestMethod.GET)
+    public String test() {
+        return "header";
+    }
+
+    @RequestMapping(value = "/headerLogin", method = RequestMethod.GET)
+    public String test1() {
+        return "headerLogin";
+    }
 }

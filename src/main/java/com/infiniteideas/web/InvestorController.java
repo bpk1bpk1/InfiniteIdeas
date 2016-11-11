@@ -25,6 +25,6 @@ public class InvestorController {
 
     @RequestMapping(value = {"", "/welcome"}, method = RequestMethod.GET)
     public String welcome() {
-        return "welcome";
+        return "investor/welcome";
     }
 }

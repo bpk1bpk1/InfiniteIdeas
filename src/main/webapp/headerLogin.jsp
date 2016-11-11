@@ -2,8 +2,6 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
-    <link href="${contextPath}/resources/css/header.css" rel="stylesheet">
-    <script type="application/javascript" src="${contextPath}/resources/js/header.js"></script>
 </head>
 <body>
 <div class="header_top"></div>
@@ -19,9 +17,8 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a id="closepage" menuid="0" class="brand" href="/welcome" followlink="true">
-                        <img src="${contextPath}/resources/images/logo.png"/>
-                    </a>
+                    <a id="closepage" menuid="0" class="brand" href="#" followlink="true">
+                        LOGO</a>
 
                 </div>
                 <div class="collapse navbar-collapse pull-right" id="main-menu">
@@ -76,16 +73,5 @@
         </div>
     </header>
 </div><!--menu-->
-
 </body>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="${contextPath}/resources/js/bootstrap.min.js"></script>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-
-<%--<link href="${contextPath}/resources/css/bootstrap.min.css" rel="stylesheet">--%>
-<%--<link href="${contextPath}/resources/css/common.css" rel="stylesheet">--%>
-<%--<link href="${contextPath}/resources/css/Cstyle.css" rel="stylesheet">--%>
-<%--<link href="${contextPath}/resources/css/style.css" rel="stylesheet">--%>
 </html>

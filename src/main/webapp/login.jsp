@@ -9,10 +9,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
 
-    <title>Agency - Start Bootstrap Theme</title>
+    <title>Infiniteideas</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="${contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -411,7 +409,7 @@
     </div>
 </section>
 
-<jsp:include page="templates/footer.jsp"></jsp:include>
+
 
 <!-- Portfolio Modals -->
 <!-- Use the modals below to showcase details about your portfolio projects! -->
@@ -595,17 +593,6 @@
     </div>
 </div>
 
-<!-- jQuery -->
-<script src="${contextPath}/resources/vendor/jquery/jquery.min.js"></script>
-
-<!-- Bootstrap Core JavaScript -->
-<script src="${contextPath}/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
-
-<!-- Plugin JavaScript -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
-
-<!-- Theme JavaScript -->
-<script src="${contextPath}/resources/js/agency.min.js"></script>
-
+<jsp:include page="templates/footer.jsp"></jsp:include>
 </body>
 </html>
