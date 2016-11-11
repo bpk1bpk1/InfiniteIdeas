@@ -228,10 +228,14 @@ ul.social-buttons li a:active {
     margin-top: -1px;
 }
 
-@media screen and (min-width: 768px) {
-    .shopping-cart {
+.shopping-cart-nav {
         margin-top: 19px;
         font-size: 30px;
+}
+
+@media screen and (max-width: 768px){
+    .shopping-cart-nav {
+        visibility: hidden;
     }
 }
 

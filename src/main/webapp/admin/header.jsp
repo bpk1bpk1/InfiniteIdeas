@@ -1,14 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-<html>
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="${contextPath}/resources/css/header.css" rel="stylesheet">
-    <%--<script type="application/javascript" src="${contextPath}/resources/js/header.js"></script>--%>
-</head>
-<body>
+<link href="${contextPath}/resources/css/header.css" rel="stylesheet">
+
 <div class="header_top">
     <div class="container">
         <div class="row">
@@ -65,7 +58,7 @@
 
                         <li class="fadeInDown animated d2"><a href="#">Contact Us</a></li>
 
-                        <a href="#"><span class="glyphicon glyphicon-shopping-cart shopping-cart"></span></a>
+                        <a href="#"><span class="glyphicon glyphicon-shopping-cart shopping-cart-nav"></span></a>
                     </ul>
 
                     <c:if test="${pageContext.request.userPrincipal.name != null}">
@@ -80,11 +73,3 @@
         </div>
     </header>
 </div><!--menu-->
-
-
-</body>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-</html>
