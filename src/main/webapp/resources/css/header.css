@@ -4,6 +4,17 @@
     height: 48px;
 }
 
+@media only screen and (max-width: 768px) {
+    .header_top {
+        height: 65px;
+    }
+
+    .shopping-cart {
+        margin-top: -1px;
+        font-size: 30px;
+    }
+}
+
 .header_top_text{
     font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
@@ -217,9 +228,11 @@ ul.social-buttons li a:active {
     margin-top: -1px;
 }
 
-.shopping-cart {
-    margin-top: 19px;
-    font-size: 30px;
+@media screen and (min-width: 768px) {
+    .shopping-cart {
+        margin-top: 19px;
+        font-size: 30px;
+    }
 }
 
 /* Search bar */

@@ -39,6 +39,8 @@
         <div class="navbar navbar-inner" role="navigation">
             <div class="container">
                 <div class="navbar-header">
+                    <a href="#"><span class="glyphicon glyphicon-shopping-cart shopping-cart navbar-toggle"></span></a>
+
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="sr-only">Toggle Navigation</span>
                         <span class="icon-bar"></span>
@@ -49,6 +51,7 @@
                     <a id="closepage" menuid="0" class="navbar-brand visible-lg visible-md" href="${contextPath}/investor/">
                         <img src="${contextPath}/resources/images/logo.png"/>
                     </a>
+
                 </div>
                 <div class="collapse navbar-collapse navbar-right" id="main-menu">
                     <ul class="nav navbar-nav">
@@ -82,8 +85,6 @@
 </body>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="${contextPath}/resources/vendor/js/bootstrap.min.js"></script>
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-<link href="${contextPath}/resources/vendor/css/bootstrap.min.css" rel="stylesheet">
 </html>
