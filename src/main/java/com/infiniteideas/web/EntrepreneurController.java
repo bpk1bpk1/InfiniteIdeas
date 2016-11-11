@@ -25,6 +25,6 @@ public class EntrepreneurController {
 
     @RequestMapping(value = {"", "/welcome"}, method = RequestMethod.GET)
     public String welcome() {
-        return "welcome";
+        return "entrepreneur/welcome";
     }
 }

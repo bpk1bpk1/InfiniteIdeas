@@ -25,6 +25,6 @@ public class AdminController {
 
     @RequestMapping(value = {"", "/welcome"}, method = RequestMethod.GET)
     public String welcome() {
-        return "welcome";
+        return "admin/welcome";
     }
 }
