@@ -37,7 +37,7 @@ public class LoginController {
     public String registration(Model model) {
         model.addAttribute("userForm", new User());
 
-        return "registration";
+        return "common/registration";
     }
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
@@ -45,7 +45,7 @@ public class LoginController {
         userValidator.validate(userForm, bindingResult);
 
         if (bindingResult.hasErrors()) {
-            return "registration";
+            return "common/registration";
         }
 
         userService.save(userForm);
@@ -58,7 +58,7 @@ public class LoginController {
     @RequestMapping(value = "/userDetails", method = RequestMethod.GET)
     public String userDetails(Model model){
         model.addAttribute("details", new UserPersonalDetails());
-        return "/userDetails";
+        return "common/userDetails";
     }
 
     @RequestMapping(value = "/userDetails", method = RequestMethod.POST)
@@ -67,7 +67,7 @@ public class LoginController {
         userValidator.validatePersonalData(form, bindingResult);
 
         if (bindingResult.hasErrors()) {
-            return "registration";
+            return "common/userDetails";
         }
 
         String userSelectedRole = userPersonalDetailsService.save(form, principal.getName());
@@ -83,6 +83,6 @@ public class LoginController {
         if (logout != null)
             model.addAttribute("message", "You have been logged out successfully.");
 
-        return "login";
+        return "common/login";
     }
 }
