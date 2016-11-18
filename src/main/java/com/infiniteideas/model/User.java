@@ -12,6 +12,7 @@ public class User {
     private String passwordConfirm;
     private String email;
     private Set<Role> roles;
+    private String selectedRole;
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -64,5 +65,13 @@ public class User {
 
     public void setEmail(String email) {
         this.email = email;
+    }
+
+    public String getSelectedRole() {
+        return selectedRole;
+    }
+
+    public void setSelectedRole(String selectedRole) {
+        this.selectedRole = selectedRole;
     }
 }

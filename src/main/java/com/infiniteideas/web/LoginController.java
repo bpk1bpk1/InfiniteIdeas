@@ -1,6 +1,7 @@
 package com.infiniteideas.web;
 
 import com.infiniteideas.model.User;
+import com.infiniteideas.model.UserPersonalDetails;
 import com.infiniteideas.service.SecurityService;
 import com.infiniteideas.service.UserPersonalDetailsService;
 import com.infiniteideas.service.UserService;
@@ -12,6 +13,8 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+
+import java.security.Principal;
 
 @Controller
 public class LoginController {
@@ -49,7 +52,27 @@ public class LoginController {
 
         securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 
-        return "redirect:/welcome";
+        return "redirect:/userDetails";
+    }
+
+    @RequestMapping(value = "/userDetails", method = RequestMethod.GET)
+    public String userDetails(Model model){
+        model.addAttribute("details", new UserPersonalDetails());
+        return "/userDetails";
+    }
+
+    @RequestMapping(value = "/userDetails", method = RequestMethod.POST)
+    public String userDetails(@ModelAttribute("details") UserPersonalDetails form, BindingResult bindingResult,
+                              Principal principal) {
+        userValidator.validatePersonalData(form, bindingResult);
+
+        if (bindingResult.hasErrors()) {
+            return "registration";
+        }
+
+        String userSelectedRole = userPersonalDetailsService.save(form, principal.getName());
+
+        return "redirect:/"+ userSelectedRole.toLowerCase() + "/welcome";
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
@@ -61,15 +84,5 @@ public class LoginController {
             model.addAttribute("message", "You have been logged out successfully.");
 
         return "login";
-    }
-
-    @RequestMapping(value = "/header", method = RequestMethod.GET)
-    public String test() {
-        return "header";
-    }
-
-    @RequestMapping(value = "/headerLogin", method = RequestMethod.GET)
-    public String test1() {
-        return "headerLogin";
     }
 }

@@ -10,4 +10,6 @@ public interface UserPersonalDetailsService {
     List<UserPersonalDetails> findAll();
 
     Hashtable<String, String> getCustomerLocations();
+
+    String save(UserPersonalDetails details, String name);
 }

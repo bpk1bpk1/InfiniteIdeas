@@ -1,5 +1,6 @@
 package com.infiniteideas.service.implementation;
 
+import com.infiniteideas.model.Role;
 import com.infiniteideas.model.User;
 import com.infiniteideas.repository.RoleRepository;
 import com.infiniteideas.repository.UserRepository;
@@ -9,6 +10,7 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.HashSet;
+import java.util.List;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -27,8 +29,18 @@ public class UserServiceImpl implements UserService {
     @Override
     public void save(User user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
-        user.setRoles(new HashSet<>(roleRepository.findAll()));
+        saveUserRole(user);
         userRepository.save(user);
+    }
+
+    private void saveUserRole(User user) {
+        HashSet<Role> selectedRole = new HashSet<>();
+        List<Role> roles = roleRepository.findAll();
+        roles.forEach(s -> {
+            if (s.getName().equals(user.getSelectedRole()))
+                selectedRole.add(s);
+        });
+        user.setRoles(selectedRole);
     }
 
     @Override

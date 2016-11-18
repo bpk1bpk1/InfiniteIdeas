@@ -1,8 +1,10 @@
 package com.infiniteideas.service.implementation;
 
+import com.infiniteideas.model.User;
 import com.infiniteideas.model.UserPersonalDetails;
 import com.infiniteideas.repository.UserPersonalDetailsRepository;
 import com.infiniteideas.service.UserPersonalDetailsService;
+import com.infiniteideas.service.UserService;
 import com.infiniteideas.utils.GeoConverter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,10 +16,12 @@ import java.util.List;
 public class UserPersonalDetailsServiceImpl implements UserPersonalDetailsService{
 
     private final UserPersonalDetailsRepository userPersonalDetailsRepository;
+    private final UserService userService;
 
     @Autowired
-    public UserPersonalDetailsServiceImpl(UserPersonalDetailsRepository userPersonalDetailsRepository) {
+    public UserPersonalDetailsServiceImpl(UserPersonalDetailsRepository userPersonalDetailsRepository, UserService userService) {
         this.userPersonalDetailsRepository = userPersonalDetailsRepository;
+        this.userService = userService;
     }
 
 
@@ -39,5 +43,13 @@ public class UserPersonalDetailsServiceImpl implements UserPersonalDetailsServic
         });
 
         return locations;
+    }
+
+    @Override
+    public String save(UserPersonalDetails details, String name) {
+        User user = userService.findByUsername(name);
+        details.setId(user.getId());
+        userPersonalDetailsRepository.save(details);
+        return user.getSelectedRole();
     }
 }

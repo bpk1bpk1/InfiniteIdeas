@@ -1,12 +1,14 @@
 package com.infiniteideas.validator;
 
 import com.infiniteideas.model.User;
+import com.infiniteideas.model.UserPersonalDetails;
 import com.infiniteideas.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 import org.springframework.validation.Errors;
 import org.springframework.validation.ValidationUtils;
 import org.springframework.validation.Validator;
+
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -49,12 +51,24 @@ public class UserValidator implements Validator {
         if (!user.getPasswordConfirm().equals(user.getPassword())) {
             errors.rejectValue("passwordConfirm", "Diff.userForm.passwordConfirm");
         }
+
+        if (user.getSelectedRole() == null){
+            errors.rejectValue("selectedRole", "userForm.selectedRole");
+        }
     }
 
     private boolean validateEmail(String email) {
         Pattern pattern = Pattern.compile(EMAIL_PATTERN);
         Matcher matcher = pattern.matcher(email);
         return matcher.matches();
+    }
+
+    public void validatePersonalData(UserPersonalDetails form, Errors errors) {
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "NotEmpty");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "street", "NotEmpty");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "city", "NotEmpty");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "state", "NotEmpty");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "country", "NotEmpty");
     }
 }
 

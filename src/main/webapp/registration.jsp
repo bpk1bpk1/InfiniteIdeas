@@ -60,11 +60,20 @@
             </div>
         </spring:bind>
 
+        <spring:bind path="selectedRole">
+            <div class="form-group ${status.error ? 'has-error' : ''}">
+                Select Role:
+                <form:radiobutton path="selectedRole" value="ENTREPRENEUR" label="Entrepreneur"/>
+                <form:radiobutton path="selectedRole" value="INVESTOR" label="Investor"/>
+                <form:errors path="selectedRole"></form:errors>
+            </div>
+        </spring:bind>
+
         <button class="btn btn-lg btn-primary btn-block" type="submit" id="register">Submit</button>
     </form:form>
 
-<jsp:include page="templates/footer.jsp"></jsp:include>
 </div>
+<jsp:include page="templates/footer.jsp"></jsp:include>
 <!-- /container -->
 </body>
 </html>
