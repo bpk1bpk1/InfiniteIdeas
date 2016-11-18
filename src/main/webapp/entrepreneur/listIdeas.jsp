@@ -5,82 +5,18 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Insert title here</title>
+    <title>View all ideas</title>
 </head>
 <body>
-
 <jsp:include page="${contextPath}/${role}/header.jsp" />
-
-<div class="container">
-    <div class="body">
-        <div id="myModal" class="modal">
-
-            <!-- Modal content -->
-            <div class="modal-content">
-                <div class="modal-header">
-                    <span class="close">Ã</span>
-                    <h2></h2>
-                </div>
-                <div class="modal-body">
-                    <p>
-                        <strong>Item added to cart</strong>
-                    </p>
-                    <br>
-                    <p>Checkout to place order or Continue to browse the products</p>
-                </div>
-                <div class="modal-footer">
-                    <h3></h3>
-                </div>
-            </div>
-        </div>
-
-        <!--
-
-        <h2>List of Persons</h2>
-        <table class="table table-bordered">
-            <tr>
-                <th>S.No</th>
-                <th>Name</th>
-
-            </tr>
-            <tbody>
-            <c:forEach items="${ideas}" var="idea" varStatus="itr">
-                <tr>
-                    <td>${idea.name}</td>
-                    <td><a href="${contextPath}/Ideas/edit/${idea.id}" class="btn btn-warning">Edit</a> </td>
-                    <td><a href="${contextPath}/Ideas/view/${idea.id}" class="btn btn-warning">View Details</a> </td>
-                </tr>
-            </c:forEach>
-            </tbody>
-
-        </table>-->
-
-
-        <div style="float: left">
-            <div class="col-md-12 products-gallery">
-                <div style="width: 1200px; padding-left: 60px;">
-                    <div id="products-gallery" class="col-md-12 grid-gallery"></div>
-                </div>
-            </div>
-        </div>
-
-        <div>
-        <a href="${contextPath}/Ideas/create" class="btn btn-success">Add Idea</a>
-        </div>
-    </div>
-
-</div>
 <div class="footer">
     <jsp:include page="${contextPath}/templates/footer.jsp" />
 </div>
-</body>
-
 <script>
     $(document).ready(function() {
         createGallery();
-
         $(".add-to-cartP").click(function() {
-            alert("inside add to cartP");
+//            alert("inside add to cartP")
             event.preventDefault(); //prevent default action
             var funds = globalQty;
             if(funds == 0 || globalQty == '') {
@@ -113,24 +49,13 @@
         this.name = name;
         this.funds = funds;
     };
-
     //-------------------- Cart Functions-----------
     function addItemTocart(ideaId,ideaName,funds) {
-        if(cart.length > 0) {
-            console.log(cart[i]);
-            console.log(product);
-            if (cart[i].ideaID == product.catalogDswStyle.styleId) {
-                cart[i].count += parseInt(count);
-                cart[i].product.totalCost = cart[i].count * Math.round(cart[i].product.catalogDSWOrder.estimatedCost * 100)/100;
-                saveCart();
-            }
-        }
+        var item = new Item(ideaId,ideaName,funds);
+        itemId = 'ideaId' + ideaId;
+        cart[itemId] = item;
+        saveCart();
     }
-    var item = new Item(ideaId,ideaName,funds);
-    itemId = 'ideaId' + ideaId;
-    cart[itemId] = item;
-    saveCart();
-
     $(document).on('change', '.Quantity', function () {
         event.preventDefault();
         globalQty = $(this).val();
@@ -146,7 +71,6 @@
         cart = {};
         saveCart();
     }
-
     function saveCart() {
         localStorage.setItem("shoppingCart", JSON.stringify(cart));
     }
@@ -157,11 +81,9 @@
             cart = {}
     }
     //==============================================
-
     function createGallery() {
         var output = "";
         allItems = {};
-
         <c:forEach items="${ideas}" var="idea" varStatus="itr">
         item ={};
         item['name'] = '${idea.name}';
@@ -186,4 +108,63 @@
         $("#products-gallery").html(output);
     }
 </script>
+<div class="container">
+    <div id="myModal" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">Ã</span>
+                <h2></h2>
+            </div>
+            <div class="modal-body">
+                <p>
+                    <strong>Item added to cart</strong>
+                </p>
+                <br>
+                <p>Checkout to place order or Continue to browse the products</p>
+            </div>
+            <div class="modal-footer">
+                <h3></h3>
+            </div>
+        </div>
+    </div>
+
+    <!--
+
+    <h2>List of Persons</h2>
+    <table class="table table-bordered">
+        <tr>
+            <th>S.No</th>
+            <th>Name</th>
+
+        </tr>
+        <tbody>
+        <c:forEach items="${ideas}" var="idea" varStatus="itr">
+            <tr>
+                <td>${idea.name}</td>
+                <td><a href="${contextPath}/Ideas/edit/${idea.id}" class="btn btn-warning">Edit</a> </td>
+                <td><a href="${contextPath}/Ideas/view/${idea.id}" class="btn btn-warning">View Details</a> </td>
+            </tr>
+        </c:forEach>
+        </tbody>
+
+    </table>-->
+
+
+    <div style="float: left">
+        <div class="col-md-12 products-gallery">
+            <div style="width: 1200px; padding-left: 60px;">
+                <div id="products-gallery" class="col-md-12 grid-gallery"></div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        <a href="${contextPath}/Ideas/create" class="btn btn-success">Add Idea</a>
+    </div>
+
+</div>
+
+</body>
 </html>

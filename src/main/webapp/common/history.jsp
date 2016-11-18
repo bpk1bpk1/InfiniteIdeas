@@ -1,23 +1,23 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
-<jsp:include page="${contextPath}/header.jsp" />
 <head>
     <title>Investor History</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
-    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
-    <script type="application/javascript">
-        $(document).ready(function() {
-            $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
-            $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');
-                $('#products .item').addClass('grid-group-item');});
-        });
-    </script>
 </head>
 <body>
+<jsp:include page="${contextPath}/${role}/header.jsp"/>
+<%--<div class="footer">--%>
+    <%--<jsp:include page="${contextPath}/templates/footer.jsp" />--%>
+<%--</div>--%>
+<script type="application/javascript">
+    $(document).ready(function() {
+        $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
+        $('#grid').click(function(event){event.preventDefault();$('#products .item').removeClass('list-group-item');
+            $('#products .item').addClass('grid-group-item');});
+    });
+</script>
 <div class="container">
     <div class="well well-sm">
         <strong>Purchase History</strong>
@@ -49,7 +49,7 @@
                                 </p>
                             </div>
                             <div class="col-xs-12 col-md-6">
-                                <a href="#myPopup" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">View Idea</a>
+                                <a href="${contextPath}/Ideas/viewIdea" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">View Idea</a>
                             </div>
                         </div>
                     </div>
@@ -77,12 +77,9 @@
             <p><b>Tip:</b> You can also click outside to close me.</p>
         </div>
     </div>
-    </div>
 </div>
+
 </body>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="${contextPath}/resources/vendor/js/bootstrap.min.js"></script>
-<link href="${contextPath}/resources/vendor/css/bootstrap.min.css" rel="stylesheet">
-<link href="${contextPath}/resources/css/common.css" rel="stylesheet">
 <link href="${contextPath}/resources/css/product.display.css" rel="stylesheet">
+
 </html>

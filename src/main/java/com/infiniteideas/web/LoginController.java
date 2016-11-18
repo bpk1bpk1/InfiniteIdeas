@@ -5,6 +5,7 @@ import com.infiniteideas.model.UserPersonalDetails;
 import com.infiniteideas.service.SecurityService;
 import com.infiniteideas.service.UserPersonalDetailsService;
 import com.infiniteideas.service.UserService;
+import com.infiniteideas.utils.RoleGetter;
 import com.infiniteideas.validator.UserValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -23,6 +24,7 @@ public class LoginController {
     private final SecurityService securityService;
     private final UserValidator userValidator;
     private final UserPersonalDetailsService userPersonalDetailsService;
+    private RoleGetter roleGetter = new RoleGetter();
 
     @Autowired
     public LoginController(SecurityService securityService, UserValidator userValidator,
@@ -84,5 +86,11 @@ public class LoginController {
             model.addAttribute("message", "You have been logged out successfully.");
 
         return "common/login";
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public String home(Principal principal){
+        String role = roleGetter.getRoles(userService, principal.getName());
+        return role + "/welcome";
     }
 }

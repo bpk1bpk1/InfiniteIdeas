@@ -3,6 +3,7 @@ package com.infiniteideas.web;
 import com.infiniteideas.model.Idea;
 import com.infiniteideas.service.IdeaService;
 import com.infiniteideas.service.UserService;
+import com.infiniteideas.utils.RoleGetter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +19,7 @@ public class IdeaController {
 
     private final IdeaService ideaService;
     private final UserService userService;
+    private RoleGetter roleGetter = new RoleGetter();
 
     @Autowired
     public IdeaController(IdeaService service, UserService userService){
@@ -27,9 +29,13 @@ public class IdeaController {
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String index(Model model, Principal principal){
+        String role = roleGetter.getRoles(userService, principal.getName());
         model.addAttribute("ideas", ideaService.findAll());
-        model.addAttribute("role", userService.findByUsername(principal.getName()).getSelectedRole().toLowerCase());
-        return "listIdeas";
+        model.addAttribute("role", role);
+        if (role.equals("investor"))
+            return "investor/listIdeas";
+        else
+            return "entrepreneur/listIdeas";
     }
 
 
