@@ -256,3 +256,9 @@ ul.social-buttons li a:active {
     border:0;
     background:transparent;
 }
+
+.footer {
+    position:absolute;
+    bottom:0;
+    width:100%;
+}

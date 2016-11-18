@@ -23,8 +23,9 @@
     <h2>view <a href="${contextPath}/admin/map">Map</a> of all our users</h2>
 </div>
 
-<jsp:include page="../templates/footer.jsp"></jsp:include>
-
+<div class="footer">
+    <jsp:include page="../templates/footer.jsp"></jsp:include>
+</div>
 
 </body>
 </html>

@@ -2,6 +2,7 @@ package com.infiniteideas.web;
 
 import com.infiniteideas.model.Idea;
 import com.infiniteideas.service.IdeaService;
+import com.infiniteideas.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -9,21 +10,25 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.security.Principal;
+
 @Controller
 @RequestMapping("/Ideas")
 public class IdeaController {
 
     private final IdeaService ideaService;
+    private final UserService userService;
 
     @Autowired
-    public IdeaController(IdeaService service){
+    public IdeaController(IdeaService service, UserService userService){
         this.ideaService = service;
+        this.userService = userService;
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
-    public String index(Model model){
-        System.out.println(ideaService.findAll());
+    public String index(Model model, Principal principal){
         model.addAttribute("ideas", ideaService.findAll());
+        model.addAttribute("role", userService.findByUsername(principal.getName()).getSelectedRole().toLowerCase());
         return "listIdeas";
     }
 

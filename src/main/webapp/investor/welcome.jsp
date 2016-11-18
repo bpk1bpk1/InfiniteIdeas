@@ -21,8 +21,10 @@
 
         <h2>view <a href="${contextPath}/investor/map">Map</a> of all our users</h2>
 </div>
-<jsp:include page="../templates/footer.jsp"></jsp:include>
 
+<div class="footer">
+    <jsp:include page="../templates/footer.jsp"></jsp:include>
+</div>
 
 </body>
 </html>
