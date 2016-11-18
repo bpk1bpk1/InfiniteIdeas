@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
 </head>
 <body>
-<jsp:include page="investor/header.jsp"></jsp:include>
+<jsp:include page="header.jsp"></jsp:include>
 
 <div style="height: 100px" class="container"></div>
 <jsp:include page="templates/footer.jsp"></jsp:include>

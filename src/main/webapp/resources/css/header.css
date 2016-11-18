@@ -257,8 +257,11 @@ ul.social-buttons li a:active {
     background:transparent;
 }
 
+/* Footer */
 .footer {
-    position:absolute;
-    bottom:0;
-    width:100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #E5E4E2;
 }

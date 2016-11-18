@@ -1,6 +1,20 @@
 <link href="${contextPath}/resources/css/header.css" rel="stylesheet">
 <!-- Bootstrap Core CSS -->
 <link href="${contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+<!-- jQuery -->
+<script src="${contextPath}/resources/vendor/jquery/jquery.min.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="${contextPath}/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+<!-- Custom Fonts -->
+<link href="${contextPath}/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+<!-- Plugin JavaScript -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
 <div class="header_top">
     <div class="container">

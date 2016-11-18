@@ -8,9 +8,6 @@
 </head>
 <body>
 <jsp:include page="${contextPath}/${role}/header.jsp"/>
-<%--<div class="footer">--%>
-    <%--<jsp:include page="${contextPath}/templates/footer.jsp" />--%>
-<%--</div>--%>
 <script type="application/javascript">
     $(document).ready(function() {
         $('#list').click(function(event){event.preventDefault();$('#products .item').addClass('list-group-item');});
@@ -49,36 +46,19 @@
                                 </p>
                             </div>
                             <div class="col-xs-12 col-md-6">
-                                <a href="${contextPath}/Ideas/viewIdea" data-rel="popup" class="ui-btn ui-btn-inline ui-corner-all">View Idea</a>
+                                <a href="${contextPath}/Ideas/view/${transaction.value.id}" class="btn btn-primary"
+                                role="button">View Idea</a>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </c:forEach>
-
-        <div data-role="popup" id="myPopup" class="ui-content">
-            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
-            <p>I have a close button at the top right corner.</p>
-            <p><b>Tip:</b> You can also click outside to close me.</p>
-            <p>I have a close button at the top right corner.</p>
-            <p><b>Tip:</b> You can also click outside to close me.</p>
-            <p>I have a close button at the top right corner.</p>
-            <p><b>Tip:</b> You can also click outside to close me.</p>
-            <p>I have a close button at the top right corner.</p>
-            <p><b>Tip:</b> You can also click outside to close me.</p>
-            <p>I have a close button at the top right corner.</p>
-            <p><b>Tip:</b> You can also click outside to close me.</p>
-            <p>I have a close button at the top right corner.</p>
-            <p><b>Tip:</b> You can also click outside to close me.</p>
-            <p>I have a close button at the top right corner.</p>
-            <p><b>Tip:</b> You can also click outside to close me.</p>
-            <p>I have a close button at the top right corner.</p>
-            <p><b>Tip:</b> You can also click outside to close me.</p>
-        </div>
     </div>
 </div>
-
+<div class="footer">
+    <jsp:include page="${contextPath}/templates/footer.jsp"></jsp:include>
+</div>
 </body>
 <link href="${contextPath}/resources/css/product.display.css" rel="stylesheet">
 

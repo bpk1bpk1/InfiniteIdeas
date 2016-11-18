@@ -60,3 +60,16 @@
 .lead {
     padding-top: 15px;
 }
+
+.btn {
+    margin-left: 40px;
+    margin-top: 15px;
+}
+
+.well-sm {
+    margin-top: 60px;
+}
+
+#products {
+    padding-bottom: 70px;
+}
