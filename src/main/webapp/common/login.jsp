@@ -11,7 +11,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Infiniteideas</title>
-
+    <link rel="icon" href="${contextPath}/resources/images/favicon.ico">
     <!-- Bootstrap Core -->
     <link href="${contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <script type="application/javascript" src="${contextPath}/resources/vendor/jquery/jquery.min.js"></script>
