@@ -24,7 +24,8 @@ public class AdminController {
     }
 
     @RequestMapping(value = {"", "/welcome"}, method = RequestMethod.GET)
-    public String welcome() {
+    public String welcome(Model model) {
+        model.addAttribute("locations", userPersonalDetailsService.getCustomerLocations());
         return "admin/welcome";
     }
 }

@@ -93,4 +93,11 @@ public class LoginController {
         String role = roleGetter.getRoles(userService, principal.getName());
         return role + "/welcome";
     }
+
+    @RequestMapping(value = "/error", method = RequestMethod.GET)
+    public String error(Model model, Principal principal){
+        String role = roleGetter.getRoles(userService, principal.getName());
+        model.addAttribute("role", role);
+        return "common/accessDenied";
+    }
 }
