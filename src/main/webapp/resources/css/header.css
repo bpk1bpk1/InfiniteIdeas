@@ -265,3 +265,7 @@ ul.social-buttons li a:active {
     right: 0;
     background: #E5E4E2;
 }
+
+.list-inline i{
+    margin-top: 9px;
+}

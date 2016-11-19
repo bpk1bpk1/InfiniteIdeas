@@ -30,12 +30,15 @@ public class IdeaController {
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String index(Model model, Principal principal){
         String role = roleGetter.getRoles(userService, principal.getName());
-        model.addAttribute("ideas", ideaService.findAll());
         model.addAttribute("role", role);
-        if (role.equals("investor"))
-            return "investor/listIdeas";
-        else
+        if (role.equals("entrepreneur")){
+            model.addAttribute("ideas", ideaService.findAll());
             return "entrepreneur/listIdeas";
+        }
+        else{
+            model.addAttribute("ideas", ideaService.findAll());
+            return "investor/listIdeas";
+        }
     }
 
 
