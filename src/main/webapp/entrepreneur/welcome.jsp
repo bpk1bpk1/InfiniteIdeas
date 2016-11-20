@@ -7,11 +7,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="${contextPath}/resources/css/homepage.css">
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
 
 <div class="container">
+    <div class="row horizontal-strip">
+        <div class="heading">
+            INVESTORS NEAR YOU
+        </div>
+        <jsp:include page="${contextPath}/templates/map.jsp"></jsp:include>
+        <div id="map_div"></div>
+    </div>
     <h2>view <a href="${contextPath}/Ideas/list">ideas</a></h2>
 
     <h2>view <a href="${contextPath}/Ideas/header">header</a></h2>

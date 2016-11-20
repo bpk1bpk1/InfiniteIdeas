@@ -10,4 +10,6 @@ import java.util.List;
 public interface UserPersonalDetailsRepository extends JpaRepository<UserPersonalDetails, Long> {
 
     List<UserPersonalDetails> findAll();
+
+    UserPersonalDetails findOne(Long id);
 }
