@@ -6,7 +6,7 @@ import com.infiniteideas.service.SecurityService;
 import com.infiniteideas.service.UserPersonalDetailsService;
 import com.infiniteideas.service.UserService;
 import com.infiniteideas.utils.RoleGetter;
-import com.infiniteideas.validator.UserValidator;
+import com.infiniteideas.validator.ObjectValidator;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -22,15 +22,15 @@ public class LoginController {
 
     private final UserService userService;
     private final SecurityService securityService;
-    private final UserValidator userValidator;
+    private final ObjectValidator objectValidator;
     private final UserPersonalDetailsService userPersonalDetailsService;
     private RoleGetter roleGetter = new RoleGetter();
 
     @Autowired
-    public LoginController(SecurityService securityService, UserValidator userValidator,
-                          UserService userService, UserPersonalDetailsService userPersonalDetailsService) {
+    public LoginController(SecurityService securityService, ObjectValidator objectValidator,
+                           UserService userService, UserPersonalDetailsService userPersonalDetailsService) {
         this.securityService = securityService;
-        this.userValidator = userValidator;
+        this.objectValidator = objectValidator;
         this.userService = userService;
         this.userPersonalDetailsService = userPersonalDetailsService;
     }
@@ -44,7 +44,7 @@ public class LoginController {
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
-        userValidator.validate(userForm, bindingResult);
+        objectValidator.validate(userForm, bindingResult);
 
         if (bindingResult.hasErrors()) {
             return "common/registration";
@@ -66,7 +66,7 @@ public class LoginController {
     @RequestMapping(value = "/userDetails", method = RequestMethod.POST)
     public String userDetails(@ModelAttribute("details") UserPersonalDetails form, BindingResult bindingResult,
                               Principal principal) {
-        userValidator.validatePersonalData(form, bindingResult);
+        objectValidator.validatePersonalData(form, bindingResult);
 
         if (bindingResult.hasErrors()) {
             return "common/userDetails";

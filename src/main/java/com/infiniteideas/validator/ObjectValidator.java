@@ -1,5 +1,6 @@
 package com.infiniteideas.validator;
 
+import com.infiniteideas.model.Idea;
 import com.infiniteideas.model.User;
 import com.infiniteideas.model.UserPersonalDetails;
 import com.infiniteideas.service.UserService;
@@ -13,13 +14,13 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 @Component
-public class UserValidator implements Validator {
+public class ObjectValidator implements Validator {
     private final UserService userService;
     private static final String EMAIL_PATTERN =
             "^[_A-Za-z0-9-+]+(\\.[_A-Za-z0-9-]+)*@[A-Za-z0-9-]+(\\.[A-Za-z0-9]+)*(\\.[A-Za-z]{2,})$";
 
     @Autowired
-    public UserValidator(UserService userService) {
+    public ObjectValidator(UserService userService) {
         this.userService = userService;
     }
 
@@ -69,6 +70,16 @@ public class UserValidator implements Validator {
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "city", "NotEmpty");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "state", "NotEmpty");
         ValidationUtils.rejectIfEmptyOrWhitespace(errors, "country", "NotEmpty");
+    }
+
+    public void IdeaValidator(Idea ideaForm, Errors errors) {
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "name", "NotEmpty");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "description", "NotEmpty");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "image", "NotEmpty");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "category", "NotEmpty");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors, "subCategory", "NotEmpty");
+        if (ideaForm.getFundsRequired() == null)
+            errors.rejectValue("fundsRequired", "NotEmpty");
     }
 }
 

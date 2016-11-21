@@ -18,6 +18,8 @@ public class Idea {
     private String subCategory;
     @Column(name = "image")
     private String image;
+    @Column(name = "user_id")
+    private Long userId;
 
 
     public String getDescription() {
@@ -84,5 +86,13 @@ public class Idea {
 
     public void setImage(String image) {
         this.image = image;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
     }
 }
