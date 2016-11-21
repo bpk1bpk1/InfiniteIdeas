@@ -46,14 +46,14 @@ public class UserPersonalDetailsServiceImpl implements UserPersonalDetailsServic
     }
 
     @Override
-    public Hashtable<String, String> getUserLocation(String name) {
+    public Hashtable<String, String> getUsersNearMe(String name) {
         Hashtable<String, String> locations = new Hashtable<>();
-        locations = getAllInvestorsNearEntrepreneur(name, locations);
+        locations = getAllUsersNearMe(name, locations);
 
         return locations;
     }
 
-    private Hashtable<String, String> getAllInvestorsNearEntrepreneur(String name, Hashtable<String, String> locations) {
+    private Hashtable<String, String> getAllUsersNearMe(String name, Hashtable<String, String> locations) {
         User user = userService.findByUsername(name);
         UserPersonalDetails details = userPersonalDetailsRepository.findOne(user.getId());
         List<UserPersonalDetails> allDetails = userPersonalDetailsRepository.findAll();

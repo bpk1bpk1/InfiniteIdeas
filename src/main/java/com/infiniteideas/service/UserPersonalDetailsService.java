@@ -10,5 +10,5 @@ public interface UserPersonalDetailsService {
 
     String save(UserPersonalDetails details, String name);
 
-    Hashtable<String,String> getUserLocation(String name);
+    Hashtable<String,String> getUsersNearMe(String name);
 }

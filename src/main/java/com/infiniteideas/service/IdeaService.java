@@ -10,4 +10,6 @@ public interface IdeaService {
     Idea findById(Long id);
 
     Idea save(Idea idea);
+
+    List<Idea> getRecommendations();
 }

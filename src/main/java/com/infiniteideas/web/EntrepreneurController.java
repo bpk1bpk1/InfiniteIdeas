@@ -28,7 +28,7 @@ public class EntrepreneurController {
 
     @RequestMapping(value = {"", "/welcome"}, method = RequestMethod.GET)
     public String welcome(Model model, Principal principal) {
-        Hashtable<String, String> location = userPersonalDetailsService.getUserLocation(principal.getName());
+        Hashtable<String, String> location = userPersonalDetailsService.getUsersNearMe(principal.getName());
         model.addAttribute("locations", location);
         return "entrepreneur/welcome";
     }

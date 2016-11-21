@@ -62,17 +62,21 @@
                 </div>
                 <div class="collapse navbar-collapse navbar-right" id="main-menu">
                     <ul class="nav navbar-nav">
-                        <li class="fadeInDown animated d1 "><a href="#" class="active" id="home">Home</a></li>
+                        <li class="fadeInDown animated d1 "><a href="${contextPath}/investor/welcome" class="active" id="home">Home</a></li>
 
                         <li class="fadeInDown animated d2"><a href="#" menuid="1">Analytics</a></li>
 
-                        <li class="fadeInDown animated d2"><a href="#" menuid="1">Funding History</a></li>
+                        <li class="fadeInDown animated d2">
+                            <a href="${contextPath}/investor/history" menuid="1">Funding History</a>
+                        </li>
 
                         <li class="fadeInDown animated d3"><a href="#Iletisim">Returns</a></li>
 
                         <li class="fadeInDown animated d2"><a href="#">Contact Us</a></li>
 
-                        <a href="#"><span class="glyphicon glyphicon-shopping-cart shopping-cart-nav"></span></a>
+                        <a href="${contextPath}/cart/checkout">
+                            <span class="glyphicon glyphicon-shopping-cart shopping-cart-nav"></span>
+                        </a>
                     </ul>
 
                     <c:if test="${pageContext.request.userPrincipal.name != null}">
