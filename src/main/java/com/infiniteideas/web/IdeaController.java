@@ -50,8 +50,9 @@ public class IdeaController {
 
 
     @RequestMapping(value = "view/{id}", method = RequestMethod.GET)
-    public String view(@PathVariable Long id, Model model){
+    public String view(@PathVariable Long id, Model model, Principal principal){
         model.addAttribute("Idea",ideaService.findById(id));
+        model.addAttribute("role", roleGetter.getRoles(userService, principal.getName()));
         return "viewIdea";
     }
 

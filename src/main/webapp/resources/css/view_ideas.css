@@ -1,0 +1,45 @@
+.product-display {
+    margin: 0;
+    height: 100%;
+    width: auto;
+}
+
+.content {
+    border-radius: 0;
+    background-clip: border-box;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    border: none;
+    min-height: 100%;
+    padding: 100px 0;
+    text-align: center;
+}
+.content h2 {
+    margin-bottom: 15px;
+    font-size: 3em;
+    text-transform: capitalize;
+}
+.content .category {
+    margin: 20px 0 30px;
+    font-family: "Droid Serif", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-style: italic;
+    font-size: 16px;
+    color: #777777;
+}
+
+.content img {
+    margin: 0 auto;
+    width: 600px;
+    height: 500px;
+}
+
+.content p {
+    margin: 30px 0 30px 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+.list-inline{
+    margin-bottom: 30px;
+    margin-top: 0;
+    font-family: 'Roboto', sans-serif;
+}
