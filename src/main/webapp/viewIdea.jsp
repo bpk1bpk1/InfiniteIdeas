@@ -19,13 +19,13 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <h2>${Idea.name}</h2>
-                        <p class="category">Insert Category</p>
+                        <p class="category">${Idea.category}</p>
                         <img class="img-responsive img-centered" src="${Idea.image}" alt="Image">
                         <p>${Idea.description}</p>
                         <ul class="list-inline">
                             <li>Funds Required: $ ${Idea.fundsRequired}</li>
                             <li>Collected Funds: $ ${Idea.collectedFunds}</li>
-                            <li>Sub-Category: Insert Sub-category</li>
+                            <li>Sub-Category: ${Idea.subCategory}</li>
                         </ul>
                         <button type="button" class="btn btn-primary" onclick="history.back()"><i class="glyphicon glyphicon-arrow-left"></i> Back</button>
                     </div>
