@@ -9,6 +9,7 @@ import com.infiniteideas.service.IdeaService;
 import com.infiniteideas.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -41,6 +42,17 @@ public class HistoryServiceImpl implements HistoryService{
             Idea idea = ideaService.findById(s.getIdeaId());
             fundingIdeaMap.put(s, idea);
         });
+        return fundingIdeaMap;
+    }
+
+    @Override
+    public Map<Funding, Idea> getUserIdeas(String name) {
+        Map<Funding, Idea> fundingIdeaMap = new HashMap<>();
+        User user = userService.findByUsername(name);
+        List<Idea> ideas = ideaService.getUserIdeas(user.getId());
+        for (int i = 0; i < ideas.size(); i++) {
+            fundingIdeaMap.put(new Funding(), ideas.get(i));
+        }
         return fundingIdeaMap;
     }
 }

@@ -28,21 +28,35 @@
         <c:forEach items="${history}" var="transaction" varStatus="itr">
             <div class="item  col-xs-4 col-lg-4">
                 <div class="thumbnail">
-                    <img class="group list-group-image" src="${transaction.value.image}" alt="" />
+                    <img class="group list-group-image" src="${transaction.value.image}" alt="" style="width: 400px;height: 250px;"/>
                     <div class="caption">
                         <h4 class="group inner list-group-item-heading">
                             ${transaction.value.name}
                         </h4>
                         <h6 class="group inner list-group-item-heading">
-                            Transaction Id: ${transaction.key.id}
+                            <c:choose>
+                                <c:when test="${!empty transaction.key.id}">
+                                    Transaction Id: ${transaction.key.id}
+                                </c:when>
+                                <c:otherwise>
+                                    Idea Id: ${transaction.value.id}
+                                </c:otherwise>
+                            </c:choose>
                         </h6>
                         <p class="group inner list-group-item-text">
-                            ${transaction.value.description}
+                            ${transaction.value.category}
                         </p>
                         <div class="row">
                             <div class="col-xs-12 col-md-6">
                                 <p class="lead">
-                                    $${transaction.key.funded}
+                                    <c:choose>
+                                        <c:when test="${!empty transaction.key.funded}">
+                                            $ ${transaction.key.funded}
+                                        </c:when>
+                                        <c:otherwise>
+                                            $ ${transaction.value.collectedFunds}
+                                        </c:otherwise>
+                                    </c:choose>
                                 </p>
                             </div>
                             <div class="col-xs-12 col-md-6">

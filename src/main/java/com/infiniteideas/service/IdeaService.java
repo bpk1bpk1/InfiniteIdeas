@@ -12,4 +12,6 @@ public interface IdeaService {
     Idea save(Idea idea);
 
     List<Idea> getRecommendations();
+
+    List<Idea> getUserIdeas(Long id);
 }

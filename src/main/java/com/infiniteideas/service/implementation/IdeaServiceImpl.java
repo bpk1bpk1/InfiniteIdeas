@@ -43,4 +43,9 @@ public class IdeaServiceImpl implements IdeaService {
         return recommendations;
     }
 
+    @Override
+    public List<Idea> getUserIdeas(Long id) {
+        return ideaRepository.findUserIdeas(id);
+    }
+
 }
