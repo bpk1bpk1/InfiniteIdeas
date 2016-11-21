@@ -28,7 +28,7 @@
         <c:forEach items="${history}" var="transaction" varStatus="itr">
             <div class="item  col-xs-4 col-lg-4">
                 <div class="thumbnail">
-                    <img class="group list-group-image" src="http://placehold.it/400x250/000/fff" alt="" />
+                    <img class="group list-group-image" src="${transaction.value.image}" alt="" />
                     <div class="caption">
                         <h4 class="group inner list-group-item-heading">
                             ${transaction.value.name}

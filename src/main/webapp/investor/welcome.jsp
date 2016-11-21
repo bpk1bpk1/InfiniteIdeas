@@ -34,7 +34,7 @@
                             <c:forEach items="${recommendation1}" var="reco1" varStatus="itr">
                                 <div class="col-md-3">
                                     <a href="${contextPath}/Ideas/view/${reco1.id}" class="thumbnail">
-                                        <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                                        <img src="${reco1.image}" alt="Image" style="width: 250px;height: 250px;">
                                         <span class="name">${reco1.name}</span>
                                     </a>
                                 </div>
@@ -47,7 +47,7 @@
                             <c:forEach items="${recommendation2}" var="reco2" varStatus="itr">
                                 <div class="col-md-3">
                                     <a href="${contextPath}/Ideas/view/${reco2.id}" class="thumbnail">
-                                        <img src="http://placehold.it/250x250" alt="Image" style="max-width:100%;">
+                                        <img src="${reco2.image}" alt="Image" style="width: 250px;height: 250px;">
                                         <span class="name">${reco2.name}</span>
                                     </a>
                                 </div>

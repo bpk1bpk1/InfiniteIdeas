@@ -20,7 +20,7 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <h2>${Idea.name}</h2>
                         <p class="category">Insert Category</p>
-                        <img class="img-responsive img-centered" src="${contextPath}/resources/images/portfolio/roundicons-free.png" alt="Image">
+                        <img class="img-responsive img-centered" src="${Idea.image}" alt="Image">
                         <p>${Idea.description}</p>
                         <ul class="list-inline">
                             <li>Funds Required: $ ${Idea.fundsRequired}</li>

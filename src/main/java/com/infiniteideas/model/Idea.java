@@ -12,6 +12,12 @@ public class Idea {
     private Double fundsRequired;
     @Column(name = "collected_funds")
     private Double collectedFunds;
+    @Column(name = "category")
+    private String category;
+    @Column(name = "sub_category")
+    private String subCategory;
+    @Column(name = "image")
+    private String image;
 
 
     public String getDescription() {
@@ -54,5 +60,29 @@ public class Idea {
 
     public void setCollectedFunds(Double collectedFunds) {
         this.collectedFunds = collectedFunds;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public String getSubCategory() {
+        return subCategory;
+    }
+
+    public void setSubCategory(String subCategory) {
+        this.subCategory = subCategory;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
     }
 }
