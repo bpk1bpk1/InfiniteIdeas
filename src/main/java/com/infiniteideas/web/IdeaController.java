@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 import java.security.Principal;
+import java.util.HashSet;
+import java.util.List;
 
 @Controller
 @RequestMapping("/Ideas")
@@ -30,7 +32,22 @@ public class IdeaController {
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String index(Model model, Principal principal){
         String role = roleGetter.getRoles(userService, principal.getName());
-        model.addAttribute("ideas", ideaService.findAll());
+        List<Idea> ideas = ideaService.findAll();
+        HashSet<String> categories = new HashSet<>();
+        HashSet<String>subcategories = new HashSet<>();
+        HashSet<Double>funds  = new HashSet<>();
+
+        for(Idea I :ideas)
+        {
+            categories.add(I.getCategory());
+            subcategories.add(I.getSub_category());
+            funds.add(I.getFundsRequired());
+        }
+
+        model.addAttribute("ideas", ideas);
+        model.addAttribute("categories",categories);
+        model.addAttribute("subcategories",subcategories);
+        model.addAttribute("funds",funds);
         model.addAttribute("role", role);
         if (role.equals("investor"))
             return "investor/listIdeas";

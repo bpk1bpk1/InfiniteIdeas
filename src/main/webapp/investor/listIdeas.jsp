@@ -15,6 +15,7 @@
 <script>
     $(document).ready(function() {
         createGallery();
+        showFilters();
         $(".add-to-cartP").click(function() {
 //            alert("inside add to cartP")
             event.preventDefault(); //prevent default action
@@ -26,7 +27,9 @@
             console.log('${pageContext.request.userPrincipal.name}');
             idea_id  =  $(this).attr("data-id");
             idea_name = $(this).attr("data-name");
-            addItemTocart(idea_id,idea_name,funds);  //adding to cart
+            category = "cat"
+            subcategory = "subcat"
+            addItemTocart(idea_id,idea_name,funds,category,subcategory);  //adding to cart
             var modal = document.getElementById('myModal');
             modal.style.display = "block";
             var span = document.getElementsByClassName("close")[0];
@@ -44,14 +47,16 @@
     // ----------------global variables------------
     var globalQty = '';
     cart = {};
-    var Item = function(id, name, funds) {
+    var Item = function(id, name, funds,category,subcategory) {
         this.id = id;
         this.name = name;
         this.funds = funds;
+        this.category = category;
+        this.subcategory = subcategory;
     };
     //-------------------- Cart Functions-----------
-    function addItemTocart(ideaId,ideaName,funds) {
-        var item = new Item(ideaId,ideaName,funds);
+    function addItemTocart(ideaId,ideaName,funds,category,subcategory) {
+        var item = new Item(ideaId,ideaName,funds,category,subcategory);
         itemId = 'ideaId' + ideaId;
         cart[itemId] = item;
         saveCart();
@@ -81,12 +86,42 @@
             cart = {}
     }
     //==============================================
+
+    var category = ""
+
+
+    function showFilters()
+    {
+        <c:forEach items="${categories}" var="category" >
+            console.log("${category}")
+            category += "<div class='checkbox'> <input data-parent='color' class='checkboxFilter' type='checkbox' value="+ "${category}"+">"+ "${category}" +"</div>"
+        </c:forEach>
+
+        $("#categoryFilter").html(category);
+
+
+        <c:forEach items="${subcategories}" var="subcategory" >
+
+        console.log("${subcategory}")
+
+        </c:forEach>
+
+        <c:forEach items="${funds}" var="fund" >
+
+        console.log("${fund}")
+
+        </c:forEach>
+    }
+
+
     function createGallery() {
         var output = "";
         allItems = {};
         <c:forEach items="${ideas}" var="idea" varStatus="itr">
         item ={};
         item['name'] = '${idea.name}';
+
+
         allItems[${idea.id}] = item;
         output += "<div>"
                 + "<div " + "class='gallery-left gallery-Item col-md-3 grid-stn simpleCart_shelfItem' style='margin:0 0px 10px ;border:1px solid #F7F2F2 ;padding-bottom:3px;' >"
@@ -114,7 +149,7 @@
         <!-- Modal content -->
         <div class="modal-content">
             <div class="modal-header">
-                <span class="close">Ã</span>
+                <span class="close">X</span>
                 <h2></h2>
             </div>
             <div class="modal-body">
@@ -152,13 +187,122 @@
     </table>-->
 
 
-    <div style="float: left">
-        <div class="col-md-12 products-gallery">
-            <div style="width: 1200px; padding-left: 60px;">
-                <div id="products-gallery" class="col-md-12 grid-gallery"></div>
+
+
+
+    <div class="col-md-12 products-gallery" style="padding-top: 40px">
+
+
+       <div style="padding-left: 0px; float: left; padding-top: 50px;" >
+
+
+
+        <div style="float: left; padding-right: 60px;">
+
+
+
+
+            <div class="panel-group driving-license-settings" id="accordion"
+                 style="width: 150%; padding-top: 0px; padding-left: 0px;">
+
+
+
+                <div class="panel panel-default">
+
+                    <div style="background-color: #5e5e5e" class="panel-heading">
+                        <h4 class="panel-title">
+                            <span style="color: Black; "><b>Filters</b></span>
+                        </h4>
+                    </div>
+
+                    <div style=" background-color: transparent; padding-bottom: 5px "> </div>
+
+                    <div style="background-color: #D0D5D6;" class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion1"
+                               href="#collapseOne"> <span style="color: Black; "><b>Category</b></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div style="text-align: left; padding-left: 20px">
+                            <div id ="categoryFilter" class="driving-license-kind">
+
+                            </div></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div style="background-color: #D0D5D6;" class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion1"
+                               href="#collapseTwo"> <span style="color: Black; "><b>Material</b></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div id = "materialFilter" class="driving-license-kind">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div style="background-color: #D0D5D6;" class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion2"
+                               href="#collapseThree"> <span style="color: Black; "><b>Style</b></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div id = "styleFilter" class="driving-license-kind">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="panel panel-default">
+                    <div style="background-color: #D0D5D6;" class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion3"
+                               href="#collapseFour"> <span style="color: Black; "><b>Brands</b></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse in">
+                        <div class="panel-body">
+                            <div id="brandFilter" class="driving-license-kind">
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div style="float:right;padding:10px;">
+                <button id="filterBtn" class = "ApplyFilter btn-success btn" >Apply Filter</button>
+            </div>
+        </div>
+        </div>
+        <!-- Filter Portal Ends Here -->
+        <!-- Start of Product Page -->
+
+        <div style="float: left">
+            <div class="col-md-12 products-gallery">
+                <div style="width: auto; padding-left: 60px;">
+                    <div id="products-gallery" class="col-md-12 grid-gallery"></div>
+                </div>
             </div>
         </div>
     </div>
+
+    <div class="clearfix"></div>
 
     <div>
         <a href="${contextPath}/Ideas/create" class="btn btn-success">Add Idea</a>

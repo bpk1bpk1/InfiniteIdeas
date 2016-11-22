@@ -17,6 +17,8 @@
 
         <h2>view <a href="${contextPath}/cart/checkout">Checkout</a></h2>
 
+        <h2>view <a href="${contextPath}/Ideas/filters">filters</a></h2>
+
         <h2>view <a href="${contextPath}/investor/history">Transaction History</a></h2>
 
         <h2>view <a href="${contextPath}/investor/map">Map</a> of all our users</h2>
