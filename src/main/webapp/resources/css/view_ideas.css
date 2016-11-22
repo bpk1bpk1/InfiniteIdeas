@@ -43,3 +43,7 @@
     margin-top: 0;
     font-family: 'Roboto', sans-serif;
 }
+
+.edit-button a{
+    color: white;
+}

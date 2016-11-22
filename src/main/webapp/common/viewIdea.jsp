@@ -28,6 +28,9 @@
                             <li>Sub-Category: ${Idea.subCategory}</li>
                         </ul>
                         <button type="button" class="btn btn-primary" onclick="history.back()"><i class="glyphicon glyphicon-arrow-left"></i> Back</button>
+                        <c:if test="${role == \"entrepreneur\"}">
+                            <button type="button" class="btn btn-primary edit-button"><a href="${contextPath}/Ideas/edit/${Idea.id}"><i class="glyphicon glyphicon-edit"></i> Edit</a></button>
+                        </c:if>
                     </div>
                 </div>
             </div>
@@ -35,7 +38,7 @@
     </div>
 </div>
 <div class="footer">
-    <jsp:include page="#{contextPath}/templates/footer.jsp"></jsp:include>
+    <jsp:include page="${contextPath}/templates/footer.jsp"></jsp:include>
 </div>
 
 </body>

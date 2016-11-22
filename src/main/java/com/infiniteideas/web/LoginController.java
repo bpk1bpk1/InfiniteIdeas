@@ -90,7 +90,8 @@ public class LoginController {
 
     @RequestMapping(value = {"/", "/welcome"}, method = RequestMethod.GET)
     public String home(Principal principal){
+
         String role = roleGetter.getRoles(userService, principal.getName());
-        return role + "/welcome";
+        return "redirect:/" + role + "/welcome";
     }
 }

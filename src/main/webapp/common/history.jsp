@@ -3,7 +3,8 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
-    <title>Investor History</title>
+    <title>History</title>
+    <link rel="icon" href="${contextPath}/resources/images/favicon.ico">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 </head>
 <body>
