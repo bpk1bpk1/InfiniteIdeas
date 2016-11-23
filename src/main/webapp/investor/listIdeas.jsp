@@ -54,7 +54,7 @@
             //console.log(filterSelected)
             // console.log($(this).attr
 
-            updateGalleryWithFilters(filterSelected)
+            //updateGalleryWithFilters(filterSelected)
 
             if(filterSelected == "category")
             {

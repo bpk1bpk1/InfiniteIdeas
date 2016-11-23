@@ -11,10 +11,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Infiniteideas</title>
-
-    <!-- Bootstrap Core CSS -->
+    <link rel="icon" href="${contextPath}/resources/images/favicon.ico">
+    <!-- Bootstrap Core -->
     <link href="${contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
+    <script type="application/javascript" src="${contextPath}/resources/vendor/jquery/jquery.min.js"></script>
+    <script type="application/javascript" src="${contextPath}/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
     <!-- Custom Fonts -->
     <link href="${contextPath}/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -28,8 +29,8 @@
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <script type="application/javascript" src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script type="application/javascript" src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
 
 </head>
@@ -45,7 +46,7 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="intro-text">
-                    <div class="intro-lead-in">We are Infiniteideas</div>
+                    <div class="intro-lead-in">We are InfiniteIdeas</div>
                     <div class="intro-heading">It's Nice To Meet You</div>
                     <a href="#services" class="page-scroll btn btn-xl">Know More</a>
                 </div>
@@ -104,34 +105,34 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading">Services</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h3 class="section-subheading text-muted">We bet you're interested in our services.</h3>
             </div>
         </div>
         <div class="row text-center">
-            <div class="col-md-4">
+            <div class="col-md-6">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-shopping-cart fa-stack-1x fa-inverse"></i>
                     </span>
-                <h4 class="service-heading">E-Commerce</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <h4 class="service-heading">Are you looking to invest?</h4>
+                <p class="text-muted">We at InfiniteIdeas help you invest in ideas according your taste. A set of refined ideas will help you delve into investing for your favourite pick of the lot.</p>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                     <span class="fa-stack fa-4x">
                         <i class="fa fa-circle fa-stack-2x text-primary"></i>
                         <i class="fa fa-laptop fa-stack-1x fa-inverse"></i>
                     </span>
-                <h4 class="service-heading">Responsive Design</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
+                <h4 class="service-heading">Are you looking to fund your idea?</h4>
+                <p class="text-muted">We at InfiniteIdeas help attract investors and raise the funding that is vital to commence your idea.</p>
             </div>
-            <div class="col-md-4">
-                    <span class="fa-stack fa-4x">
-                        <i class="fa fa-circle fa-stack-2x text-primary"></i>
-                        <i class="fa fa-lock fa-stack-1x fa-inverse"></i>
-                    </span>
-                <h4 class="service-heading">Web Security</h4>
-                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>
-            </div>
+            <%--<div class="col-md-4">--%>
+                    <%--<span class="fa-stack fa-4x">--%>
+                        <%--<i class="fa fa-circle fa-stack-2x text-primary"></i>--%>
+                        <%--<i class="fa fa-lock fa-stack-1x fa-inverse"></i>--%>
+                    <%--</span>--%>
+                <%--<h4 class="service-heading">Web Security</h4>--%>
+                <%--<p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Minima maxime quam architecto quo inventore harum ex magni, dicta impedit.</p>--%>
+            <%--</div>--%>
         </div>
     </div>
 </section>
@@ -142,7 +143,7 @@
         <div class="row">
             <div class="col-lg-12 text-center">
                 <h2 class="section-heading">Projects</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h3 class="section-subheading text-muted">InfiniteIdeas that have flourished.</h3>
             </div>
         </div>
         <div class="row">
@@ -153,11 +154,11 @@
                             <i class="fa fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="${contextPath}/resources/images/portfolio/roundicons.png" class="img-responsive" alt="">
+                    <img src="${contextPath}/resources/images/portfolio/Baymax.jpg" class="img-responsive" alt="">
                 </a>
                 <div class="portfolio-caption">
-                    <h4>Round Icons</h4>
-                    <p class="text-muted">Graphic Design</p>
+                    <h4>Artifical Intelligent Systems</h4>
+                    <p class="text-muted">A personal healthcare companion.</p>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 portfolio-item">
@@ -167,11 +168,11 @@
                             <i class="fa fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="${contextPath}/resources/images/portfolio/startup-framework.png" class="img-responsive" alt="">
+                    <img src="${contextPath}/resources/images/portfolio/Obama.jpg" class="img-responsive" alt="">
                 </a>
                 <div class="portfolio-caption">
-                    <h4>Startup Framework</h4>
-                    <p class="text-muted">Website Design</p>
+                    <h4>Art</h4>
+                    <p class="text-muted">Mosaic Art: Obama</p>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 portfolio-item">
@@ -181,11 +182,11 @@
                             <i class="fa fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="${contextPath}/resources/images/portfolio/treehouse.png" class="img-responsive" alt="">
+                    <img src="${contextPath}/resources/images/portfolio/donald-trump.jpg" class="img-responsive" alt="">
                 </a>
                 <div class="portfolio-caption">
-                    <h4>Treehouse</h4>
-                    <p class="text-muted">Website Design</p>
+                    <h4>The Moronic Productions</h4>
+                    <p class="text-muted">Trump as President?Holy Guacamole!</p>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 portfolio-item">
@@ -195,11 +196,11 @@
                             <i class="fa fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="${contextPath}/resources/images/portfolio/golden.png" class="img-responsive" alt="">
+                    <img src="${contextPath}/resources/images/portfolio/FF.jpg" class="img-responsive" alt="">
                 </a>
                 <div class="portfolio-caption">
-                    <h4>Golden</h4>
-                    <p class="text-muted">Website Design</p>
+                    <h4>Flouroscent Fix</h4>
+                    <p class="text-muted">The Bling Jacket</p>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 portfolio-item">
@@ -209,11 +210,11 @@
                             <i class="fa fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="${contextPath}/resources/images/portfolio/escape.png" class="img-responsive" alt="">
+                    <img src="${contextPath}/resources/images/portfolio/Animal%20Shelter.jpg" class="img-responsive" alt="">
                 </a>
                 <div class="portfolio-caption">
-                    <h4>Escape</h4>
-                    <p class="text-muted">Website Design</p>
+                    <h4>Nature's Disappointed</h4>
+                    <p class="text-muted">Under one Woof - Animal Shelter</p>
                 </div>
             </div>
             <div class="col-md-4 col-sm-6 portfolio-item">
@@ -223,11 +224,11 @@
                             <i class="fa fa-plus fa-3x"></i>
                         </div>
                     </div>
-                    <img src="${contextPath}/resources/images/portfolio/dreams.png" class="img-responsive" alt="">
+                    <img src="${contextPath}/resources/images/portfolio/Comic.jpeg" class="img-responsive" alt="">
                 </a>
                 <div class="portfolio-caption">
-                    <h4>Dreams</h4>
-                    <p class="text-muted">Website Design</p>
+                    <h4>Comic Graduate Life</h4>
+                    <p class="text-muted">AI versus Natural Stupidity.</p>
                 </div>
             </div>
         </div>
@@ -239,8 +240,8 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">About</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 class="section-heading">The story of InfiniteIdeas</h2>
+                <h3 class="section-subheading text-muted">Get to know us better!</h3>
             </div>
         </div>
         <div class="row">
@@ -252,11 +253,11 @@
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>2009-2011</h4>
+                                <h4>The second of October 2016</h4>
                                 <h4 class="subheading">Our Humble Beginnings</h4>
                             </div>
                             <div class="timeline-body">
-                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                <p class="text-muted">The team met for the first time. Thus,the seed called InfiniteIdeas was implanted.</p>
                             </div>
                         </div>
                     </li>
@@ -266,11 +267,11 @@
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>March 2011</h4>
-                                <h4 class="subheading">An Agency is Born</h4>
+                                <h4>The Fall of 2016</h4>
+                                <h4 class="subheading">Our embryo received it's first few doses of nourishment.</h4>
                             </div>
                             <div class="timeline-body">
-                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                <p class="text-muted">The customer and the team had their initial meetings and suited the software to meet customer's requirements. </p>
                             </div>
                         </div>
                     </li>
@@ -280,11 +281,11 @@
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>December 2012</h4>
-                                <h4 class="subheading">Transition to Full Service</h4>
+                                <h4>Winter is coming.</h4>
+                                <h4 class="subheading">The crux time.</h4>
                             </div>
                             <div class="timeline-body">
-                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                <p class="text-muted">The final preparations before the big day.</p>
                             </div>
                         </div>
                     </li>
@@ -294,11 +295,11 @@
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
-                                <h4>July 2014</h4>
-                                <h4 class="subheading">Phase Two Expansion</h4>
+                                <h4>7th of December 2016</h4>
+                                <h4 class="subheading">The Launch!</h4>
                             </div>
                             <div class="timeline-body">
-                                <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sunt ut voluptatum eius sapiente, totam reiciendis temporibus qui quibusdam, recusandae sit vero unde, sed, incidunt et ea quo dolore laudantium consectetur!</p>
+                                <p class="text-muted">The platform InfiniteIdeas was born.</p>
                             </div>
                         </div>
                     </li>
@@ -320,16 +321,29 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-12 text-center">
-                <h2 class="section-heading">Our Amazing Team</h2>
-                <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                <h2 class="section-heading">The Infinitely Brilliant Team</h2>
+                <h3 class="section-subheading text-muted">The brains of InfiniteIdeas.</h3>
             </div>
         </div>
         <div class="row">
             <div class="col-sm-4">
                 <div class="team-member">
-                    <img src="${contextPath}/resources/images/team/1.jpg" class="img-responsive img-circle" alt="">
-                    <h4>Srikanth Srinvas</h4>
-                    <p class="text-muted">Tech Lead</p>
+                    <img src="${contextPath}/resources/images/team/Prerana.jpg" class="img-responsive img-circle" alt="">
+                    <h4>Burde Prerana Kamath</h4>
+                    <p class="text-muted">Chief Executive Officer</p>
+                    <ul class="list-inline social-buttons">
+                        <li><a href="#"><i class="fa fa-facebook"></i></a>
+                        </li>
+                        <li><a href="#"><i class="fa fa-linkedin"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-sm-4">
+                <div class="team-member">
+                    <img src="${contextPath}/resources/images/team/Vishwas.JPG" class="img-responsive img-circle" alt="">
+                    <h4>Vishwas Vijaya Kumar</h4>
+                    <p class="text-muted">Chief Operating Officer</p>
                     <ul class="list-inline social-buttons">
                         <li><a href="#"><i class="fa fa-twitter"></i></a>
                         </li>
@@ -342,9 +356,9 @@
             </div>
             <div class="col-sm-4">
                 <div class="team-member">
-                    <img src="${contextPath}/resources/images/team/2.jpg" class="img-responsive img-circle" alt="">
-                    <h4>Vishwas Kumar</h4>
-                    <p class="text-muted">Tech Principal</p>
+                    <img src="${contextPath}/resources/images/team/Srikanth.jpg" class="img-responsive img-circle" alt="">
+                    <h4>Sriknath Srinivas Holavanahalli</h4>
+                    <p class="text-muted">Cheif Technical Officer</p>
                     <ul class="list-inline social-buttons">
                         <li><a href="#"><i class="fa fa-twitter"></i></a>
                         </li>
@@ -357,9 +371,9 @@
             </div>
             <div class="col-sm-4">
                 <div class="team-member">
-                    <img src="${contextPath}/resources/images/team/3.jpg" class="img-responsive img-circle" alt="">
-                    <h4>Prerana Kamath</h4>
-                    <p class="text-muted">Developer</p>
+                    <img src="${contextPath}/resources/images/team/Madhukiran.jpg" class="img-responsive img-circle" alt="">
+                    <h4>Madhukiran Radhakrishnan</h4>
+                    <p class="text-muted">Chief Marketing Officer</p>
                     <ul class="list-inline social-buttons">
                         <li><a href="#"><i class="fa fa-twitter"></i></a>
                         </li>
@@ -372,9 +386,9 @@
             </div>
             <div class="col-sm-4">
                 <div class="team-member">
-                    <img src="${contextPath}/resources/images/team/2.jpg" class="img-responsive img-circle" alt="">
-                    <h4>Madhukiran</h4>
-                    <p class="text-muted">Lead Marketer</p>
+                    <img src="${contextPath}/resources/images/team/Saif.jpg" class="img-responsive img-circle" alt="">
+                    <h4>Syed Saif Ahmed</h4>
+                    <p class="text-muted">Chief Financial Officer</p>
                     <ul class="list-inline social-buttons">
                         <li><a href="#"><i class="fa fa-twitter"></i></a>
                         </li>
@@ -387,9 +401,9 @@
             </div>
             <div class="col-sm-4">
                 <div class="team-member">
-                    <img src="${contextPath}/resources/images/team/2.jpg" class="img-responsive img-circle" alt="">
-                    <h4>Saif</h4>
-                    <p class="text-muted">Developer</p>
+                    <img src="${contextPath}/resources/images/team/Rohith.jpg" class="img-responsive img-circle" alt="">
+                    <h4>Rohith Nenuduri</h4>
+                    <p class="text-muted">Customer</p>
                     <ul class="list-inline social-buttons">
                         <li><a href="#"><i class="fa fa-twitter"></i></a>
                         </li>
@@ -432,13 +446,13 @@
                             <h2>Project Name</h2>
                             <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
                             <img class="img-responsive img-centered" src="${contextPath}/resources/images/portfolio/roundicons-free.png" alt="">
-                            <p>Use this area to describe your project. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Est blanditiis dolorem culpa incidunt minus dignissimos deserunt repellat aperiam quasi sunt officia expedita beatae cupiditate, maiores repudiandae, nostrum, reiciendis facere nemo!</p>
+                            <p> A personal healthcare companion who does not occupy much space and will be used for emergency care anywhere at any time!In an ambulance, in a bag, in a hospital , this system will take immediate care of the hurt human before a doctor can attend to the human being if required.</p>
                             <p>
-                                <strong>Want these icons in this portfolio item sample?</strong>You can download 60 of them for free, courtesy of <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">RoundIcons.com</a>, or you can purchase the 1500 icon set <a href="https://getdpd.com/cart/hoplink/18076?referrer=bvbo4kax5k8ogc">here</a>.</p>
+                                <strong>Want to have doctor with you always?</strong> Invest in the idea and be carefree</p>
                             <ul class="list-inline">
                                 <li>Date: July 2014</li>
-                                <li>Client: Round Icons</li>
-                                <li>Category: Graphic Design</li>
+                                <li>Client: Artificial Intelligent Systems</li>
+                                <li>Category: A personal healthcare companion</li>
                             </ul>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>

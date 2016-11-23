@@ -12,15 +12,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <title>Enter Details</title>
-
+    <link rel="icon" href="${contextPath}/resources/images/favicon.ico">
     <link href="${contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+    <!-- jQuery -->
+    <script src="${contextPath}/resources/vendor/jquery/jquery.min.js"></script>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!--[if lt IE 9]>
+    <!-- Bootstrap Core JavaScript -->
+    <script src="${contextPath}/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Custom Fonts -->
+    <link href="${contextPath}/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+
+    <!-- Plugin JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
     <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <style>
+        body {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            background-color: #eee;
+        }
+    </style>
 </head>
 
 <body>

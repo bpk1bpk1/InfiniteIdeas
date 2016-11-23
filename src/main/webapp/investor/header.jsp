@@ -54,7 +54,7 @@
         var item ={};
         item['name'] = '${idea.name}';
         item['category'] = '${idea.category}'
-        item['subcategory'] = '${idea.sub_category}'
+        item['subcategory'] = '${idea.subCategory}'
         item['funds'] = '${idea.fundsRequired}'
         item['collectedFunds'] = '${idea.collectedFunds}'
         allItems[${idea.id}] = item;
@@ -159,7 +159,7 @@
                 <c:forEach items="${ideas}" var="idea" >
                 jQuery.each( subcategoryFilterList, function( key, value ) {
 
-                    if("${idea.sub_category}" == key)
+                    if("${idea.subCategory}" == key)
                     {
                         finalFilterItems.push("${idea.id}")
                     }
@@ -374,17 +374,21 @@
                 </div>
                 <div class="collapse navbar-collapse navbar-right" id="main-menu">
                     <ul class="nav navbar-nav">
-                        <li class="fadeInDown animated d1 "><a href="#" class="active" id="home">Home</a></li>
+                        <li class="fadeInDown animated d1 "><a href="${contextPath}/investor/welcome" class="active" id="home">Home</a></li>
 
                         <li class="fadeInDown animated d2"><a href="#" menuid="1">Analytics</a></li>
 
-                        <li class="fadeInDown animated d2"><a href="#" menuid="1">Funding History</a></li>
+                        <li class="fadeInDown animated d2">
+                            <a href="${contextPath}/investor/history" menuid="1">Funding History</a>
+                        </li>
 
                         <li class="fadeInDown animated d3"><a href="#Iletisim">Returns</a></li>
 
                         <li class="fadeInDown animated d2"><a href="#">Contact Us</a></li>
 
-                        <a href="#"><span class="glyphicon glyphicon-shopping-cart shopping-cart-nav"></span></a>
+                        <a href="${contextPath}/cart/checkout">
+                            <span class="glyphicon glyphicon-shopping-cart shopping-cart-nav"></span>
+                        </a>
                     </ul>
 
                     <c:if test="${pageContext.request.userPrincipal.name != null}">

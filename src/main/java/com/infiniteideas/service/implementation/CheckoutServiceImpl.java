@@ -43,16 +43,16 @@ public class CheckoutServiceImpl implements CheckoutService {
 
         List<Funding> validation = save(fundingList);
         if (validation.size() == fundingList.size()){
-            makeIdeaUpdate(validation);
+            makeIdeaUpdate(validation, userName);
         }
 
     }
 
-    private void makeIdeaUpdate(List<Funding> validation) {
+    private void makeIdeaUpdate(List<Funding> validation, String userName) {
         validation.forEach(s -> {
             Idea idea = ideaService.findById(s.getIdeaId());
             idea.setCollectedFunds(idea.getCollectedFunds() + s.getFunded());
-            ideaService.save(idea);
+            ideaService.save(idea, userName);
         });
     }
 

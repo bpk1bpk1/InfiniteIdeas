@@ -11,63 +11,35 @@
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
 <script src="${contextPath}/resources/vendor/js/bootstrap.min.js"></script>
-
-
 <script>
-
     //-----------Global Variables------
-
-
-    var globalQty = ''
-    var globalQtyID = ''
-    cart = {}
-
-
+    var globalQty = '';
+    var globalQtyID = '';
+    cart = {};
     var Item = function(ideadId, userId, funds) {
         this.ideaID = ideadId;
         this.userId = userId;
         this.funds = funds;
-
     };
-
     //---------------------------------
-
     $(document).ready(function(){
-
-
         loadCart();
         showProds();
-
-
-
-
-
         $("#logoutButton").click(function(event) {
             clearCart();
         });
-
-
-
     });
-
     //--------------Cart Functions-----------
-
     function showProds(){
-
         cart = JSON.parse(localStorage.getItem("shoppingCart"));
         var allItems = JSON.parse(localStorage.getItem("AllItems"));
         var output = "";
         var id = "";
-        var j = 0
-        //console.log("------------------------------------")
-        //console.log(cartArray)
-
+        var j = 0;
         jQuery.each(cart, function(i, val) {
-
-            console.log(val)
-
+            console.log(val);
             id = "checkOutClose" + j;
-            qid = val['id']
+            qid = val['id'];
             output  += "<ul class='cart-header'>"
                     +  "<div "+ " qid = " + qid +" id=" + id + " " + "class='close1' ></div>"
                     +  "<li class='ring-in'>"
@@ -78,43 +50,32 @@
                     +  "<li><span class='name'>"  + " " + allItems[qid]['name']+ " </span></li>"
                     +  "<li><span class='cost'>" + " " + '1' + "</span></li>"
                     +  "<li><span> <input class='Quantity' qid = " + qid +" value = "+ val['funds'] + " style='width:90px;height:25px; text-align:center ; font-weight:bold;border-style: solid; border-radius: 8px;padding-left:3px;border-color:#828689;'></input> </span> </li>"
-                    +  "<div class='clearfix'> </div> </ul>"
+                    +  "<div class='clearfix'> </div> </ul>";
             j++;
-
         });
-
-        output += "<div class='clearfix'></div>"
+        output += "<div class='clearfix'></div>";
         $("#show-products").html(output);
-
-
     }
-
 
     $(document).on('change', '.Quantity', function () {
         event.preventDefault();
         globalQty = $(this).val();
-
-        if((!$.isNumeric(globalQty) || globalQty < 0 ) &&  globalQty!='')
-        {
-            alert("Please enter positive numbers only")
-            $(this).val('')
+        if((!$.isNumeric(globalQty) || globalQty < 0 ) &&  globalQty!='') {
+            alert("Please enter positive numbers only");
+            $(this).val('');
             globalQty = 0
         }
-
         globalQtyID =  $(this).attr("id");
         //console.log("Quantity--- " + globalQty)
-
     });
 
-    function clearCart()
-    {
+    function clearCart() {
         cart = {};
         saveCart();
     }
     function saveCart() {
         localStorage.setItem("shoppingCart" , JSON.stringify(cart));
     }
-
 
     function loadCart() {
         if(!jQuery.isEmptyObject(localStorage.getItem("shoppingCart") ) )
@@ -136,7 +97,7 @@
 
 
 <html>
-<jsp:include page="${contextPath}/header.jsp" />
+<jsp:include page="${contextPath}/entrepreneur/header.jsp" />
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Insert title here</title>
@@ -146,7 +107,7 @@
 
             //clearCart()
 
-            console.log(JSON.parse(localStorage.getItem("shoppingCart")))
+            console.log(JSON.parse(localStorage.getItem("shoppingCart")));
 
             $.ajax({
                 type: "POST",

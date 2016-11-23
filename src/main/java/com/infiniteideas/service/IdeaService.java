@@ -9,5 +9,11 @@ public interface IdeaService {
 
     Idea findById(Long id);
 
-    Idea save(Idea idea);
+    Idea save(Idea idea, String name);
+
+    List<Idea> getRecommendations();
+
+    List<Idea> getUserIdeas(Long id);
+
+    void updateAndSave(Idea idea);
 }

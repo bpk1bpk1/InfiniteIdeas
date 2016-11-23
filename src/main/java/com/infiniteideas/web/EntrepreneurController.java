@@ -7,6 +7,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
+import java.security.Principal;
+import java.util.Hashtable;
+
 @Controller
 @RequestMapping("/entrepreneur")
 public class EntrepreneurController {
@@ -23,8 +26,10 @@ public class EntrepreneurController {
         return "map";
     }
 
-    @RequestMapping(value = {"", "/welcome"}, method = RequestMethod.GET)
-    public String welcome() {
+    @RequestMapping(value = {"", "/welcome", "/"}, method = RequestMethod.GET)
+    public String welcome(Model model, Principal principal) {
+        Hashtable<String, String> location = userPersonalDetailsService.getUsersNearMe(principal.getName());
+        model.addAttribute("locations", location);
         return "entrepreneur/welcome";
     }
 }

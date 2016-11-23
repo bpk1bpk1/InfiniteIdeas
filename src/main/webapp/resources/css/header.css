@@ -259,9 +259,13 @@ ul.social-buttons li a:active {
 
 /* Footer */
 .footer {
-    position: fixed;
+    position: relative;
     bottom: 0;
     left: 0;
     right: 0;
     background: #E5E4E2;
+}
+
+.list-inline i{
+    margin-top: 9px;
 }

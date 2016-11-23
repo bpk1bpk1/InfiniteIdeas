@@ -1,0 +1,16 @@
+.horizontal-strip {
+    height: 500px;
+    padding-top: 40px;
+}
+
+#map_div {
+    width: 100%;
+    height: 100%;
+}
+
+.heading {
+    font-family: Baskerville, "Baskerville Old Face", "Goudy Old Style", Garamond, "Times New Roman", serif;
+    font-size: 35px;
+    font-weight: bold;
+    padding-bottom: 10px;
+}

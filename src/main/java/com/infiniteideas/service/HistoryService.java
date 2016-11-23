@@ -11,4 +11,6 @@ public interface HistoryService {
     Map<Funding, Idea> findAllTransactions(String name);
 
     Map<Funding, Idea> getUserIdeas(List<Funding> fundHistory);
+
+    Map<Funding, Idea> getUserIdeas(String name);
 }

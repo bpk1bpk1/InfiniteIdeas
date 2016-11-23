@@ -33,4 +33,12 @@ public class HistoryController {
         model.addAttribute("role", roleGetter.getRoles(userService, principal.getName()));
         return "common/history";
     }
+
+    @RequestMapping(value = "/entrepreneur/history", method = RequestMethod.GET)
+    public String getHistory(Model model, Principal principal){
+        Map<Funding, Idea> fundingHistory = historyService.getUserIdeas(principal.getName());
+        model.addAttribute("history", fundingHistory);
+        model.addAttribute("role", roleGetter.getRoles(userService, principal.getName()));
+        return "common/history";
+    }
 }

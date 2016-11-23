@@ -17,14 +17,9 @@ public class AdminController {
         this.userPersonalDetailsService = userPersonalDetailsService;
     }
 
-    @RequestMapping(value = "/map", method = RequestMethod.GET)
-    public String test(Model model){
-        model.addAttribute("locations", userPersonalDetailsService.getCustomerLocations());
-        return "map";
-    }
-
     @RequestMapping(value = {"", "/welcome"}, method = RequestMethod.GET)
-    public String welcome() {
+    public String welcome(Model model) {
+        model.addAttribute("locations", userPersonalDetailsService.getCustomerLocations());
         return "admin/welcome";
     }
 }

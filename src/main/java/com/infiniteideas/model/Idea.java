@@ -12,12 +12,14 @@ public class Idea {
     private Double fundsRequired;
     @Column(name = "collected_funds")
     private Double collectedFunds;
-
     @Column(name = "category")
     private String category;
-
     @Column(name = "sub_category")
-    private String sub_category;
+    private String subCategory;
+    @Column(name = "image")
+    private String image;
+    @Column(name = "user_id")
+    private Long userId;
 
 
     public String getDescription() {
@@ -62,10 +64,6 @@ public class Idea {
         this.collectedFunds = collectedFunds;
     }
 
-
-
-
-
     public String getCategory() {
         return category;
     }
@@ -74,13 +72,28 @@ public class Idea {
         this.category = category;
     }
 
-
-
-    public String getSub_category() {
-        return sub_category;
+    public String getSubCategory() {
+        return subCategory;
     }
 
-    public void setSub_category(String sub_category) {
-        this.sub_category = sub_category;
+    public void setSubCategory(String subCategory) {
+        this.subCategory = subCategory;
+    }
+
+    public String getImage() {
+        return image;
+    }
+
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    public Long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(Long userId) {
+        this.userId = userId;
+
     }
 }
