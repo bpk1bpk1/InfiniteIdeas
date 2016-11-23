@@ -7,10 +7,11 @@
     -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px;
+    /*height: 390px;*/
 }
 
-.item {
-    height: 390px;
+.caption {
+    height: 159px;
 }
 
 .item.list-group-item

@@ -7,11 +7,12 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="${contextPath}/resources/images/favicon.ico">
     <link rel="stylesheet" href="${contextPath}/resources/css/homepage.css">
 </head>
 <body>
-<jsp:include page="header.jsp"></jsp:include>
 
+<jsp:include page="header.jsp"></jsp:include>
 <div class="container">
     <div class="row horizontal-strip">
         <div class="heading">

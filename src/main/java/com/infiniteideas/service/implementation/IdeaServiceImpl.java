@@ -54,4 +54,11 @@ public class IdeaServiceImpl implements IdeaService {
         return ideaRepository.findUserIdeas(id);
     }
 
+    @Override
+    public void updateAndSave(Idea idea) {
+        ideaRepository.update(idea.getId(), idea.getName(), idea.getDescription(), idea.getCategory(),
+                idea.getSubCategory(), idea.getUserId(), idea.getFundsRequired(), idea.getCollectedFunds(),
+                idea.getImage());
+    }
+
 }

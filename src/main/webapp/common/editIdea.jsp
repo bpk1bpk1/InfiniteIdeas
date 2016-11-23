@@ -19,8 +19,20 @@
 <body onload="test()">
 <jsp:include page="${contextPath}/${role}/header.jsp"></jsp:include>
 <div class="container">
-    <form:form method="POST" modelAttribute="ideaForm" class="form-signin" action="${contextPath}/Ideas/create">
+    <form:form method="POST" modelAttribute="ideaForm" class="form-signin" action="${contextPath}/Ideas/update">
         <h2 class="form-signin-heading">Create an idea!</h2>
+        <spring:bind path="id">
+            <div class="form-group">
+                <form:hidden path="id" id="id"></form:hidden>
+            </div>
+        </spring:bind>
+
+        <spring:bind path="userId">
+            <div class="form-group">
+                <form:hidden path="userId" id="userId"></form:hidden>
+            </div>
+        </spring:bind>
+
         <spring:bind path="name">
             <div class="form-group ${status.error ? 'has-error' : ''}">
                 <form:input type="text" path="name" class="form-control" placeholder="name"
@@ -72,6 +84,12 @@
                 <form:input type="text" path="subCategory" class="form-control"
                             placeholder="Sub-category" id="subCategory"></form:input>
                 <form:errors path="subCategory"></form:errors>
+            </div>
+        </spring:bind>
+
+        <spring:bind path="collectedFunds">
+            <div class="form-group">
+                <form:hidden path="collectedFunds" id="collectedFunds"></form:hidden>
             </div>
         </spring:bind>
 

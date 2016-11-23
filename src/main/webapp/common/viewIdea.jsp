@@ -9,6 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="${contextPath}/resources/images/favicon.ico">
     <link rel="stylesheet" href="${contextPath}/resources/css/view_ideas.css">
+    <script type="application/javascript">
+        function handleEdit(id) {
+            location.href = "${contextPath}/Ideas/edit/" + id;
+        }
+    </script>
 </head>
 <body>
 <jsp:include page="${contextPath}/${role}/header.jsp"></jsp:include>
@@ -29,7 +34,7 @@
                         </ul>
                         <button type="button" class="btn btn-primary" onclick="history.back()"><i class="glyphicon glyphicon-arrow-left"></i> Back</button>
                         <c:if test="${role == \"entrepreneur\"}">
-                            <button type="button" class="btn btn-primary edit-button"><a href="${contextPath}/Ideas/edit/${Idea.id}"><i class="glyphicon glyphicon-edit"></i> Edit</a></button>
+                            <button type="button" class="btn btn-primary edit-button" onclick="handleEdit(${Idea.id})"><i class="glyphicon glyphicon-edit"></i> Edit</button>
                         </c:if>
                     </div>
                 </div>

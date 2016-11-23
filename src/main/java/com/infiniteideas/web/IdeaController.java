@@ -49,10 +49,9 @@ public class IdeaController {
 
     @RequestMapping(value = "edit/{id}", method = RequestMethod.GET)
     public String edit(@PathVariable Long id, Model model, Principal principal){
-        model.addAttribute("Idea",ideaService.findById(id));
+        model.addAttribute("ideaForm",ideaService.findById(id));
         model.addAttribute("role", roleGetter.getRoles(userService, principal.getName()));
-        model.addAttribute("mode", "edit");
-        return "common/createIdea";
+        return "common/editIdea";
     }
 
 
@@ -66,7 +65,7 @@ public class IdeaController {
 
     @RequestMapping(value = "update",method = RequestMethod.POST)
     public String update(Idea idea, Principal principal){
-        ideaService.save(idea, principal.getName());
+        ideaService.updateAndSave(idea);
         return "redirect:/welcome";
     }
 
@@ -74,7 +73,6 @@ public class IdeaController {
     public String create(Model model, Principal principal) {
         model.addAttribute("ideaForm", new Idea());
         model.addAttribute("role", roleGetter.getRoles(userService, principal.getName()));
-        model.addAttribute("mode", "create");
         return "common/createIdea";
     }
 
