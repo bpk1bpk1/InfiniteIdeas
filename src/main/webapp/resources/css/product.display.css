@@ -9,6 +9,10 @@
     border-radius: 0px;
 }
 
+.item {
+    height: 390px;
+}
+
 .item.list-group-item
 {
     float: none;

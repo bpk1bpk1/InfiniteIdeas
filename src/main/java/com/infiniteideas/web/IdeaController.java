@@ -48,9 +48,11 @@ public class IdeaController {
 
 
     @RequestMapping(value = "edit/{id}", method = RequestMethod.GET)
-    public String edit(@PathVariable Long id, Model model){
+    public String edit(@PathVariable Long id, Model model, Principal principal){
         model.addAttribute("Idea",ideaService.findById(id));
-        return "editIdea";
+        model.addAttribute("role", roleGetter.getRoles(userService, principal.getName()));
+        model.addAttribute("mode", "edit");
+        return "common/createIdea";
     }
 
 
@@ -72,6 +74,7 @@ public class IdeaController {
     public String create(Model model, Principal principal) {
         model.addAttribute("ideaForm", new Idea());
         model.addAttribute("role", roleGetter.getRoles(userService, principal.getName()));
+        model.addAttribute("mode", "create");
         return "common/createIdea";
     }
 

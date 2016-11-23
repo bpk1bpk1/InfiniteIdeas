@@ -12,12 +12,15 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/common.css">
 </head>
 <script type="application/javascript">
-    console.log("In side this page");
+    function test() {
+        console.log("In side this page");
+    }
 </script>
-<body>
+<body onload="test()">
 <jsp:include page="${contextPath}/${role}/header.jsp"></jsp:include>
 <div class="container">
-
+    <c:choose>
+        <c:when test="$${mode == \"create\"}">
     <form:form method="POST" modelAttribute="ideaForm" class="form-signin" action="${contextPath}/Ideas/create">
         <h2 class="form-signin-heading">Create an idea!</h2>
         <spring:bind path="name">
@@ -76,7 +79,11 @@
 
         <button class="btn btn-lg btn-primary btn-block" type="submit" id="register">Submit</button>
     </form:form>
-
+        </c:when>
+        <c:otherwise>
+            <h1>Hello Nigga</h1>
+        </c:otherwise>
+    </c:choose>
 </div>
 <div class="footer">
     <jsp:include page="${contextPath}/templates/footer.jsp"></jsp:include>
