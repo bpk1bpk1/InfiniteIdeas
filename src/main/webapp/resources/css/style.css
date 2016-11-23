@@ -629,7 +629,8 @@ a.show:hover {
 }
 .nbs-flexisel-nav-right {
 	right: 0px;
-	background: url(../images/arw.png) no-repeat ;
+	background-repeat: no-repeat;
+	background-image: url(../images/arw.png);
 }
 .price-s {
 	margin: 3em 0;
@@ -797,7 +798,7 @@ h3.m_2 {
 	position: relative;	
 	cursor: pointer;
 	font-weight:600;
-	background:;
+	background:white;
 	color:#898989;
 	-webkit-user-select: none;
 	-moz-user-select: none;
@@ -1562,7 +1563,7 @@ p.product_descr {
 	color:#555555;
 	text-transform:uppercase;
 	font-size: 13px;
-	-webkit-text-stroke: 0px;
+	-webkit-text-stroke: 0 px;
 	letter-spacing: 0px;
 }
 .desc1 p a:hover{
@@ -2851,4 +2852,4 @@ ul.product li.product_desc h4 a {
 .gallery-left{
 	float:left;
 	padding:10px;
-}
+}}

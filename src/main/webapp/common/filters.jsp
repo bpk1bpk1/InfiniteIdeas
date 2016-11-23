@@ -17,31 +17,6 @@
 <body>
 
 
-<sql:setDataSource var="snapshot" driver="org.postgresql.Driver"
-                   url="jdbc:postgresql://oldinfiniteideas.c358x9d2lbrf.us-east-2.rds.amazonaws.com/InfiniteIdeas?useSSL=false"
-                   user="master"  password="Abcd1234"/>
-
-<sql:query dataSource="${snapshot}" var="result">
-    SELECT * from idea;
-</sql:query>
-
-<table border="1" width="100%">
-    <tr>
-        <th>Idea ID</th>
-        <th>Idea Name</th>
-        <th>Idea Desc</th>
-
-    </tr>
-    <c:forEach var="row" items="${result.rows}">
-        <tr>
-            <td><c:out value="${row.id}"/></td>
-            <td><c:out value="${row.name}"/></td>
-            <td><c:out value="${row.description}"/></td>
-
-        </tr>
-    </c:forEach>
-</table>
-
 
 
 

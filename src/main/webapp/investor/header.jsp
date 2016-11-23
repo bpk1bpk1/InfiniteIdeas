@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link href="${contextPath}/resources/css/header.css" rel="stylesheet">
 <!-- Bootstrap Core CSS -->
 <link href="${contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -16,15 +17,326 @@
 <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
+<script>
+
+    function searchItems()
+    {
+        var finalFilteredItems =  {}
+
+        var queryText = $("#searchText").val()
+
+        <c:forEach items="${ideas}" var="idea" >
+
+            var ideaName =  "${idea.name}"
+            var ideaDesc =  "${idea.description}"
+
+            //console.log(ideaDesc.indexOf(queryText))
+
+            if( ideaName.indexOf(queryText) >= 0 || ideaDesc.indexOf(queryText) >=0 )
+            {
+                finalFilteredItems["${idea.id}"] = true
+            }
+
+        </c:forEach>
+
+        return finalFilteredItems
+    }
+
+
+    function preReq()
+    {
+        <c:forEach items="${ideas}" var="idea" >
+        searchSpace.push("${idea.name}")
+        searchSpace.push("${idea.description}")
+
+        itemsID["${idea.id}"] =  true
+
+        var item ={};
+        item['name'] = '${idea.name}';
+        item['category'] = '${idea.category}'
+        item['subcategory'] = '${idea.sub_category}'
+        item['funds'] = '${idea.fundsRequired}'
+        item['collectedFunds'] = '${idea.collectedFunds}'
+        allItems[${idea.id}] = item;
+
+        </c:forEach>
+
+        localStorage.setItem("AllItems" , JSON.stringify(allItems));
+    }
+
+
+    function createGallery(finalFilterItems)
+    {
+        var gallery = ""
+
+        jQuery.each( finalFilterItems, function( key, value ) {
+
+            gallery += "<div class='item thumbnail col-xs-4 col-lg-4'>" +
+                    "<div class = 'thumbnail'>"  +
+                    "<img class='group list-group-image' src='http://placehold.it/400x250/000/fff' alt='' />" +
+                    "<div class='caption'>" +
+                    "<h4 class='group inner list-group-item-heading'>" +
+                    allItems[key]['name'] + "</h4>" +
+                    " <p class='group inner list-group-item-text'> Target Funds:    $ <strong>"     + allItems[key]['funds']  +   "</strong></p>" +
+                    " <p class='group inner list-group-item-text'> Collected Funds: $ <strong>"  + allItems[key]['collectedFunds']  +   "</strong></p>" +
+                    //" <div class='row'> "+
+                    " " +  " <h4 class='group inner list-group-item-text'>"+
+                    "<p> Invest <Strong> $ </Strong><input " + "id="+ key + " " + " value = '' "  +" class='Quantity' style='width:90px;height:25px; font-weight:bold;border-style: solid; border-radius: 8px;padding-left:3px;border-color:#828689;'> </input> </p></h4>" +
+                    //" </div>" +
+                    " <div style='float:left;padding-bottom:8px; padding-top:23px '>" +
+                    " <button class = 'add-to-cartP btn-success btn' " +
+                    " data-toggle='modal' data-id ="+ key +" data-target='#basicModal'" +
+                    " data-name="+   allItems[key]['name'] + ">Add to Cart</button></div>" +
+
+                    " <div style='float:left;padding-bottom:8px; padding-left:10px; padding-top:23px '> " +
+                    " <button  class =' btn btn-info ' onclick=window.location='${contextPath}/Ideas/view/"+ key  + "' > Quick View</button></div>" +
+                    "</div>       </div>               </div>              </div>"
+
+
+        });
+        gallery += "<div class='clearfix'></div>";
+        $("#products-gallery2").html(gallery);
+
+
+    }
+
+
+    function showFilters()
+    {
+        <c:forEach items="${categories}" var="category" >
+        console.log("${category}")
+        category += "<div class='checkbox'> <input data-parent='category' class='checkboxFilter' type='checkbox' value="+ "${category}"+">"+ "${category}" +"</div>"
+        </c:forEach>
+        $("#categoryFilter").html(category);
+
+
+        <c:forEach items="${subcategories}" var="subcategory" >
+        subcategory += "<div class='checkbox'> <input data-parent='subcategory' class='checkboxFilter' type='checkbox' value="+ "${subcategory}"+">"+ "${subcategory}" +"</div>"
+        console.log("${subcategory}")
+        </c:forEach>
+        $("#subCategoryFilter").html(subcategory)
+
+
+        <c:forEach items="${funds}" var="fund" >
+        funds += "<div class='checkbox'> <input data-parent='funds' class='checkboxFilter' type='checkbox' value="+ "${fund}"+">"+ "${fund}" +"</div>"
+        console.log("${fund}")
+        </c:forEach>
+        $("#fundsFilter").html(funds)
+    }
+
+    function filterItems()
+    {
+
+        var finalFilterItems = {}
+        var finalFilterItems1  = [];
+        var finalFilterItems2  = [];
+        var finalFilterItems3  = [];
+
+        var filterStatus = 0;
+
+        if(!jQuery.isEmptyObject(categoryFilterList)){
+
+            <c:forEach items="${ideas}" var="idea" >
+
+
+            jQuery.each( categoryFilterList, function( key, value ) {
+
+                if("${idea.category}" == key)
+                {
+                    finalFilterItems[("${idea.id}")] = true
+                }
+            });
+            </c:forEach>
+        }
+
+
+
+        if( !jQuery.isEmptyObject(subcategoryFilterList) )
+        {
+
+            if(jQuery.isEmptyObject(finalFilterItems))
+            {
+                <c:forEach items="${ideas}" var="idea" >
+                jQuery.each( subcategoryFilterList, function( key, value ) {
+
+                    if("${idea.sub_category}" == key)
+                    {
+                        finalFilterItems.push("${idea.id}")
+                    }
+                });
+                </c:forEach>
+            }
+            else
+            {
+
+                var flag = false
+                jQuery.each( finalFilterItems, function( k, v ) {
+                    flag = false
+                    jQuery.each( subcategoryFilterList, function( key, value ) {
+
+                        if(allItems[k]['subcategory'] == key)
+                        {
+                            flag = true
+
+                        }
+                    });
+
+                    if(flag == false)
+                    {
+
+                        delete finalFilterItems[k]
+                    }
+                });
+            }
+
+        }
+
+
+        console.log(" after subcategory")
+
+        console.log(finalFilterItems)
+
+        //--------funds filters-----------
+
+        if( !jQuery.isEmptyObject(fundsFilterList) )
+        {
+
+            if(jQuery.isEmptyObject(finalFilterItems))
+            {
+                <c:forEach items="${ideas}" var="idea" >
+                jQuery.each( fundsFilterList, function( key, value ) {
+
+                    if("${idea.fundsRequired}" == key)
+                    {
+                        finalFilterItems.push("${idea.id}")
+                    }
+                });
+                </c:forEach>
+            }
+            else
+            {
+                var flag = false
+                jQuery.each( finalFilterItems, function( k, v ) {
+                    flag = false
+                    jQuery.each( fundsFilterList, function( key, value ) {
+
+                        if(allItems[k]['funds'] == key)
+                        {
+                            flag = true
+                        }
+                    });
+
+                    if(flag == false)
+                    {
+                        delete finalFilterItems[k]
+                    }
+                });
+            }
+        }
+
+        createGallery(finalFilterItems)
+    }
+
+    function displayFilteredItems(finalFilterItems)
+    {
+
+        var output = ""
+        var flag = false
+        jQuery.each( finalFilterItems, function( key, value ) {
+            if(flag == false)
+            {
+                output += "<div>"
+                        + "<div " + "class='gallery-left gallery-Item col-md-3 grid-stn simpleCart_shelfItem' style='margin:0 0px 10px ;border:1px solid #F7F2F2 ;padding-bottom:3px;' >"
+                        + "<div  class='ih-item square effect3 bottom_to_top'  >"
+                        + "<div  class='bottom-2-top'>"
+                        + "<div  class='img'><img style = 'width:40px;height:30px;' src='${contextPath}/resources/images/logo.png' alt='/' class='img-responsive gri-wid'/></div>"
+                        + "<div> <span><strong>Idea: <span style='color:#A5040E ;'>" + allItems[key]['name'] + "</span></strong></span><br>"
+                        + "<span> <strong>Funds Required: $<span style='color:#A5040E; font-style:bold;'>"+ '100' +"</span></strong></span><br> </div>"
+                        + "</div> </div>"
+                        + "<div style='padding-bottom:10px;'><span><strong>Quantity: </strong></span>"
+                        + "<input " + "id="+ key + " " + " value = '' "  +" class='Quantity' style='width:90px;height:25px; font-weight:bold;border-style: solid; border-radius: 8px;padding-left:3px;border-color:#828689;'> </input> </div>"
+                        + "<div class='quick-view' data-name="+  allItems[key]['name'] +" data-price="+ '100'  +"> "
+                        + "<div style='padding-right:5px;float:left;padding-bottom:30px;'><button class = 'quick-view-btn btn btn-info' data-sku="+ " action='#' >Quick view</button></div>"
+                        + "<div style='float:left;padding-bottom:30px;'><button class = 'add-to-cartP btn-success btn'  data-toggle='modal' data-id ="+ key +" data-target='#basicModal' data-name="+   allItems[key]['name'] + ">Add to Cart</button></div>"
+                        + "</div></div></div>";
+                flag = true
+            }
+        });
+
+        output += "<div class='clearfix'></div>";
+        $("#products-gallery").html(output);
+
+    }
+
+
+    //------------------------------------------------------------------------
+
+
+
+    // ----------------global variables------------
+
+    var categoryFilterList ={};
+    var subcategoryFilterList = {};
+    var fundsFilterList = {};
+    var brandFilterList = [];
+
+    var searchSpace = []
+
+
+    var globalQty = '';
+    cart = {};
+    var Item = function(id, name, funds,category,subcategory) {
+        this.id = id;
+        this.name = name;
+        this.funds = funds;
+        this.category = category;
+        this.subcategory = subcategory;
+    };
+
+
+    //-------------------- Cart Functions-----------
+    function addItemTocart(ideaId,ideaName,funds,category,subcategory) {
+        var item = new Item(ideaId,ideaName,funds,category,subcategory);
+        var itemId = 'ideaId' + ideaId;
+        cart[itemId] = item;
+        saveCart();
+    }
+
+    function clearCart() {
+        cart = {};
+        saveCart();
+    }
+    function saveCart() {
+        localStorage.setItem("shoppingCart", JSON.stringify(cart));
+    }
+    function loadCart() {
+        if(JSON.parse ( localStorage.getItem("shoppingCart") ) != null  )
+            cart = JSON.parse ( localStorage.getItem("shoppingCart") );
+        else
+            cart = {}
+    }
+    //==============================================
+
+
+
+    //########################################################################
+
+
+</script>
+
+
+
+
+
 <div class="header_top">
     <div class="container">
         <div class="row">
             <div class="col-sm-6 col-sm-offset-0">
                 <div id="imaginary_container">
                     <div class="input-group stylish-input-group">
-                        <input type="text" class="form-control"  placeholder="Search" >
+                        <input type="text" id="searchText" class="form-control"  placeholder="Search" >
                         <span class="input-group-addon">
-                        <button type="submit">
+                        <button id = "searchBtn" type="submit">
                             <span class="glyphicon glyphicon-search"></span>
                         </button>
                     </span>
