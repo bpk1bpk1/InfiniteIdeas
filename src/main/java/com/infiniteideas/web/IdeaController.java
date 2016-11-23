@@ -64,8 +64,13 @@ public class IdeaController {
 
 
     @RequestMapping(value = "update",method = RequestMethod.POST)
-    public String update(Idea idea, Principal principal){
-        ideaService.updateAndSave(idea);
+    public String update(@ModelAttribute("ideaForm") Idea ideaForm){
+        try {
+            ideaService.updateAndSave(ideaForm);
+        }
+        catch (Exception e){
+            System.out.println("Ignoring exception");
+        }
         return "redirect:/welcome";
     }
 
