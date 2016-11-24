@@ -154,7 +154,7 @@
     var Item = function(id, name, funds,category,subcategory) {
         this.id = id;
         this.name = name;
-        this.funds = funds;
+        this.funds = parseInt(funds);
         this.category = category;
         this.subcategory = subcategory;
     };
@@ -164,7 +164,17 @@
     function addItemTocart(ideaId,ideaName,funds,category,subcategory) {
         var item = new Item(ideaId,ideaName,funds,category,subcategory);
         var itemId = 'ideaId' + ideaId;
-        cart[itemId] = item;
+
+
+
+        if(cart[itemId] == null)
+            cart[itemId] = item;
+        else {
+
+            var fund = parseInt(funds)
+
+           cart[itemId]['funds']  += fund
+        }
         saveCart();
     }
 

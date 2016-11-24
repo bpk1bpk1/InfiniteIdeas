@@ -44,25 +44,30 @@
         jQuery.each( cart, function( index, value ) {
 
             gallery += "<div class='item list-group-item thumbnail '" +
-                       " style='width:600px;height: 400px; padding-top:10px ; padding-bottom:40px '>" +
+                       " style='width:600px;height: 400px; padding-top:5px ;  padding-bottom:40px '>" +
 
                     " <div class = 'thumbnail'>"  +
 
                     " <img class='group list-group-image' " +
                     "src='http://placehold.it/400x250/000/fff' alt='' />" +
 
-                    " <div class='caption'>" +
-                    " <h4 class='group inner list-group-item-heading'>"
-                    + allItems[value['id']]['name'] + "</h4>" +
+                    " <div class='caption' style=' padding-left:80px'>" +
+                    " <h5 class='group inner list-group-item-heading'>"
+                    + allItems[value['id']]['name'] + "</h5>" +
 
-                    " <p class='group inner list-group-item-text'> " +
-                    "Collected Funds $ <strong> "+ value['funds'] +"</strong></p>" +
 
-                    " <h4 class='group inner list-group-item-text'>"+
-                    "<p> Invest <Strong> $ </Strong><input " + "id="+ value['id'] + " " + " value = '' "  +" class='Quantity' style='width:90px;height:25px; font-weight:bold;border-style: solid; border-radius: 8px;padding-left:3px;border-color:#828689;'> </input> </p></h4>" +
+                    " <h5 class='group inner list-group-item-text'> " +
+                    "Target Funds $ <strong> "+ allItems[value['id']]['funds']  +"</strong></h5>" +
+
+                    " <h5 class='group inner list-group-item-text'> " +
+                    "Collected Funds $ <strong> "+ allItems[value['id']]['collectedFunds']  +"</strong></h5>" +
+
+                    " <h5 class='group inner list-group-item-text'>"+
+                    "<p> Investment <Strong> $ </Strong>" +
+                    "<input " + "id="+ value['id'] + " " + " value = "+ value['funds'] + "  class='Quantity' style='width:90px;height:25px; font-weight:bold;border-style: solid; border-radius: 8px;padding-left:3px;border-color:#828689;'>  </input> </p></h5>" +
                     " </div></div></div>"
 
-
+                    // value['funds']
                     //console.log(gallery)
         });
         gallery += "<div class='clearfix'></div>";
@@ -147,7 +152,7 @@
     <script type="application/javascript">
         function fund() {
 
-            //clearCart()
+            clearCart()
 
             console.log(JSON.parse(localStorage.getItem("shoppingCart")));
 
@@ -192,10 +197,10 @@
 
 
 
-<div class="container">
+<div class="container" style="padding-left: 200px">
     <div style="padding-top: 30px; opacity: 0 "  ></div>
-    <div style="width:300px;height: 40px ; " class="well well-sm">
-        <strong>Checkout Summary</strong>
+    <div style="width:600px;height: 40px ; " class="well well-sm">
+       <div style="text-align: center;"> <strong>Checkout Summary</strong> </div>
 
     </div>
     <div id="products" class="  list-group">
@@ -203,10 +208,10 @@
 
     </div>
 </div>
-    <input type="submit" id="button" onclick="fund()">
+    <%--<input type="submit" id="button" onclick="fund()">--%>
 
 <div style = "float:right ; padding-right:300px; padding-bottom:150px;">
-    <button  id = "place-order" type="button" class="btn-success btn" onclick="fund()">Purchase Order</button>
+    <button  id = "place-order" type="button" class="btn-success btn" onclick="fund()">Make Investments</button>
 </div>
 
 </body>
