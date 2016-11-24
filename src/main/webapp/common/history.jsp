@@ -16,6 +16,8 @@
             $('#products .item').addClass('grid-group-item');});
     });
 </script>
+
+
 <div class="container">
     <div class="well well-sm">
         <strong>Purchase History</strong>

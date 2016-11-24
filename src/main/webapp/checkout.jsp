@@ -6,11 +6,12 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 
-<link href="${contextPath}/resources/vendor/css/bootstrap.min.css" rel="stylesheet">
+<link href="${contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+<link href="${contextPath}/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="${contextPath}/resources/vendor/js/bootstrap.min.js"></script>
+<script src="${contextPath}/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
 <script>
     //-----------Global Variables------
     var globalQty = '';
@@ -24,12 +25,40 @@
     //---------------------------------
     $(document).ready(function(){
         loadCart();
-        showProds();
+        var cart = JSON.parse(localStorage.getItem("shoppingCart"));
+        //showProds();
+        showCartItems();
+
+
+
         $("#logoutButton").click(function(event) {
             clearCart();
         });
     });
     //--------------Cart Functions-----------
+
+    function showCartItems()
+    {
+        var cart = JSON.parse(localStorage.getItem("shoppingCart"));
+
+        var items =""
+
+        jQuery.each( cart, function( key, value ) {
+
+            items += "<div class='item thumbnail col-xs-4 col-lg-4'>" +
+                    "<div class = 'thumbnail'>"  +
+                    "<img class='group list-group-image' src='http://placehold.it/400x250/000/fff' alt='' />" +
+                    "<div class='caption'>" +
+                    "<h4 class='group inner list-group-item-heading'>" + key['name'] + "</h4>" +
+                    "<p class='group inner list-group-item-text'> Collected Funds: $ <strong>"  +   "</strong></p>" +
+                    "<h6 class='group inner list-group-item-heading'>" +  key['funds']+ "</h6>" +
+                    "</div></div></div>"
+
+        });
+
+        $("#button").html(items)
+    }
+
     function showProds(){
         cart = JSON.parse(localStorage.getItem("shoppingCart"));
         var allItems = JSON.parse(localStorage.getItem("AllItems"));
@@ -101,7 +130,7 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Insert title here</title>
-    <link type="text/css" href="/css/bootstrap.css" rel="stylesheet" />
+
     <script type="application/javascript">
         function fund() {
 
@@ -118,7 +147,7 @@
                     if(data.status == 'OK') {
                         location.replace("${contextPath}/welcome")
                     }
-                    else alert('Failed adding person: ' + data.status + ', ' + data.errorMessage);
+                    else alert('Failed adding Idea: ' + data.status + ', ' + data.errorMessage);
                 }
             });
         }
@@ -149,25 +178,18 @@
 
 
 
-<div class="in-check" >
-    <ul class="unit">
-        <li><span>Idea </span></li>
-        <li><span>Idea Id</span></li>
-        <li><span>Idea Name</span></li>
-        <li><span>User Id</span></li>
-        <li><span>Funds ($)</span></li>
 
-        <li> </li>
-        <div class="clearfix"> </div>
-    </ul>
-    <div id = "show-products">
+<div class="container">
+    <div class="well well-sm">
+        <strong>Checkout Summary</strong>
+
+    </div>
+    <div id="products" class="row list-group">
+
 
     </div>
 </div>
-
     <input type="submit" id="button" onclick="fund()">
-
-
 
 <div style = "float:right ; padding-right:300px; padding-bottom:150px;">
     <button  id = "place-order" type="button" class="btn-success btn" onclick="fund()">Purchase Order</button>
