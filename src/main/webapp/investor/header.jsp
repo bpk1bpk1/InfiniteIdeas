@@ -277,50 +277,6 @@
 
 
 
-    // ----------------global variables------------
-
-    var categoryFilterList ={};
-    var subcategoryFilterList = {};
-    var fundsFilterList = {};
-    var brandFilterList = [];
-
-    var searchSpace = []
-
-
-    var globalQty = '';
-    cart = {};
-    var Item = function(id, name, funds,category,subcategory) {
-        this.id = id;
-        this.name = name;
-        this.funds = funds;
-        this.category = category;
-        this.subcategory = subcategory;
-    };
-
-
-    //-------------------- Cart Functions-----------
-    function addItemTocart(ideaId,ideaName,funds,category,subcategory) {
-        var item = new Item(ideaId,ideaName,funds,category,subcategory);
-        var itemId = 'ideaId' + ideaId;
-        cart[itemId] = item;
-        saveCart();
-    }
-
-    function clearCart() {
-        cart = {};
-        saveCart();
-    }
-    function saveCart() {
-        localStorage.setItem("shoppingCart", JSON.stringify(cart));
-    }
-    function loadCart() {
-        if(JSON.parse ( localStorage.getItem("shoppingCart") ) != null  )
-            cart = JSON.parse ( localStorage.getItem("shoppingCart") );
-        else
-            cart = {}
-    }
-    //==============================================
-
 
 
     //########################################################################

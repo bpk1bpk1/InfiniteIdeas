@@ -26,6 +26,8 @@
         //showProds();
         showCartItems();
 
+        //$('#products .item').addClass('list-group-item')
+
         $("#logoutButton").click(function(event) {
             clearCart();
         });
@@ -41,7 +43,9 @@
 
         jQuery.each( cart, function( index, value ) {
 
-            gallery += "<div class='item thumbnail col-xs-4 col-lg-4'>" +
+            gallery += "<div class='item list-group-item thumbnail '" +
+                       " style='width:600px;height: 400px; padding-top:10px ; padding-bottom:40px '>" +
+
                     " <div class = 'thumbnail'>"  +
 
                     " <img class='group list-group-image' " +
@@ -189,11 +193,12 @@
 
 
 <div class="container">
-    <div style="width:300px;height: 40px" class="well well-sm">
+    <div style="padding-top: 30px; opacity: 0 "  ></div>
+    <div style="width:300px;height: 40px ; " class="well well-sm">
         <strong>Checkout Summary</strong>
 
     </div>
-    <div id="products" class="row list-group">
+    <div id="products" class="  list-group">
 
 
     </div>
