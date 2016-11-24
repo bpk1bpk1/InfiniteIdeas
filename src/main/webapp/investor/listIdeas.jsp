@@ -107,8 +107,10 @@
             console.log('${pageContext.request.userPrincipal.name}');
             var idea_id  =  $(this).attr("data-id");
             var idea_name = $(this).attr("data-name");
-            category = "cat"
-            subcategory = "subcat"
+            category = allItems[idea_id]['category']
+            subcategory = allItems[idea_id]['subcategory']
+
+
             addItemTocart(idea_id,idea_name,funds,category,subcategory);  //adding to cart
             var modal = document.getElementById('myModal');
             modal.style.display = "block";

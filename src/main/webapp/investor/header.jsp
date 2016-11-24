@@ -52,6 +52,7 @@
         itemsID["${idea.id}"] =  true
 
         var item ={};
+
         item['name'] = '${idea.name}';
         item['category'] = '${idea.category}'
         item['subcategory'] = '${idea.subCategory}'
@@ -71,12 +72,14 @@
 
         jQuery.each( finalFilterItems, function( key, value ) {
 
+            var ideaName = allItems[key]['name']
+
             gallery += "<div class='item thumbnail col-xs-4 col-lg-4'>" +
                     "<div class = 'thumbnail'>"  +
                     "<img class='group list-group-image' src='http://placehold.it/400x250/000/fff' alt='' />" +
                     "<div class='caption'>" +
                     "<h4 class='group inner list-group-item-heading'>" +
-                    allItems[key]['name'] + "</h4>" +
+                    ideaName + "</h4>" +
                     " <p class='group inner list-group-item-text'> Target Funds:    $ <strong>"     + allItems[key]['funds']  +   "</strong></p>" +
                     " <p class='group inner list-group-item-text'> Collected Funds: $ <strong>"  + allItems[key]['collectedFunds']  +   "</strong></p>" +
                     //" <div class='row'> "+
@@ -86,7 +89,8 @@
                     " <div style='float:left;padding-bottom:8px; padding-top:23px '>" +
                     " <button class = 'add-to-cartP btn-success btn' " +
                     " data-toggle='modal' data-id ="+ key +" data-target='#basicModal'" +
-                    " data-name="+   allItems[key]['name'] + ">Add to Cart</button></div>" +
+                    " data-name="+
+                    String( ideaName ) + ">Add to Cart</button></div>" +
 
                     " <div style='float:left;padding-bottom:8px; padding-left:10px; padding-top:23px '> " +
                     " <button  class =' btn btn-info ' onclick=window.location='${contextPath}/Ideas/view/"+ key  + "' > Quick View</button></div>" +

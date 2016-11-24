@@ -1,9 +1,6 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 
 
 <link href="${contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -16,7 +13,7 @@
     //-----------Global Variables------
     var globalQty = '';
     var globalQtyID = '';
-    cart = {};
+    var cart ={};
     var Item = function(ideadId, userId, funds) {
         this.ideaID = ideadId;
         this.userId = userId;
@@ -25,11 +22,9 @@
     //---------------------------------
     $(document).ready(function(){
         loadCart();
-        var cart = JSON.parse(localStorage.getItem("shoppingCart"));
+        //var cart = JSON.parse(localStorage.getItem("shoppingCart"));
         //showProds();
         showCartItems();
-
-
 
         $("#logoutButton").click(function(event) {
             clearCart();
@@ -39,24 +34,38 @@
 
     function showCartItems()
     {
-        var cart = JSON.parse(localStorage.getItem("shoppingCart"));
+        var allItems = JSON.parse(localStorage.getItem("AllItems"))
+        var gallery =""
 
-        var items =""
+        console.log(cart)
 
-        jQuery.each( cart, function( key, value ) {
+        jQuery.each( cart, function( index, value ) {
 
-            items += "<div class='item thumbnail col-xs-4 col-lg-4'>" +
-                    "<div class = 'thumbnail'>"  +
-                    "<img class='group list-group-image' src='http://placehold.it/400x250/000/fff' alt='' />" +
-                    "<div class='caption'>" +
-                    "<h4 class='group inner list-group-item-heading'>" + key['name'] + "</h4>" +
-                    "<p class='group inner list-group-item-text'> Collected Funds: $ <strong>"  +   "</strong></p>" +
-                    "<h6 class='group inner list-group-item-heading'>" +  key['funds']+ "</h6>" +
-                    "</div></div></div>"
+            gallery += "<div class='item thumbnail col-xs-4 col-lg-4'>" +
+                    " <div class = 'thumbnail'>"  +
 
+                    " <img class='group list-group-image' " +
+                    "src='http://placehold.it/400x250/000/fff' alt='' />" +
+
+                    " <div class='caption'>" +
+                    " <h4 class='group inner list-group-item-heading'>"
+                    + allItems[value['id']]['name'] + "</h4>" +
+
+                    " <p class='group inner list-group-item-text'> " +
+                    "Collected Funds $ <strong> "+ value['funds'] +"</strong></p>" +
+
+                    " <h4 class='group inner list-group-item-text'>"+
+                    "<p> Invest <Strong> $ </Strong><input " + "id="+ value['id'] + " " + " value = '' "  +" class='Quantity' style='width:90px;height:25px; font-weight:bold;border-style: solid; border-radius: 8px;padding-left:3px;border-color:#828689;'> </input> </p></h4>" +
+                    " </div></div></div>"
+
+
+                    //console.log(gallery)
         });
+        gallery += "<div class='clearfix'></div>";
 
-        $("#button").html(items)
+
+        $("#products").html(gallery)
+
     }
 
     function showProds(){
@@ -155,7 +164,7 @@
     </script>
 </head>
 <body>
-<h2>List of Ideas</h2>
+
 
 
 <div id="myModal" class="modal">
@@ -180,7 +189,7 @@
 
 
 <div class="container">
-    <div class="well well-sm">
+    <div style="width:300px;height: 40px" class="well well-sm">
         <strong>Checkout Summary</strong>
 
     </div>
