@@ -443,16 +443,16 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="${contextPath}/resources/images/portfolio/roundicons-free.png" alt="">
+                            <h2>A personal healthcare companion</h2>
+                            <p class="item-intro text-muted">A safe pair of hands with you always.</p>
+                            <img class="img-responsive img-centered" src="${contextPath}/resources/images/portfolio/Baymax.jpg" alt="">
                             <p> A personal healthcare companion who does not occupy much space and will be used for emergency care anywhere at any time!In an ambulance, in a bag, in a hospital , this system will take immediate care of the hurt human before a doctor can attend to the human being if required.</p>
                             <p>
                                 <strong>Want to have doctor with you always?</strong> Invest in the idea and be carefree</p>
                             <ul class="list-inline">
-                                <li>Date: July 2014</li>
+                                <li>Date: December 2016</li>
                                 <li>Client: Artificial Intelligent Systems</li>
-                                <li>Category: A personal healthcare companion</li>
+                                <li>Category: Science</li>
                             </ul>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
@@ -477,11 +477,16 @@
                 <div class="row">
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
-                            <h2>Project Heading</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="${contextPath}/resources/images/portfolio/startup-framework-preview.png" alt="">
-                            <p><a href="http://designmodo.com/startup/?u=787">Startup Framework</a> is a website builder for professionals. Startup Framework contains components and complex blocks (PSD+HTML Bootstrap themes and templates) which can easily be integrated into almost any design. All of these components are made in the same style, and can easily be integrated into projects, allowing you to create hundreds of solutions for your future projects.</p>
-                            <p>You can preview Startup Framework <a href="http://designmodo.com/startup/?u=787">here</a>.</p>
+                            <h2>Mosaic Art : Obama</h2>
+                            <p class="item-intro text-muted">Have the potrait of the greatest leader the world has ever seen.</p>
+                            <img class="img-responsive img-centered" src="${contextPath}/resources/images/portfolio/Obama.jpg" alt="">
+                            <p><a href="http://designmodo.com/startup/?u=787">Mosaic portrait of President Obama</a> is an exquisite piece of art that can be developed with unique pictures of all the investors that can be sent to us.</p>
+                            <p>You can contact us, Mosaic Arts on our website for further details.</p>
+                            <ul class="list-inline">
+                                <li>Date: December 2016</li>
+                                <li>Client: Mosaic Art</li>
+                                <li>Category: Art</li>
+                            </ul>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>
@@ -506,11 +511,16 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="${contextPath}/resources/images/portfolio/treehouse-preview.png" alt="">
-                            <p>Treehouse is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. This is bright and spacious design perfect for people or startup companies looking to showcase their apps or other projects.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/treehouse-free-psd-web-template/">FreebiesXpress.com</a>.</p>
+                            <h2>Trump as President?Holy Guacamole!</h2>
+                            <p class="item-intro text-muted">Another movie to have you laughing with tears.</p>
+                            <img class="img-responsive img-centered" src="${contextPath}/resources/images/portfolio/donald-trump.jpg" alt="">
+                            <p>The movie is built on the Presendital elections that took place in United States of America during 2016. The possible impacts of choosing Trump as President will be showcased.</p>
+                            <p> Guaranteed to tickle your funny bones.</p>
+                            <ul class="list-inline">
+                                <li>Date: December 2016</li>
+                                <li>Client: The Moronic Productions</li>
+                                <li>Category: Film Making</li>
+                            </ul>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>
@@ -535,11 +545,16 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="${contextPath}/resources/images/portfolio/golden-preview.png" alt="">
-                            <p>Start Bootstrap's Agency theme is based on Golden, a free PSD website template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Golden is a modern and clean one page web template that was made exclusively for Best PSD Freebies. This template has a great portfolio, timeline, and meet your team sections that can be easily modified to fit your needs.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/golden-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
+                            <h2>The Bling Jacket</h2>
+                            <p class="item-intro text-muted">Be a part of the world wide trend with this jacket .</p>
+                            <img class="img-responsive img-centered" src="${contextPath}/resources/images/portfolio/FF.jpg" alt="">
+                            <p>The Bling Jacket is available in more sizes than what is known to common public. Invest in us to get 20% off and begin the trend in your area with the jacket.</p>
+                            <p>DO NOT LET YOUR WARDROBE MISS OUT ON THIS!</p>
+                            <ul class="list-inline">
+                                <li>Date: December 2016</li>
+                                <li>Client: Flouroscent Fix</li>
+                                <li>Category: Fashion</li>
+                            </ul>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>
@@ -564,11 +579,16 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="${contextPath}/resources/images/portfolio/escape-preview.png" alt="">
-                            <p>Escape is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Escape is a one page web template that was designed with agencies in mind. This template is ideal for those looking for a simple one page solution to describe your business and offer your services.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/escape-one-page-psd-web-template/">FreebiesXpress.com</a>.</p>
+                            <h2>Under one Woof - Animal Shelter</h2>
+                            <p class="item-intro text-muted">Why will you not invest in Animal Shelter?</p>
+                            <img class="img-responsive img-centered" src="${contextPath}/resources/images/portfolio/Animal%20Shelter.jpg" alt="">
+                            <p>Under one Woof is a social project hoping to attain some funds to start building an animal shelter for the old dogs and provide an opportunity for adoption to everyone interested.</p>
+                            <p>Please invest in us to have animals to play with in your locality!</p>
+                            <ul class="list-inline">
+                                <li>Date: December 2016</li>
+                                <li>Client: Nature's Disaapointed</li>
+                                <li>Category: Social Service</li>
+                            </ul>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>
@@ -593,11 +613,16 @@
                     <div class="col-lg-8 col-lg-offset-2">
                         <div class="modal-body">
                             <!-- Project Details Go Here -->
-                            <h2>Project Name</h2>
-                            <p class="item-intro text-muted">Lorem ipsum dolor sit amet consectetur.</p>
-                            <img class="img-responsive img-centered" src="${contextPath}/resources/images/portfolio/dreams-preview.png" alt="">
-                            <p>Dreams is a free PSD web template built by <a href="https://www.behance.net/MathavanJaya">Mathavan Jaya</a>. Dreams is a modern one page web template designed for almost any purpose. It’s a beautiful template that’s designed with the Bootstrap framework in mind.</p>
-                            <p>You can download the PSD template in this portfolio sample item at <a href="http://freebiesxpress.com/gallery/dreams-free-one-page-web-template/">FreebiesXpress.com</a>.</p>
+                            <h2>Artifical Intelligence versus Natural Stupidity.</h2>
+                            <p class="item-intro text-muted">Ever wondered if the field was required or not?.</p>
+                            <img class="img-responsive img-centered" src="${contextPath}/resources/images/portfolio/Comic.jpeg" alt="">
+                            <p>These two series comic books are going to portray a computer scientist and his real life difficultly in solving day to day inference obstacles. .</p>
+                            <p>Invest in us to win merchandise upto 50$ and get the first few episodes of the second series.</p>
+                            <ul class="list-inline">
+                                <li>Date: December 2016</li>
+                                <li>Client: Comic Graduate Life</li>
+                                <li>Category: Comics</li>
+                            </ul>
                             <button type="button" class="btn btn-primary" data-dismiss="modal"><i class="fa fa-times"></i> Close Project</button>
                         </div>
                     </div>
