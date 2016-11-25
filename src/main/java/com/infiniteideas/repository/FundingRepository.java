@@ -13,4 +13,6 @@ public interface FundingRepository extends JpaRepository<Funding, Long> {
     @Query(value = ("SELECT * FROM FUNDING WHERE USER_ID = ?1"), nativeQuery = true)
     List<Funding> getUserTransactions(Long userId);
 
+    @Query(value = ("SELECT SUM(funded) FROM FUNDING;"), nativeQuery = true)
+    Integer getRevenue();
 }

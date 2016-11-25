@@ -10,4 +10,6 @@ public interface CheckoutService {
     void makeTransactions(Map<String, ShoppingCartItem> itemMap, String userName);
 
     List<Funding> save(List<Funding> fundingList);
+
+    Integer getRevenue();
 }

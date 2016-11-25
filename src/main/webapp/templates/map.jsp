@@ -8,7 +8,7 @@
     google.charts.load("upcoming", {packages:["map"]});
     google.charts.setOnLoadCallback(drawChart);
     function initMap() {
-        console.log("Lets see");
+        console.log("Load Map");
     }
     function drawChart() {
         var data = google.visualization.arrayToDataTable([

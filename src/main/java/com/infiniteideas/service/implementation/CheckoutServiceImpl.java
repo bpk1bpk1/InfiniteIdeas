@@ -60,4 +60,9 @@ public class CheckoutServiceImpl implements CheckoutService {
     public List<Funding> save(List<Funding> fundingList) {
         return fundingRepository.save(fundingList);
     }
+
+    @Override
+    public Integer getRevenue() {
+       return fundingRepository.getRevenue();
+    }
 }
