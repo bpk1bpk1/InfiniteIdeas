@@ -3,6 +3,8 @@ package com.infiniteideas.web;
 import com.infiniteideas.model.Idea;
 import com.infiniteideas.service.IdeaService;
 import com.infiniteideas.service.UserPersonalDetailsService;
+import com.infiniteideas.service.UserService;
+import com.infiniteideas.utils.RoleGetter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -17,17 +19,27 @@ import java.util.List;
 public class InvestorController {
     private final UserPersonalDetailsService userPersonalDetailsService;
     private final IdeaService ideaService;
+    private final UserService userService;
+    private RoleGetter roleGetter = new RoleGetter();
 
     @Autowired
-    public InvestorController(UserPersonalDetailsService userPersonalDetailsService, IdeaService ideaService) {
+    public InvestorController(UserPersonalDetailsService userPersonalDetailsService, IdeaService ideaService, UserService userService) {
         this.userPersonalDetailsService = userPersonalDetailsService;
         this.ideaService = ideaService;
+        this.userService = userService;
     }
 
     @RequestMapping(value = "/map", method = RequestMethod.GET)
     public String test(Model model){
         model.addAttribute("locations", userPersonalDetailsService.getCustomerLocations());
         return "map";
+    }
+
+    @RequestMapping(value = "/wishlist", method = RequestMethod.GET)
+    public String wishlist(Model model,Principal principal)
+    {
+         model.addAttribute("role", roleGetter.getRoles(userService, principal.getName()));
+         return "investor/wishlist";
     }
 
     @RequestMapping(value = {"", "/welcome"}, method = RequestMethod.GET)

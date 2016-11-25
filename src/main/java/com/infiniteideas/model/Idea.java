@@ -21,6 +21,9 @@ public class Idea {
     @Column(name = "user_id")
     private Long userId;
 
+    @Column(name = "status")
+    private String status;
+
 
     public String getDescription() {
         return description;
@@ -95,5 +98,13 @@ public class Idea {
     public void setUserId(Long userId) {
         this.userId = userId;
 
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

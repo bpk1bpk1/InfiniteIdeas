@@ -68,6 +68,8 @@
 
         <h2>view <a href="${contextPath}/investor/history">Transaction History</a></h2>
 
+        <h2>view <a href="${contextPath}/investor/wishlist">Add an idea to Wishlist</a></h2>
+
         <h2>view <a href="${contextPath}/Ideas/list">ideas</a></h2>
     <div class="row horizontal-strip">
         <div class="heading">ENTREPRENEURS NEAR YOU</div>
