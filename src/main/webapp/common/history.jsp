@@ -29,7 +29,7 @@
     </div>
     <div id="products" class="row list-group">
         <c:forEach items="${history}" var="transaction" varStatus="itr">
-            <div class="item  col-xs-4 col-lg-4">
+            <div class="item  col-xs-12 col-lg-4 col-md-6 col-sm-12">
                 <div class="thumbnail">
                     <img class="group list-group-image" src="${transaction.value.image}" alt="" style="width: 400px;height: 250px;"/>
                     <div class="caption">
@@ -50,7 +50,7 @@
                             ${transaction.value.category}
                         </p>
                         <div class="row">
-                            <div class="col-xs-12 col-md-6">
+                            <div class="col-xs-6 col-sm-6 col-md-6">
                                 <p class="lead">
                                     <c:choose>
                                         <c:when test="${!empty transaction.key.funded}">
@@ -62,9 +62,13 @@
                                     </c:choose>
                                 </p>
                             </div>
-                            <div class="col-xs-12 col-md-6">
+                            <div class="col-xs-6 col-sm-6 col-md-6 buttons">
                                 <a href="${contextPath}/Ideas/view/${transaction.value.id}" class="btn btn-primary"
                                 role="button">View Idea</a>
+                                <c:if test="${role == \"investor\"}">
+                                    <a href="${contextPath}/Ideas/return/${transaction.key.id}" class="cancel-fund"
+                                       role="button">Cancel Fund</a>
+                                </c:if>
                             </div>
                         </div>
                     </div>

@@ -1216,3 +1216,7 @@ ul.notifications {
 .horizontal-strip {
   height: auto;
 }
+
+#map_div{
+  margin-bottom: 50px;
+}

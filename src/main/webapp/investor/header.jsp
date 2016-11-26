@@ -305,7 +305,7 @@
             </div>
             <div class="col-md-4">
                 <span class="header_top_text">
-                    Welcome ${pageContext.request.userPrincipal.name} |
+                    Welcome ${pageContext.request.userPrincipal.name} | Coupons: ${coupons} |
                     <a role="button" aria-pressed="true" onclick="document.forms['logoutForm'].submit()">Logout</a>
                 </span>
             </div>
@@ -341,8 +341,6 @@
                         <li class="fadeInDown animated d2">
                             <a href="${contextPath}/investor/history" menuid="1">Funding History</a>
                         </li>
-
-                        <li class="fadeInDown animated d3"><a href="#Iletisim">Returns</a></li>
 
                         <li class="fadeInDown animated d2"><a href="#">Contact Us</a></li>
 

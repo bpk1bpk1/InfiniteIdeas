@@ -61,4 +61,11 @@ public class IdeaServiceImpl implements IdeaService {
                 idea.getImage());
     }
 
+    @Override
+    public void processRefund(Long ideaId, Double funded) {
+        Idea idea = ideaRepository.findOne(ideaId);
+        idea.setCollectedFunds(idea.getCollectedFunds() - funded);
+        ideaRepository.save(idea);
+    }
+
 }

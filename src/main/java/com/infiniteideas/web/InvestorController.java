@@ -29,12 +29,6 @@ public class InvestorController {
         this.userService = userService;
     }
 
-    @RequestMapping(value = "/map", method = RequestMethod.GET)
-    public String test(Model model){
-        model.addAttribute("locations", userPersonalDetailsService.getCustomerLocations());
-        return "map";
-    }
-
     @RequestMapping(value = "/wishlist", method = RequestMethod.GET)
     public String wishlist(Model model,Principal principal)
     {
@@ -52,6 +46,7 @@ public class InvestorController {
         }
         else
             model.addAttribute("recommendation1", recommendation);
+        model.addAttribute("coupons", userPersonalDetailsService.getUserCoupons());
         return "investor/welcome";
     }
 }

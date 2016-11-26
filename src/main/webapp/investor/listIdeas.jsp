@@ -9,17 +9,10 @@
 </head>
 <body>
 <jsp:include page="${contextPath}/${role}/header.jsp" />
-<div class="footer">
-    <jsp:include page="${contextPath}/templates/footer.jsp" />
-</div>
-
-
-
-
 <script>
 
-    var allItems = {}
-    var itemsID = {}
+    var allItems = {};
+    var itemsID = {};
 
     $(document).ready(function() {
 
@@ -42,9 +35,9 @@
 
     //----------Important Page funtions dont touch--------------
 
-    var category = ""
-    var subcategory = ""
-    var funds = ""
+    var category = "";
+    var subcategory = "";
+    var funds = "";
 
         $(document).on('change', '.checkboxFilter', function () {
 
@@ -108,8 +101,8 @@
             console.log('${pageContext.request.userPrincipal.name}');
             var idea_id  =  $(this).attr("data-id");
             var idea_name = $(this).attr("data-name");
-            category = allItems[idea_id]['category']
-            subcategory = allItems[idea_id]['subcategory']
+            category = allItems[idea_id]['category'];
+            subcategory = allItems[idea_id]['subcategory'];
 
 
             addItemTocart(idea_id,idea_name,funds,category,subcategory);  //adding to cart
@@ -131,7 +124,7 @@
         $(document).on('click', '#searchBtn', function ()
         {
 
-            var finalFilteredItems = searchItems()
+            var finalFilteredItems = searchItems();
 
             createGallery(finalFilteredItems)
 
@@ -146,7 +139,7 @@
     var fundsFilterList = {};
     var brandFilterList = [];
 
-    var searchSpace = []
+    var searchSpace = [];
 
 
     var globalQty = '';
@@ -171,7 +164,7 @@
             cart[itemId] = item;
         else {
 
-            var fund = parseInt(funds)
+            var fund = parseInt(funds);
 
            cart[itemId]['funds']  += fund
         }
@@ -352,7 +345,9 @@
     </div>
 
 </div>
-
+<div class="footer">
+    <jsp:include page="${contextPath}/templates/footer.jsp" />
+</div>
 </body>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">

@@ -17,6 +17,8 @@ public class UserPersonalDetails {
     private String state;
     @Column(name = "country")
     private String country;
+    @Column(name = "coupons")
+    private Double coupons;
 
     public Long getId() {
         return id;
@@ -64,5 +66,13 @@ public class UserPersonalDetails {
 
     public void setCountry(String country) {
         this.country = country;
+    }
+
+    public Double getCoupons() {
+        return coupons;
+    }
+
+    public void setCoupons(Double coupons) {
+        this.coupons = coupons;
     }
 }

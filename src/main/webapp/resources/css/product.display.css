@@ -78,3 +78,16 @@
 #products {
     padding-bottom: 70px;
 }
+
+.cancel-fund {
+    margin-left: 42px;
+}
+
+
+@media (max-width: 990px) {
+    .cancel-fund {
+        position: absolute;
+        margin-left: 5px;
+        margin-top: 22px;
+    }
+}

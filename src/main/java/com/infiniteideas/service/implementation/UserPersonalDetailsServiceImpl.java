@@ -19,12 +19,14 @@ public class UserPersonalDetailsServiceImpl implements UserPersonalDetailsServic
     private final UserPersonalDetailsRepository userPersonalDetailsRepository;
     private final UserService userService;
     private GeoConverter geoConverter;
+    private UserPersonalDetails userPersonalDetails;
 
     @Autowired
     public UserPersonalDetailsServiceImpl(UserPersonalDetailsRepository userPersonalDetailsRepository, UserService userService) {
         this.userPersonalDetailsRepository = userPersonalDetailsRepository;
         this.userService = userService;
         geoConverter = new GeoConverter();
+        userPersonalDetails = new UserPersonalDetails();
     }
 
     @Override
@@ -53,13 +55,25 @@ public class UserPersonalDetailsServiceImpl implements UserPersonalDetailsServic
         return locations;
     }
 
+    @Override
+    public Double getUserCoupons() {
+        return userPersonalDetails.getCoupons();
+    }
+
+    @Override
+    public void setRefundedCoupons(Double coupons, Long userId) {
+        UserPersonalDetails details = userPersonalDetailsRepository.findOne(userId);
+        details.setCoupons(details.getCoupons() + coupons);
+        userPersonalDetailsRepository.save(details);
+    }
+
     private Hashtable<String, String> getAllUsersNearMe(String name, Hashtable<String, String> locations) {
         User user = userService.findByUsername(name);
-        UserPersonalDetails details = userPersonalDetailsRepository.findOne(user.getId());
+        userPersonalDetails = userPersonalDetailsRepository.findOne(user.getId());
         List<UserPersonalDetails> allDetails = userPersonalDetailsRepository.findAll();
 
         allDetails.stream()
-                    .filter(u -> Objects.equals(u.getCountry().toLowerCase(), details.getCountry().toLowerCase()))
+                    .filter(u -> Objects.equals(u.getCountry().toLowerCase(), userPersonalDetails.getCountry().toLowerCase()))
                     .forEach(s -> getCoordinates(locations, s));
 
         return locations;

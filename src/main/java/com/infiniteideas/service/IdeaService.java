@@ -16,4 +16,6 @@ public interface IdeaService {
     List<Idea> getUserIdeas(Long id);
 
     void updateAndSave(Idea idea);
+
+    void processRefund(Long ideaId, Double funded);
 }

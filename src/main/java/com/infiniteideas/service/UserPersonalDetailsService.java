@@ -11,4 +11,8 @@ public interface UserPersonalDetailsService {
     String save(UserPersonalDetails details, String name);
 
     Hashtable<String,String> getUsersNearMe(String name);
+
+    Double getUserCoupons();
+
+    void setRefundedCoupons(Double coupons, Long userId);
 }

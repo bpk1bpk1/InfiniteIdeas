@@ -1,6 +1,7 @@
 package com.infiniteideas.web;
 
 import com.infiniteideas.model.Idea;
+import com.infiniteideas.service.CheckoutService;
 import com.infiniteideas.service.IdeaService;
 import com.infiniteideas.service.UserService;
 import com.infiniteideas.utils.RoleGetter;
@@ -25,13 +26,15 @@ public class IdeaController {
     private final IdeaService ideaService;
     private final UserService userService;
     private final ObjectValidator objectValidator;
+    private final CheckoutService checkoutService;
     private RoleGetter roleGetter = new RoleGetter();
 
     @Autowired
-    public IdeaController(IdeaService service, UserService userService, ObjectValidator objectValidator){
+    public IdeaController(IdeaService service, UserService userService, ObjectValidator objectValidator, CheckoutService checkoutService){
         this.ideaService = service;
         this.userService = userService;
         this.objectValidator = objectValidator;
+        this.checkoutService = checkoutService;
     }
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
@@ -100,12 +103,6 @@ public class IdeaController {
         return "common/createIdea";
     }
 
-
-    @RequestMapping(value = "header",  method = RequestMethod.GET)
-    public String header(){
-        return "header";
-    }
-
     @RequestMapping(value = "create", method = RequestMethod.POST)
     public String save(@ModelAttribute("ideaForm") Idea ideaForm, BindingResult bindingResult, Principal principal,
                        Model model){
@@ -117,6 +114,17 @@ public class IdeaController {
 
         ideaService.save(ideaForm, principal.getName());
         return "redirect:/welcome";
+    }
+
+    @RequestMapping(value = "return/{id}")
+    public String cancelFund(@PathVariable Long id){
+        try {
+            checkoutService.deleteTransaction(id);
+        }
+        catch (Exception e){
+            System.out.println(e.getMessage());
+        }
+        return "redirect:/investor/history";
     }
 
 }

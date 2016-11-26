@@ -12,4 +12,6 @@ public interface CheckoutService {
     List<Funding> save(List<Funding> fundingList);
 
     Integer getRevenue();
+
+    void deleteTransaction(Long id);
 }

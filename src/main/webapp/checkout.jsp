@@ -152,8 +152,6 @@
     <script type="application/javascript">
         function fund() {
 
-            clearCart()
-
             console.log(JSON.parse(localStorage.getItem("shoppingCart")));
 
             $.ajax({
@@ -168,6 +166,7 @@
                     else alert('Failed adding Idea: ' + data.status + ', ' + data.errorMessage);
                 }
             });
+            clearCart();
         }
 
     </script>
