@@ -270,3 +270,8 @@ ul.social-buttons li a:active {
 .list-inline i{
     margin-top: 9px;
 }
+
+#pay .btn{
+    margin: auto;
+    padding: 2px 16px;
+}

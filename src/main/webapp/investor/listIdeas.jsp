@@ -8,7 +8,7 @@
     <title>View all ideas</title>
 </head>
 <body>
-<jsp:include page="${contextPath}/${role}/header.jsp" />
+<jsp:include page="${contextPath}/investor/header.jsp" />
 <script>
 
     var allItems = {};

@@ -7,7 +7,9 @@ import com.infiniteideas.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Comparator;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 public class IdeaServiceImpl implements IdeaService {
@@ -42,10 +44,9 @@ public class IdeaServiceImpl implements IdeaService {
     @Override
     public List<Idea> getRecommendations() {
         List<Idea> recommendations = ideaRepository.findAll();
-        recommendations.stream()
-                .limit(8)
-                .sorted((idea1, idea2) -> idea2.getCollectedFunds().compareTo(idea1.getCollectedFunds()));
-
+        recommendations.sort(Comparator.comparing(Idea::getCollectedFunds));
+        if (recommendations.size() > 8)
+            recommendations = recommendations.stream().limit(8).collect(Collectors.toList());
         return recommendations;
     }
 

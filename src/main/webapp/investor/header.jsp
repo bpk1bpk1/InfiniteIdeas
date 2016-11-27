@@ -18,8 +18,16 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
 <script>
+    var paypal = function () {
+        window.location = "https://www.paypal.com/signin?returnUri=http%3A%2F%2Furi.paypal.com%2FWeb%2FWeb%2Fcgi-" +
+            "bin%2Fwebscr%3Fvia%3Dul&state=%3fcmd%3d_account";
+    };
+
     $.get("${contextPath}/coupons", function (data) {
         document.getElementById("coupon").innerText = data;
+        if (data < 0) {
+            document.getElementById("pay").innerHTML = "<button type=\"button\" class=\"btn btn-primary\" onclick='paypal()' '>Pay</button>";
+        }
     });
 
     function searchItems()
@@ -46,8 +54,7 @@
     }
 
 
-    function preReq()
-    {
+    function preReq() {
         <c:forEach items="${ideas}" var="idea" >
         searchSpace.push("${idea.name}");
         searchSpace.push("${idea.description}");
@@ -302,9 +309,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <span class="header_top_text">
-                    Welcome ${pageContext.request.userPrincipal.name} | Coupons: <span id="coupon"></span> |
+                    Welcome ${pageContext.request.userPrincipal.name} | Coupons: <span id="coupon"></span> | <span id="pay"></span>
                     <a role="button" aria-pressed="true" onclick="document.forms['logoutForm'].submit()">Logout</a>
                 </span>
             </div>

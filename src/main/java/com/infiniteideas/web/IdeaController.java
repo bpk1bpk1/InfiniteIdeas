@@ -39,8 +39,6 @@ public class IdeaController {
 
     @RequestMapping(value = "/list", method = RequestMethod.GET)
     public String index(Model model, Principal principal){
-        String role = roleGetter.getRoles(userService, principal.getName());
-
         List<Idea> ideas = ideaService.findAll();
         HashSet<String> categories = new HashSet<>();
         HashSet<String>subcategories = new HashSet<>();
@@ -57,15 +55,8 @@ public class IdeaController {
         model.addAttribute("subcategories",subcategories);
         model.addAttribute("funds",funds);
 
-        model.addAttribute("role", role);
-        if (role.equals("entrepreneur")){
-            model.addAttribute("ideas", ideaService.findAll());
-            return "entrepreneur/listIdeas";
-        }
-        else{
-            model.addAttribute("ideas", ideaService.findAll());
-            return "investor/listIdeas";
-        }
+        model.addAttribute("ideas", ideaService.findAll());
+        return "investor/listIdeas";
     }
 
 
