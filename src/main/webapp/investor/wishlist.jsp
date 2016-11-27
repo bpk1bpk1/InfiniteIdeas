@@ -44,15 +44,21 @@
         </spring:bind>
 
 
-        <spring:bind path="status">
-            <div style="display: none" class="form-group ${status.error ? 'has-error' : ''}">
-                <form:input type="text" path="status" value="created" class="form-control" placeholder="status"
-                            autofocus="true" id="status"></form:input>
-                <form:errors path="status"></form:errors>
+        <spring:bind path="fundsRequired">
+            <div  style="display: none" class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input value="0" type="number" path="fundsRequired" class="form-control" placeholder="500"
+                            id="fundsRequired"></form:input>
+                <form:errors path="fundsRequired"></form:errors>
             </div>
         </spring:bind>
 
-
+        <spring:bind path="image">
+            <div  class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="text" path="image"  class="form-control"
+                            placeholder="Image url" id="image"></form:input>
+                <form:errors path="image"></form:errors>
+            </div>
+        </spring:bind>
 
         <spring:bind path="category">
             <div class="dropdown form-group ${status.error ? 'has-error' : ''}">
@@ -73,6 +79,15 @@
                 <form:input type="text" path="subCategory" class="form-control"
                             placeholder="Sub-category" id="subCategory"></form:input>
                 <form:errors path="subCategory"></form:errors>
+            </div>
+        </spring:bind>
+
+
+        <spring:bind path="status">
+            <div style="display: none" class="form-group ${status.error ? 'has-error' : ''}">
+                <form:input type="text" path="status" value="created" class="form-control" placeholder="status"
+                            autofocus="true" id="status"></form:input>
+                <form:errors path="status"></form:errors>
             </div>
         </spring:bind>
 

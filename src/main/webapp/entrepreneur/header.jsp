@@ -64,6 +64,8 @@
                     <ul class="nav navbar-nav">
                         <li class="fadeInDown animated d1 "><a href="${contextPath}/entrepreneur/" class="active" id="home">Home</a></li>
 
+                        <li class="fadeInDown animated d4 "><a href="${contextPath}/entrepreneur/eWishList"  id="wishlist">wishlist</a></li>
+
                         <li class="fadeInDown animated d2"><a href="${contextPath}/entrepreneur/history" menuid="1">History</a></li>
 
                         <li class="fadeInDown animated d2"><a href="#">Contact Us</a></li>
