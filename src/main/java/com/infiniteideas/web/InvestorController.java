@@ -32,6 +32,7 @@ public class InvestorController {
     @RequestMapping(value = "/wishlist", method = RequestMethod.GET)
     public String wishlist(Model model,Principal principal)
     {
+         model.addAttribute("ideaForm", new Idea());
          model.addAttribute("role", roleGetter.getRoles(userService, principal.getName()));
          return "investor/wishlist";
     }
