@@ -36,10 +36,11 @@
 
     function showCartItems()
     {
-        var allItems = JSON.parse(localStorage.getItem("AllItems"))
-        var gallery =""
+        var allItems = JSON.parse(localStorage.getItem("AllItems"));
+        var gallery ="";
+        console.log(allItems);
 
-        console.log(cart)
+        console.log(cart);
 
         jQuery.each( cart, function( index, value ) {
 
@@ -49,7 +50,7 @@
                     " <div class = 'thumbnail'>"  +
 
                     " <img class='group list-group-image' " +
-                    "src='http://placehold.it/400x250/000/fff' alt='' />" +
+                    "src='" + allItems[value['id']]['image'] + "' alt='' />" +
 
                     " <div class='caption' style=' padding-left:80px'>" +
                     " <h5 class='group inner list-group-item-heading'>"
@@ -65,7 +66,7 @@
                     " <h5 class='group inner list-group-item-text'>"+
                     "<p> Investment <Strong> $ </Strong>" +
                     "<input " + "id="+ value['id'] + " " + " value = "+ value['funds'] + "  class='Quantity' style='width:90px;height:25px; font-weight:bold;border-style: solid; border-radius: 8px;padding-left:3px;border-color:#828689;'>  </input> </p></h5>" +
-                    " </div></div></div>"
+                    " </div></div></div>";
 
                     // value['funds']
                     //console.log(gallery)
@@ -144,7 +145,7 @@
 
 
 <html>
-<jsp:include page="${contextPath}/entrepreneur/header.jsp" />
+<jsp:include page="${contextPath}/${role}/header.jsp" />
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>Insert title here</title>
