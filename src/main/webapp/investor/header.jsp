@@ -337,11 +337,19 @@
                         <li class="fadeInDown animated d1 "><a href="${contextPath}/investor/welcome" class="active" id="home">Home</a></li>
 
                         <li class="fadeInDown animated d2"><a href="#" menuid="1">Analytics</a></li>
+                        
+                        <li class="fadeInDown animated d2">
+                            <a href="${contextPath}/Ideas/list" menuid="1">List Ideas</a>
+                        </li>
 
                         <li class="fadeInDown animated d2">
                             <a href="${contextPath}/investor/history" menuid="1">Funding History</a>
                         </li>
-
+                            
+                        <li class="fadeInDown animated d2">
+                            <a href="${contextPath}/investor/wishlist" menuid="1">Wishlist</a>
+                        </li>
+                        
                         <li class="fadeInDown animated d2"><a href="#">Contact Us</a></li>
 
                         <a href="${contextPath}/cart/checkout">

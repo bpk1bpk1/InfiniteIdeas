@@ -3,6 +3,8 @@ package com.infiniteideas.web;
 import com.infiniteideas.model.Idea;
 import com.infiniteideas.service.IdeaService;
 import com.infiniteideas.service.UserPersonalDetailsService;
+import com.infiniteideas.service.UserService;
+import com.infiniteideas.utils.RoleGetter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,11 +21,14 @@ import java.util.List;
 public class EntrepreneurController {
     private final UserPersonalDetailsService userPersonalDetailsService;
     private final IdeaService ideaService;
+    private RoleGetter roleGetter = new RoleGetter();
+    private final UserService userService;
 
     @Autowired
-    public EntrepreneurController(UserPersonalDetailsService userPersonalDetailsService , IdeaService ideaService) {
+    public EntrepreneurController(UserPersonalDetailsService userPersonalDetailsService , IdeaService ideaService, UserService userService) {
         this.userPersonalDetailsService = userPersonalDetailsService;
         this.ideaService = ideaService;
+        this.userService = userService;
     }
 
     @RequestMapping(value = {"", "/welcome", "/"}, method = RequestMethod.GET)
@@ -36,23 +41,25 @@ public class EntrepreneurController {
 
     @RequestMapping(value = {"/eWishList"}, method = RequestMethod.GET)
     public String wishlist(Model model, Principal principal) {
-        List<Idea> ideas = ideaService.findAll();
-
-        List<Idea> newIdeas = new ArrayList<Idea>();
+        List<Idea> allIdeas = ideaService.findAll();
 
 
-        for (Idea idea:ideas)
+        List<Idea> ideas = new ArrayList<Idea>();
+
+
+        for (Idea idea:allIdeas)
         {
-            String status = idea.getStatus();
-            String createdStatus = "created";
+            //String status = idea.getStatus();
+            //String funds = "created";
 
-            if(status != null && status.compareToIgnoreCase(createdStatus) == 0)
+            if(idea.getFundsRequired() == 0)
             {
-                newIdeas.add(idea);
+                ideas.add(idea);
             }
         }
 
-        model.addAttribute(newIdeas);
+        model.addAttribute("role", roleGetter.getRoles(userService, principal.getName()));
+        model.addAttribute("ideas",ideas);
 
         return "entrepreneur/eWishList";
     }
