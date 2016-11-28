@@ -1,14 +1,37 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+<html>
 
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Checkout</title>
+    <link rel="icon" type="image/x-icon" href="${contextPath}/resources/images/favicon.ico">
+    <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
+    <script type="application/javascript">
+        function fund() {
 
+            console.log(JSON.parse(localStorage.getItem("shoppingCart")));
 
-<link href="${contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-<link href="${contextPath}/resources/css/common.css" rel="stylesheet">
-<link href="${contextPath}/resources/vendor/bootstrap/css/bootstrap.css" rel="stylesheet">
+            $.ajax({
+                type: "POST",
+                url: "/cart/fund",
+                data: localStorage.getItem("shoppingCart"),
+                contentType: 'application/json',
+                success: function(data) {
+                    if(data.status == 'OK') {
+                        location.replace("${contextPath}/welcome")
+                    }
+                    else alert('Failed adding Idea: ' + data.status + ', ' + data.errorMessage);
+                }
+            });
+            clearCart();
+        }
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script src="${contextPath}/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
+    </script>
+</head>
+<body>
+
+<jsp:include page="${contextPath}/${role}/header.jsp" />
 <script>
     //-----------Global Variables------
     var globalQty = '';
@@ -36,10 +59,11 @@
 
     function showCartItems()
     {
-        var allItems = JSON.parse(localStorage.getItem("AllItems"))
-        var gallery =""
+        var allItems = JSON.parse(localStorage.getItem("AllItems"));
+        var gallery ="";
+        console.log(allItems);
 
-        console.log(cart)
+        console.log(cart);
 
         jQuery.each( cart, function( index, value ) {
 
@@ -49,7 +73,7 @@
                     " <div class = 'thumbnail'>"  +
 
                     " <img class='group list-group-image' " +
-                    "src='http://placehold.it/400x250/000/fff' alt='' />" +
+                    "src='" + allItems[value['id']]['image'] + "' alt='' />" +
 
                     " <div class='caption' style=' padding-left:80px'>" +
                     " <h5 class='group inner list-group-item-heading'>"
@@ -65,7 +89,7 @@
                     " <h5 class='group inner list-group-item-text'>"+
                     "<p> Investment <Strong> $ </Strong>" +
                     "<input " + "id="+ value['id'] + " " + " value = "+ value['funds'] + "  class='Quantity' style='width:90px;height:25px; font-weight:bold;border-style: solid; border-radius: 8px;padding-left:3px;border-color:#828689;'>  </input> </p></h5>" +
-                    " </div></div></div>"
+                    " </div></div></div>";
 
                     // value['funds']
                     //console.log(gallery)
@@ -141,40 +165,6 @@
     //---------------------------------------
 
 </script>
-
-
-<html>
-<jsp:include page="${contextPath}/entrepreneur/header.jsp" />
-<head>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Insert title here</title>
-
-    <script type="application/javascript">
-        function fund() {
-
-            console.log(JSON.parse(localStorage.getItem("shoppingCart")));
-
-            $.ajax({
-                type: "POST",
-                url: "/cart/fund",
-                data: localStorage.getItem("shoppingCart"),
-                contentType: 'application/json',
-                success: function(data) {
-                    if(data.status == 'OK') {
-                        location.replace("${contextPath}/welcome")
-                    }
-                    else alert('Failed adding Idea: ' + data.status + ', ' + data.errorMessage);
-                }
-            });
-            clearCart();
-        }
-
-    </script>
-</head>
-<body>
-
-
-
 <div id="myModal" class="modal">
 
     <!-- Modal content -->

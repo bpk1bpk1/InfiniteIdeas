@@ -47,7 +47,6 @@ public class InvestorController {
         }
         else
             model.addAttribute("recommendation1", recommendation);
-        model.addAttribute("coupons", userPersonalDetailsService.getUserCoupons());
         return "investor/welcome";
     }
 }

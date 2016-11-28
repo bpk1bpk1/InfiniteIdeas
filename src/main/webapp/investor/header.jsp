@@ -18,17 +18,28 @@
 <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 
 <script>
+    var paypal = function () {
+        window.location = "https://www.paypal.com/signin?returnUri=http%3A%2F%2Furi.paypal.com%2FWeb%2FWeb%2Fcgi-" +
+            "bin%2Fwebscr%3Fvia%3Dul&state=%3fcmd%3d_account";
+    };
+
+    $.get("${contextPath}/coupons", function (data) {
+        document.getElementById("coupon").innerText = data;
+        if (data < 0) {
+            document.getElementById("pay").innerHTML = "<button type=\"button\" class=\"btn btn-primary\" onclick='paypal()' '>Pay</button>";
+        }
+    });
 
     function searchItems()
     {
-        var finalFilteredItems =  {}
+        var finalFilteredItems =  {};
 
-        var queryText = $("#searchText").val()
+        var queryText = $("#searchText").val();
 
         <c:forEach items="${ideas}" var="idea" >
 
-            var ideaName =  "${idea.name}"
-            var ideaDesc =  "${idea.description}"
+            var ideaName =  "${idea.name}";
+            var ideaDesc =  "${idea.description}";
 
             //console.log(ideaDesc.indexOf(queryText))
 
@@ -43,40 +54,40 @@
     }
 
 
-    function preReq()
-    {
+    function preReq() {
         <c:forEach items="${ideas}" var="idea" >
-        searchSpace.push("${idea.name}")
-        searchSpace.push("${idea.description}")
+        searchSpace.push("${idea.name}");
+        searchSpace.push("${idea.description}");
 
-        itemsID["${idea.id}"] =  true
+        itemsID["${idea.id}"] =  true;
 
         var item ={};
 
         item['name'] = '${idea.name}';
-        item['category'] = '${idea.category}'
-        item['subcategory'] = '${idea.subCategory}'
-        item['funds'] = '${idea.fundsRequired}'
-        item['collectedFunds'] = '${idea.collectedFunds}'
+        item['category'] = '${idea.category}';
+        item['subcategory'] = '${idea.subCategory}';
+        item['funds'] = '${idea.fundsRequired}';
+        item['collectedFunds'] = '${idea.collectedFunds}';
+        item['image'] = '${idea.image}';
         allItems[${idea.id}] = item;
 
         </c:forEach>
-
         localStorage.setItem("AllItems" , JSON.stringify(allItems));
     }
 
 
     function createGallery(finalFilterItems)
     {
-        var gallery = ""
+        var gallery = "";
 
         jQuery.each( finalFilterItems, function( key, value ) {
 
-            var ideaName = allItems[key]['name']
+            var ideaName = allItems[key]['name'];
+            var image = allItems[key]['image'];
 
             gallery += "<div class='item thumbnail col-xs-4 col-lg-4'>" +
                     "<div class = 'thumbnail'>"  +
-                    "<img class='group list-group-image' src='http://placehold.it/400x250/000/fff' alt='' />" +
+                    "<img class='group list-group-image' src='"+ image + "' alt='Idea Image' style=\"width: 400px; height: 250px\" />" +
                     "<div class='caption'>" +
                     "<h4 class='group inner list-group-item-heading'>" +
                     ideaName + "</h4>" +
@@ -108,22 +119,22 @@
     function showFilters()
     {
         <c:forEach items="${categories}" var="category" >
-        console.log("${category}")
-        category += "<div class='checkbox'> <input data-parent='category' class='checkboxFilter' type='checkbox' value="+ "${category}"+">"+ "${category}" +"</div>"
+        console.log("${category}");
+        category += "<div class='checkbox'> <input data-parent='category' class='checkboxFilter' type='checkbox' value="+ "${category}"+">"+ "${category}" +"</div>";
         </c:forEach>
         $("#categoryFilter").html(category);
 
 
         <c:forEach items="${subcategories}" var="subcategory" >
-        subcategory += "<div class='checkbox'> <input data-parent='subcategory' class='checkboxFilter' type='checkbox' value="+ "${subcategory}"+">"+ "${subcategory}" +"</div>"
-        console.log("${subcategory}")
+        subcategory += "<div class='checkbox'> <input data-parent='subcategory' class='checkboxFilter' type='checkbox' value="+ "${subcategory}"+">"+ "${subcategory}" +"</div>";
+        console.log("${subcategory}");
         </c:forEach>
-        $("#subCategoryFilter").html(subcategory)
+        $("#subCategoryFilter").html(subcategory);
 
 
         <c:forEach items="${funds}" var="fund" >
-        funds += "<div class='checkbox'> <input data-parent='funds' class='checkboxFilter' type='checkbox' value="+ "${fund}"+">"+ "${fund}" +"</div>"
-        console.log("${fund}")
+        funds += "<div class='checkbox'> <input data-parent='funds' class='checkboxFilter' type='checkbox' value="+ "${fund}"+">"+ "${fund}" +"</div>";
+        console.log("${fund}");
         </c:forEach>
         $("#fundsFilter").html(funds)
     }
@@ -131,7 +142,7 @@
     function filterItems()
     {
 
-        var finalFilterItems = {}
+        var finalFilterItems = {};
         var finalFilterItems1  = [];
         var finalFilterItems2  = [];
         var finalFilterItems3  = [];
@@ -173,9 +184,9 @@
             else
             {
 
-                var flag = false
+                var flag = false;
                 jQuery.each( finalFilterItems, function( k, v ) {
-                    flag = false
+                    flag = false;
                     jQuery.each( subcategoryFilterList, function( key, value ) {
 
                         if(allItems[k]['subcategory'] == key)
@@ -196,9 +207,9 @@
         }
 
 
-        console.log(" after subcategory")
+        console.log(" after subcategory");
 
-        console.log(finalFilterItems)
+        console.log(finalFilterItems);
 
         //--------funds filters-----------
 
@@ -219,9 +230,9 @@
             }
             else
             {
-                var flag = false
+                var flag = false;
                 jQuery.each( finalFilterItems, function( k, v ) {
-                    flag = false
+                    flag = false;
                     jQuery.each( fundsFilterList, function( key, value ) {
 
                         if(allItems[k]['funds'] == key)
@@ -244,8 +255,8 @@
     function displayFilteredItems(finalFilterItems)
     {
 
-        var output = ""
-        var flag = false
+        var output = "";
+        var flag = false;
         jQuery.each( finalFilterItems, function( key, value ) {
             if(flag == false)
             {
@@ -283,11 +294,6 @@
 
 
 </script>
-
-
-
-
-
 <div class="header_top">
     <div class="container">
         <div class="row">
@@ -303,9 +309,9 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <span class="header_top_text">
-                    Welcome ${pageContext.request.userPrincipal.name} | Coupons: ${coupons} |
+                    Welcome ${pageContext.request.userPrincipal.name} | Coupons: <span id="coupon"></span> | <span id="pay"></span>
                     <a role="button" aria-pressed="true" onclick="document.forms['logoutForm'].submit()">Logout</a>
                 </span>
             </div>
@@ -336,11 +342,15 @@
                     <ul class="nav navbar-nav">
                         <li class="fadeInDown animated d1 "><a href="${contextPath}/investor/welcome" class="active" id="home">Home</a></li>
 
+
                         <li class="fadeInDown animated d2"><a href="#" menuid="1">Analytics</a></li>
                         
                         <li class="fadeInDown animated d2">
                             <a href="${contextPath}/Ideas/list" menuid="1">List Ideas</a>
                         </li>
+
+                        <li class="fadeInDown animated d2"><a href="${contextPath}/Ideas/list" menuid="1">List Ideas</a></li>
+
 
                         <li class="fadeInDown animated d2">
                             <a href="${contextPath}/investor/history" menuid="1">Funding History</a>
