@@ -13,6 +13,9 @@
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
+<script type="application/javascript" src="${contextPath}/resources/js/datarangepicker.js"></script>
+<script type="application/javascript" src="${contextPath}/resources/js/sparklines.js"></script>
+<script type="application/javascript" src="${contextPath}/resources/js/float.js"></script>
 
 <div class="container">
     <div class="row horizontal-strip top_tiles">
