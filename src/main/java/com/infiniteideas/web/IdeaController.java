@@ -50,13 +50,17 @@ public class IdeaController {
             funds.add(I.getFundsRequired());
         }
 
+        String role = roleGetter.getRoles(userService, principal.getName());
+
         model.addAttribute("ideas", ideas);
         model.addAttribute("categories",categories);
         model.addAttribute("subcategories",subcategories);
         model.addAttribute("funds",funds);
-
+        model.addAttribute("role",role );
         model.addAttribute("ideas", ideaService.findAll());
-        return "investor/listIdeas";
+
+        String returnPage = ""+ role + "/listIdeas";
+        return returnPage;
     }
 
 

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <link href="${contextPath}/resources/css/header.css" rel="stylesheet">
 <!-- Bootstrap Core CSS -->
 <link href="${contextPath}/resources/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -7,7 +8,6 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="${contextPath}/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <!-- Custom Fonts -->
 <link href="${contextPath}/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
@@ -100,14 +100,9 @@
                     " <p class='group inner list-group-item-text'> Target Funds:    $ <strong>"     + allItems[key]['funds']  +   "</strong></p>" +
                     " <p class='group inner list-group-item-text'> Collected Funds: $ <strong>"  + allItems[key]['collectedFunds']  +   "</strong></p>" +
                     //" <div class='row'> "+
-                    " " +  " <h4 class='group inner list-group-item-text'>"+
-                    "<p> Invest <Strong> $ </Strong><input " + "id="+ key + " " + " value = '' "  +" class='Quantity' style='width:90px;height:25px; font-weight:bold;border-style: solid; border-radius: 8px;padding-left:3px;border-color:#828689;'> </input> </p></h4>" +
-                    //" </div>" +
+                    " " + //" </div>" +
                     " <div style='float:left;padding-bottom:8px; padding-top:23px '>" +
-                    " <button class = 'add-to-cartP btn-success btn' " +
-                    " data-toggle='modal' data-id ="+ key +" data-target='#basicModal'" +
-                    " data-name="+
-                    String( ideaName ) + ">Add to Cart</button></div>" +
+                    " </div>" +
 
                     " <div style='float:left;padding-bottom:8px; padding-left:10px; padding-top:23px '> " +
                     " <button  class =' btn btn-info ' onclick=window.location='${contextPath}/Ideas/view/"+ key  + "' > Quick View</button></div>" +
@@ -345,13 +340,15 @@
                     <ul class="nav navbar-nav">
                         <li class="fadeInDown animated d1 "><a href="${contextPath}/entrepreneur/" class="active" id="home">Home</a></li>
 
+                        <li class="fadeInDown animated d5 "><a href="${contextPath}/Ideas/list" menuid="1">List Ideas</a></li>
+
                         <li class="fadeInDown animated d4 "><a href="${contextPath}/entrepreneur/eWishList"  id="wishlist">wishlist</a></li>
 
-                        <li class="fadeInDown animated d2"><a href="${contextPath}/entrepreneur/history" menuid="1">History</a></li>
+                        <li class="fadeInDown animated d2 "><a href="${contextPath}/entrepreneur/history" menuid="1">History</a></li>
 
-                        <li class="fadeInDown animated d2"><a href="#">Contact Us</a></li>
+                        <li class="fadeInDown animated d6 "><a href="#">Contact Us</a></li>
 
-                        <li class="fadeInDown animated d3"><a href="${contextPath}/Ideas/create">Create Idea</a></li>
+                        <li class="fadeInDown animated d3 "><a href="${contextPath}/Ideas/create">Create Idea</a></li>
 
                     </ul>
 

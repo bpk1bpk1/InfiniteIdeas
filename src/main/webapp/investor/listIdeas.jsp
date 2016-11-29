@@ -153,6 +153,8 @@
     };
 
 
+    //---------------------------------------------------------
+
     //-------------------- Cart Functions-----------
     function addItemTocart(ideaId,ideaName,funds,category,subcategory) {
         var item = new Item(ideaId,ideaName,funds,category,subcategory);
