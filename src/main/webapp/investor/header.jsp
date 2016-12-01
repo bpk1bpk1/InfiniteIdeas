@@ -87,7 +87,7 @@
 
             gallery += "<div class='item thumbnail col-xs-4 col-lg-4'>" +
                     "<div class = 'thumbnail'>"  +
-                    "<img class='group list-group-image' src='"+ image + "' alt='Idea Image' style=\"width: 400px; height: 250px\" />" +
+                    "<img class='group list-group-image' src='"+ image + "' alt='Idea Image' style='width: 400px; height: 250px' />" +
                     "<div class='caption'>" +
                     "<h4 class='group inner list-group-item-heading'>" +
                     ideaName + "</h4>" +
@@ -349,8 +349,7 @@
                             <a href="${contextPath}/Ideas/list" menuid="1">List Ideas</a>
                         </li>
 
-                        <li class="fadeInDown animated d2"><a href="${contextPath}/Ideas/list" menuid="1">List Ideas</a></li>
-
+                       
 
                         <li class="fadeInDown animated d2">
                             <a href="${contextPath}/investor/history" menuid="1">Funding History</a>

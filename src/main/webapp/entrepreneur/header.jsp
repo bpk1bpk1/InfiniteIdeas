@@ -64,6 +64,7 @@
         item['subcategory'] = '${idea.subCategory}'
         item['funds'] = '${idea.fundsRequired}'
         item['collectedFunds'] = '${idea.collectedFunds}'
+        item['image'] = '${idea.image}'
         allItems[${idea.id}] = item;
 
         </c:forEach>
@@ -90,10 +91,11 @@
             console.log(key)
 
             var ideaName = allItems[key]['name']
+            var image = allItems[key]['image'];
 
             gallery += "<div class='item thumbnail col-xs-4 col-lg-4'>" +
                     "<div class = 'thumbnail'>"  +
-                    "<img class='group list-group-image' src='http://placehold.it/400x250/000/fff' alt='' />" +
+                    "<img class='group list-group-image' src='"+ image + "' alt='Idea Image' style=\"width: 400px; height: 250px\" />" +
                     "<div class='caption'>" +
                     "<h4 class='group inner list-group-item-heading'>" +
                     ideaName + "</h4>" +
