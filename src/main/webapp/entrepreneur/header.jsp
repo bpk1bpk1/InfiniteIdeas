@@ -8,7 +8,6 @@
 <!-- Bootstrap Core JavaScript -->
 <script src="${contextPath}/resources/vendor/bootstrap/js/bootstrap.min.js"></script>
 
-
 <!-- Custom Fonts -->
 <link href="${contextPath}/resources/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
@@ -25,6 +24,8 @@
         var finalFilteredItems =  {}
 
         var queryText = $("#searchText").val()
+
+        console.log(queryText)
 
         <c:forEach items="${ideas}" var="idea" >
 
@@ -48,12 +49,8 @@
     {
         <c:forEach items="${ideas}" var="idea" >
 
-
-
         searchSpace.push("${idea.name}")
         searchSpace.push("${idea.description}")
-
-        console.log("${idea.name}")
 
         itemsID["${idea.id}"] =  true
 
@@ -70,6 +67,9 @@
         </c:forEach>
 
        // console.log(itemsID)
+
+
+        console.log(searchSpace)
 
         localStorage.setItem("AllItems" , JSON.stringify(allItems));
     }
@@ -300,9 +300,9 @@
             <div class="col-sm-6 col-sm-offset-0">
                 <div id="imaginary_container">
                     <div class="input-group stylish-input-group">
-                        <input type="text" class="form-control"  placeholder="Search" >
+                        <input type="text" id="searchText"  class="form-control"  placeholder="Search" >
                         <span class="input-group-addon">
-                        <button type="submit">
+                        <button id = "searchBtn" type="submit">
                             <span class="glyphicon glyphicon-search"></span>
                         </button>
                     </span>

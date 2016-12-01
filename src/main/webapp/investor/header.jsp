@@ -36,6 +36,8 @@
 
         var queryText = $("#searchText").val();
 
+
+
         <c:forEach items="${ideas}" var="idea" >
 
             var ideaName =  "${idea.name}";

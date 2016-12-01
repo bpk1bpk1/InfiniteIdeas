@@ -201,6 +201,7 @@
         item['subcategory'] = '${idea.subCategory}'
         item['funds'] = '${idea.fundsRequired}'
         item['collectedFunds'] = '${idea.collectedFunds}'
+        item['image'] = '${idea.image}'
         allItems[${idea.id}] = item;
 
         </c:forEach>
@@ -436,9 +437,9 @@
             <div class="col-sm-6 col-sm-offset-0">
                 <div id="imaginary_container">
                     <div class="input-group stylish-input-group">
-                        <input type="text" class="form-control"  placeholder="Search" >
+                        <input id="searchText"  type="text" class="form-control"  placeholder="Search" >
                         <span class="input-group-addon">
-                        <button type="submit">
+                        <button id = "searchBtn" type="submit">
                             <span class="glyphicon glyphicon-search"></span>
                         </button>
                     </span>

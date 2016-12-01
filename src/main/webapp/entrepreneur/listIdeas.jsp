@@ -24,6 +24,9 @@
         createGallery(itemsID);
 
         $( "#searchText" ).autocomplete({
+
+
+
             source: searchSpace
         });
 
