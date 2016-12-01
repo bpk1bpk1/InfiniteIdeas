@@ -56,6 +56,18 @@
                     categoryFilterList[$(this).attr("value")] = true;
                 else
                     delete categoryFilterList[$(this).attr("value")]
+
+
+                if (jQuery.isEmptyObject(categoryFilterList))
+                {
+                    <c:forEach items="${categories}" var="category" >
+
+                        categoryFilterList["${category}"] = true
+
+                    </c:forEach>
+                }
+
+
             }
             else if(filterSelected == "subcategory")
             {
@@ -63,6 +75,16 @@
                     subcategoryFilterList[$(this).attr("value")] = true;
                 else
                     delete subcategoryFilterList[$(this).attr("value")]
+
+
+                if (jQuery.isEmptyObject(subcategoryFilterList))
+                {
+                    <c:forEach items="${subcategories}" var="subcategory" >
+
+                    categoryFilterList["${subcategory}"] = true
+
+                    </c:forEach>
+                }
             }
             else if(filterSelected == "funds")
             {
@@ -70,6 +92,16 @@
                     fundsFilterList[$(this).attr("value")] = true;
                 else
                     delete fundsFilterList[$(this).attr("value")]
+
+
+                if (jQuery.isEmptyObject(fundsFilterList))
+                {
+                    <c:forEach items="${funds}" var="fund" >
+
+                    categoryFilterList["${fund}"] = true
+
+                    </c:forEach>
+                }
             }
 
             filterItems();
