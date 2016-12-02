@@ -17,5 +17,5 @@
 <jsp:include page="templates/footer.jsp"></jsp:include>
 
 
-</body>
+</body> 
 </html>

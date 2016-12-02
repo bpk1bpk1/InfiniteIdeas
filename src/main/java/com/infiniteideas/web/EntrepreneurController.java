@@ -1,6 +1,7 @@
 package com.infiniteideas.web;
 
 import com.infiniteideas.model.Idea;
+import com.infiniteideas.model.User;
 import com.infiniteideas.service.IdeaService;
 import com.infiniteideas.service.UserPersonalDetailsService;
 import com.infiniteideas.service.UserService;
@@ -38,6 +39,12 @@ public class EntrepreneurController {
         return "entrepreneur/welcome";
     }
 
+    @RequestMapping(value = "/contactus", method = RequestMethod.GET)
+    public String contactus(Model model) {
+        model.addAttribute("userForm", new User());
+       // model.addAttribute("role", roleGetter.getRoles(userService, principal.getName()));
+        return "entrepreneur/contactus";
+    }
 
     @RequestMapping(value = {"/eWishList"}, method = RequestMethod.GET)
     public String wishlist(Model model, Principal principal) {
@@ -63,6 +70,8 @@ public class EntrepreneurController {
 
         return "entrepreneur/eWishList";
     }
+
+
 
 
 }

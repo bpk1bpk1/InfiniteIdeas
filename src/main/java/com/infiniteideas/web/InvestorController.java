@@ -1,6 +1,7 @@
 package com.infiniteideas.web;
 
 import com.infiniteideas.model.Idea;
+import com.infiniteideas.model.User;
 import com.infiniteideas.service.IdeaService;
 import com.infiniteideas.service.UserPersonalDetailsService;
 import com.infiniteideas.service.UserService;
@@ -35,6 +36,13 @@ public class InvestorController {
          model.addAttribute("ideaForm", new Idea());
          model.addAttribute("role", roleGetter.getRoles(userService, principal.getName()));
          return "investor/wishlist";
+    }
+
+    @RequestMapping(value = "/contactus", method = RequestMethod.GET)
+    public String contactus(Model model, Principal principal) {
+        model.addAttribute("userForm", new User());
+        model.addAttribute("role", roleGetter.getRoles(userService, principal.getName()));
+        return "investor/contactus";
     }
 
     @RequestMapping(value = {"", "/welcome"}, method = RequestMethod.GET)
