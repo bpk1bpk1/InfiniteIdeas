@@ -40,8 +40,8 @@ public class InvestorController {
 
     @RequestMapping(value = "/contactus", method = RequestMethod.GET)
     public String contactus(Model model, Principal principal) {
-        model.addAttribute("userForm", new User());
-        model.addAttribute("role", roleGetter.getRoles(userService, principal.getName()));
+       // model.addAttribute("userForm", new User());
+       // model.addAttribute("role", roleGetter.getRoles(userService, principal.getName()));
         return "investor/contactus";
     }
 

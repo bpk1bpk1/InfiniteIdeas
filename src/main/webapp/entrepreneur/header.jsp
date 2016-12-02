@@ -349,8 +349,6 @@
                         <li class="fadeInDown animated d2 "><a href="${contextPath}/entrepreneur/history" menuid="1">History</a></li>
 
 
-                        <li class="fadeInDown animated d6 "><a href="#">Contact Us</a></li>
-
                         <li class="fadeInDown animated d2"><a href="${contextPath}/entrepreneur/contactus" id="contactus">Contact Us</a></li>
 
 
