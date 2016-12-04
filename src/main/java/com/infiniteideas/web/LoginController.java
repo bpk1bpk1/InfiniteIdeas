@@ -42,7 +42,10 @@ public class LoginController {
         return "common/registration";
     }
 
-
+    @RequestMapping(value = "/error", method = RequestMethod.GET)
+    public String error() {
+        return "accessDenied";
+    }
 
     @RequestMapping(value = "/registration", method = RequestMethod.POST)
     public String registration(@ModelAttribute("userForm") User userForm, BindingResult bindingResult, Model model) {
