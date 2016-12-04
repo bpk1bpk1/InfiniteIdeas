@@ -1,9 +1,13 @@
-
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<c:set var="contextPath" value="${pageContext.request.contextPath}"/>
+<html>
+<title>Contact Us</title>
+<link rel="icon" href="${contextPath}/resources/images/favicon.ico">
 <link rel="stylesheet" href="${contextPath}/resources/css/contactus.css">
-
+<body>
+<jsp:include page="${contextPath}/entrepreneur/header.jsp" />
 <div id="contact-form">
-    <jsp:include page="../header.jsp"></jsp:include>
     <div>
         <h1>Nice to Meet You!</h1>
         <h4>Have a question or just want to get in touch? Let's chat.</h4>
@@ -43,9 +47,12 @@
         <div>
             <button name="submit" type="submit" id="submit" >SEND</button>
         </div>
-
-        <jsp:include page="../templates/footer.jsp"></jsp:include>
-
     </form>
 
 </div>
+<div id="footer" class="footer">
+    <jsp:include page="../templates/footer.jsp"></jsp:include>
+</div>
+</body>
+
+</html>
