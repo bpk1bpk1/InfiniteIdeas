@@ -349,13 +349,6 @@
                             <a href="${contextPath}/Ideas/list" menuid="1">List Ideas</a></li>
 
                         <li class="fadeInDown animated d2"><a href="#" menuid="1">Analytics</a></li>
-                        
-                        <li class="fadeInDown animated d2">
-                            <a href="${contextPath}/Ideas/list" menuid="1">List Ideas</a>
-                        </li>
-
-
-                       
 
                         <li class="fadeInDown animated d2">
                             <a href="${contextPath}/investor/history" menuid="1">Funding History</a>
@@ -365,7 +358,7 @@
                             <a href="${contextPath}/investor/wishlist" menuid="1">Wishlist</a>
                         </li>
                         
-                        <li class="fadeInDown animated d2"><a href="${contextPath}/investor/contactus">Contact Us</a></li>
+                        <li class="fadeInDown animated d2"><a href="${contextPath}/contactus">Contact Us</a></li>
 
 
                         <a href="${contextPath}/cart/checkout">

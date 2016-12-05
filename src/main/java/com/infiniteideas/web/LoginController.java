@@ -1,5 +1,6 @@
 package com.infiniteideas.web;
 
+import com.infiniteideas.model.ContactForm;
 import com.infiniteideas.model.User;
 import com.infiniteideas.model.UserPersonalDetails;
 import com.infiniteideas.service.SecurityService;
@@ -60,6 +61,22 @@ public class LoginController {
         securityService.autologin(userForm.getUsername(), userForm.getPasswordConfirm());
 
         return "redirect:/userDetails";
+    }
+
+    @RequestMapping(value = "/contactus", method = RequestMethod.GET)
+    public String contactus(Model model, Principal principal) {
+        model.addAttribute("contactForm", new ContactForm());
+        model.addAttribute("role", roleGetter.getRoles(userService, principal.getName()));
+        return "common/contactus";
+    }
+
+    @RequestMapping(value = "/contact", method = RequestMethod.POST)
+    public String contact(@ModelAttribute("contactForm") ContactForm contactForm, Model model, Principal principal) {
+        System.out.println(contactForm);
+        userService.sendMail(contactForm);
+        String role = roleGetter.getRoles(userService, principal.getName());
+        model.addAttribute("role", role);
+        return "redirect:/" + role + "/welcome";
     }
 
     @RequestMapping(value = "/userDetails", method = RequestMethod.GET)

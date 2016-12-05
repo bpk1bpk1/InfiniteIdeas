@@ -1,10 +1,12 @@
 package com.infiniteideas.service.implementation;
 
+import com.infiniteideas.model.ContactForm;
 import com.infiniteideas.model.Role;
 import com.infiniteideas.model.User;
 import com.infiniteideas.repository.RoleRepository;
 import com.infiniteideas.repository.UserRepository;
 import com.infiniteideas.service.UserService;
+import com.infiniteideas.utils.GoogleMail;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -55,5 +57,11 @@ public class UserServiceImpl implements UserService {
         signUps.put("entrepreneur", userRepository.findEntrepreneurCount("ENTREPRENEUR"));
         signUps.put("investor", userRepository.findEntrepreneurCount("INVESTOR"));
         return signUps;
+    }
+
+    @Override
+    public void sendMail(ContactForm contactForm) {
+        GoogleMail googleMail = new GoogleMail();
+        googleMail.sendMail(contactForm);
     }
 }
