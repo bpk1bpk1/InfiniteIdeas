@@ -309,10 +309,12 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-6">
                 <span class="header_top_text">
-                    Welcome ${pageContext.request.userPrincipal.name} |
-                    <a role="button" aria-pressed="true" onclick="document.forms['logoutForm'].submit()">Logout</a>
+                    Welcome ${pageContext.request.userPrincipal.name}
+                    <span id="logout">
+                        <a role="button" aria-pressed="true" onclick="document.forms['logoutForm'].submit()">Logout</a>
+                    </span>
                 </span>
             </div>
         </div>

@@ -10,11 +10,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="${contextPath}/resources/images/favicon.ico">
     <link rel="stylesheet" href="${contextPath}/resources/css/homepage.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/common.css">
     <link rel="stylesheet" href="${contextPath}/resources/css/carousel.css">
 </head>
 <body>
 <jsp:include page="header.jsp"></jsp:include>
+<div class="myDiv">
+    <div class="bg"></div>
 <script type="application/javascript" src="${contextPath}/resources/js/carousel.js"></script>
+
 <div class="container">
     <div class="row horizontal-strip recommendation">
         <div class="heading">Recommendations</div>
@@ -76,6 +80,6 @@
 <div class="footer">
     <jsp:include page="../templates/footer.jsp"></jsp:include>
 </div>
-
+</div>
 </body>
 </html>

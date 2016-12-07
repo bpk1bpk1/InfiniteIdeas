@@ -1,7 +1,15 @@
-
-
-<link rel="stylesheet" href="${contextPath}/resources/css/contactus.css">
-
+<html>
+<head>
+    <title>Contact Us</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="${contextPath}/resources/css/contactus.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/common.css">
+</head>
+<body>
+<div class="myDiv">
+    <div class="bg"></div>
 <div id="contact-form">
     <jsp:include page="../header.jsp"></jsp:include>
     <div>
@@ -44,8 +52,12 @@
             <button name="submit" type="submit" id="submit" >SEND</button>
         </div>
 
-        <jsp:include page="../templates/footer.jsp"></jsp:include>
-
     </form>
 
 </div>
+<div class="footer">
+    <jsp:include page="${contextPath}/templates/footer.jsp"></jsp:include>
+</div>
+</div>
+</body>
+</html>

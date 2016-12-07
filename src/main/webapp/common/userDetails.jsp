@@ -39,7 +39,8 @@
 </head>
 
 <body>
-
+<div class="myDiv">
+    <div class="bg">
 <div class="container">
 
     <form:form method="POST" modelAttribute="details" class="form-signin" action="${contextPath}/userDetails">
@@ -89,5 +90,6 @@
 </div>
 <jsp:include page="../templates/footer.jsp"></jsp:include>
 <!-- /container -->
+</div>
 </body>
 </html>

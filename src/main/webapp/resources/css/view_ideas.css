@@ -1,3 +1,40 @@
+.myDiv {
+    position: relative;
+    z-index: 1;
+}
+
+.myDiv .bg {
+    position: absolute;
+    z-index: -1;
+    background: url('../images/wood_grayscale_planks_1920x120_2560x1600_artwallpaperhi.com.jpg') no-repeat scroll center center;
+    opacity: 0.5;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
+    color: white;
+}
+
+/*
+.mydiv{
+    no-repeat scroll center center;
+    opacity: 0.5;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+    text-align: center;
+    color: white;
+    no-repeat
+}
+*/
 .product-display {
     margin: 0;
     height: 100%;
@@ -45,7 +82,7 @@
 }
 
 .edit-button a{
-    color: white;
+    color: whitesmoke;
 }
 
 .footer {

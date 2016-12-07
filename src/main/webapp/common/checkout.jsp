@@ -30,7 +30,8 @@
     </script>
 </head>
 <body>
-
+<div class="myDiv">
+    <div class="bg"></div>
 <jsp:include page="${contextPath}/${role}/header.jsp" />
 <script>
     //-----------Global Variables------
@@ -266,12 +267,17 @@
 
 
     </div>
+    <div style = "float:right ; padding-right:300px; padding-bottom:150px;">
+        <button  id = "place-order" type="button" class="btn-success btn" onclick="fund()">Make Investments</button>
+    </div>
 </div>
     <%--<input type="submit" id="button" onclick="fund()">--%>
 
-<div style = "float:right ; padding-right:300px; padding-bottom:150px;">
-    <button  id = "place-order" type="button" class="btn-success btn" onclick="fund()">Make Investments</button>
-</div>
 
+
+</div>
+<div class="footer">
+    <jsp:include page="${contextPath}/templates/footer.jsp"></jsp:include>
+</div>
 </body>
 </html>

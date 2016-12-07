@@ -18,6 +18,8 @@
 </script>
 <body onload="test()">
 <jsp:include page="${contextPath}/${role}/header.jsp"></jsp:include>
+<div class="myDiv">
+    <div class="bg"><div
 <div class="container">
     <form:form method="POST" modelAttribute="ideaForm" class="form-signin" action="${contextPath}/Ideas/update">
         <h2 class="form-signin-heading">Create an idea!</h2>
@@ -99,6 +101,6 @@
 <div class="footer">
     <jsp:include page="${contextPath}/templates/footer.jsp"></jsp:include>
 </div>
-
+</div>
 </body>
 </html>

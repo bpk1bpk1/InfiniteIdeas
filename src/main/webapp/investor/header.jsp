@@ -313,8 +313,10 @@
             </div>
             <div class="col-md-6">
                 <span class="header_top_text">
-                    Welcome ${pageContext.request.userPrincipal.name} | Coupons: <span id="coupon"></span> | <span id="pay"></span>
-                    <a role="button" aria-pressed="true" onclick="document.forms['logoutForm'].submit()">Logout</a>
+                    Welcome ${pageContext.request.userPrincipal.name} | My Coupons: <span id="coupon"></span>  <span id="pay"></span>
+                    <span id="logout">
+                        <a role="button" aria-pressed="true" onclick="document.forms['logoutForm'].submit()">Logout</a>
+                    </span>
                 </span>
             </div>
         </div>
@@ -344,7 +346,6 @@
                     <ul class="nav navbar-nav">
                         <li class="fadeInDown animated d1 "><a href="${contextPath}/investor/welcome" class="active" id="home">Home</a></li>
 
-
                         <li class="fadeInDown animated d2">
                             <a href="${contextPath}/Ideas/list" menuid="1">List Ideas</a></li>
 
@@ -364,8 +365,6 @@
                         <li class="fadeInDown animated d2">
                             <a href="${contextPath}/investor/wishlist" menuid="1">Wishlist</a>
                         </li>
-                        
-                        <li class="fadeInDown animated d2"><a href="#">Contact Us</a></li>
 
                         <li class="fadeInDown animated d2">
                             <a href="${contextPath}/investor/contactus" menuid="1">Contact Us</a></li>

@@ -4,6 +4,7 @@
 <html>
 <head>
     <title>Grab the opportunity</title>
+    <link rel="stylesheet" href="${contextPath}/resources/css/common.css">
 </head>
 
 <script src="https://code.jquery.com/jquery-1.12.2.min.js"></script>
@@ -11,7 +12,8 @@
 <body>
 
 <jsp:include page="${contextPath}/${role}/header.jsp"/>
-
+<div class="myDiv">
+    <div class="bg">
 <script>
 
 var allItems = {};
@@ -80,7 +82,7 @@ function loadCart() {
 }
 
 </script>
-
+    </div>
 </body>
 
 <div class="col-md-12 products-gallery" style="padding-top: 40px">

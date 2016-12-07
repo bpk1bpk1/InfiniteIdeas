@@ -5,6 +5,7 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link rel="stylesheet" href="${contextPath}/resources/css/common.css">
     <title>View all ideas</title>
 </head>
 <body>
@@ -227,7 +228,8 @@
 
 </script>
 
-
+<div class="myDiv">
+    <div class="bg"></div>
 <div class="container">
     <div id="myModal" class="modal">
 
@@ -381,6 +383,7 @@
 </div>
 <div class="footer">
     <jsp:include page="${contextPath}/templates/footer.jsp" />
+</div>
 </div>
 </body>
 

@@ -2,8 +2,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 <html>
-<link rel="stylesheet" href="${contextPath}/resources/css/contactus.css">
+<head>
+    <link rel="stylesheet" href="${contextPath}/resources/css/contactus.css">
+    <link rel="stylesheet" href="${contextPath}/resources/css/common.css">
+</head>
 <body>
+<div class="myDiv">
+    <div class="bg"></div>
 <div id="contact-form">
     <jsp:include page="${contextPath}/investor/header.jsp" />
     <div>
@@ -43,16 +48,15 @@
             </label>
         </div>
         <div>
-            <button name="submit" type="submit" id="submit" >SEND</button>
+            <button name="submit" type="submit" id="submit" >Send</button>
         </div>
-
-
 
     </form>
 
 </div>
 <div class="footer">
-    <jsp:include page="../templates/footer.jsp"></jsp:include>
+    <jsp:include page="${contextPath}/templates/footer.jsp"></jsp:include>
+</div>
 </div>
 </body>
 

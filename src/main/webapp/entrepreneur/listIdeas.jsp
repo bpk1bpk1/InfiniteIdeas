@@ -196,7 +196,8 @@
 </script>
 
 
-
+<div class="myDiv">
+    <div class="bg"></div>
 <div class="container">
 
 
@@ -324,6 +325,7 @@
 </div>
 <div class="footer">
     <jsp:include page="${contextPath}/templates/footer.jsp" />
+</div>
 </div>
 </body>
 
