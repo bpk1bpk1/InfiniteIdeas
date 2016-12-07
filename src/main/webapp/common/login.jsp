@@ -402,7 +402,7 @@
             <div class="col-sm-4">
                 <div class="team-member">
                     <img src="${contextPath}/resources/images/team/Rohith.jpg" class="img-responsive img-circle" alt="">
-                    <h4>Rohith Nenuduri</h4>
+                    <h4>Rohith Nedunuri</h4>
                     <p class="text-muted">Customer</p>
                     <ul class="list-inline social-buttons">
                         <li><a href="#"><i class="fa fa-twitter"></i></a>

@@ -87,13 +87,15 @@
             var ideaName = allItems[key]['name'];
             var image = allItems[key]['image'];
 
-            gallery += "<div class='item thumbnail col-xs-4 col-lg-4'>" +
-                    "<div class = 'thumbnail'>"  +
+            //dcdcdc
+
+            gallery += "<div style='background:#d3d3d3' class='item thumbnail col-xs-4 col-lg-4'>" +
+                    "<div style='background:#f2f2f2' class = 'thumbnail'>"  +
                     "<img class='group list-group-image' src='"+ image + "' alt='Idea Image' style='width: 400px; height: 250px' />" +
                     "<div class='caption'>" +
                     "<h4 class='group inner list-group-item-heading'>" +
                     ideaName + "</h4>" +
-                    " <p class='group inner list-group-item-text'> Target Funds:    $ <strong>"     + allItems[key]['funds']  +   "</strong></p>" +
+                    " <p class='group inner list-group-item-text'> Target Funds:  &emsp;   $ <strong class='right' >  "  + allItems[key]['funds']  + "  </strong></p>" +
                     " <p class='group inner list-group-item-text'> Collected Funds: $ <strong>"  + allItems[key]['collectedFunds']  +   "</strong></p>" +
                     //" <div class='row'> "+
                     " " +  " <h4 class='group inner list-group-item-text'>"+

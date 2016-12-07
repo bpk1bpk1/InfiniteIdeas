@@ -350,14 +350,12 @@
         <!-- Filter Portal Ends Here -->
         <!-- Start of Product Page -->
 
+        <div style="background-color:floralwhite" ></div>
 
-
-
-
-        <div style="float: left ; padding-top: 40px" >
+        <div style="float: left ; padding-top: 50px" >
             <div class="row group inner item  col-xs-4 col-lg-4 ">
                 <div style="width: 850px; padding-left: 30px;">
-                    <div id="products-gallery2" class="group inner list-group-item "></div>
+                    <div id="products-gallery2" class="group inner "></div>
                 </div>
             </div>
         </div>
