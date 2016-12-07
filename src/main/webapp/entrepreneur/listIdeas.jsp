@@ -5,12 +5,13 @@
 
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
     <title>View all ideas</title>
 </head>
 <body>
+<div class="myDiv">
+    <div class="bg"></div>
 <jsp:include page="${contextPath}/entrepreneur/header.jsp" />
-
-
 <script>
 
     var allItems = {};
@@ -325,6 +326,7 @@
 </div>
 <div class="footer">
     <jsp:include page="${contextPath}/templates/footer.jsp" />
+</div>
 </div>
 </div>
 </body>

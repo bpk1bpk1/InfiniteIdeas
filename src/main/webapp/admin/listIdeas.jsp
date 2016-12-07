@@ -9,6 +9,8 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/common.css">
 </head>
 <body>
+<div class="myDiv">
+    <div class="bg"></div>
 <jsp:include page="${contextPath}/admin/header.jsp" />
 
 
@@ -325,6 +327,7 @@
     <jsp:include page="${contextPath}/templates/footer.jsp" />
 </div>
 </div>
+    </div>
 </body>
 
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">

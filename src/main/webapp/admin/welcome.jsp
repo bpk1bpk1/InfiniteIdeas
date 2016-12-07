@@ -10,8 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="${pageContext.request.contextPath}/resources/images/favicon.ico" rel="icon">
     <link href="${pageContext.request.contextPath}/resources/css/homepage.css" rel="stylesheet">
+    <link href="${contextPath}/resources/css/common.css" rel="stylesheet">
 </head>
 <body>
+<div class="myDiv">
+    <div class="bg"></div>
 <jsp:include page="header.jsp"></jsp:include>
 <script type="application/javascript" src="${contextPath}/resources/js/datarangepicker.js"></script>
 <script type="application/javascript" src="${contextPath}/resources/js/sparklines.js"></script>
@@ -162,6 +165,6 @@
 <div class="footer">
     <jsp:include page="../templates/footer.jsp"></jsp:include>
 </div>
-
+</div>
 </body>
 </html>
