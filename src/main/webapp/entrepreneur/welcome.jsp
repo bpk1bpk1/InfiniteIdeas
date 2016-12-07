@@ -11,7 +11,8 @@
     <link rel="stylesheet" href="${contextPath}/resources/css/homepage.css">
 </head>
 <body>
-
+<div class="myDiv">
+    <div class="bg"></div>
 <jsp:include page="header.jsp"></jsp:include>
 <div class="container">
     <div class="row horizontal-strip">
@@ -25,6 +26,6 @@
 <div class="footer">
     <jsp:include page="../templates/footer.jsp"></jsp:include>
 </div>
-
+</div>
 </body>
 </html>
