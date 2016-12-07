@@ -1,4 +1,9 @@
 /* General Styles */
+#contact-form{
+    background-size: cover;
+    background-color: #000;
+}
+
 * {
     box-sizing:border-box;
     -webkit-box-sizing:border-box;
@@ -9,7 +14,7 @@
     font-smoothing:antialiased;
     text-rendering:optimizeLegibility;
 }
-body {
+#contact-form {
     color: #C0C0C0;
     font-family: Arial, san-serif;
 }
@@ -123,4 +128,8 @@ input:required, textarea:required {
         padding-left: 3%;
         padding-right: 3%;
     }
+}
+
+#footer {
+    position: absolute;
 }
