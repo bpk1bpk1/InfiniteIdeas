@@ -89,7 +89,7 @@
 
             //dcdcdc
 
-            gallery += "<div style='background:#d3d3d3' class='item thumbnail col-xs-4 col-lg-4'>" +
+            gallery += "<div style='background:gray' class='item thumbnail col-xs-4 col-lg-4'>" +
                     "<div style='background:#f2f2f2' class = 'thumbnail'>"  +
                     "<img class='group list-group-image' src='"+ image + "' alt='Idea Image' style='width: 400px; height: 250px' />" +
                     "<div class='caption'>" +
