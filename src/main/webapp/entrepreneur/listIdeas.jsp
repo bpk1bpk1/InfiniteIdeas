@@ -201,9 +201,6 @@
     <div class="bg"></div>
 <div class="container">
 
-
-
-
     <div class="col-md-12 products-gallery" style="padding-top: 40px">
 
 
@@ -304,10 +301,10 @@
 
 
 
-        <div style="float: left ; padding-top: 40px" >
+        <div style="float: left ; padding-top: 50px" >
             <div class="row group inner item  col-xs-4 col-lg-4 ">
                 <div style="width: 850px; padding-left: 30px;">
-                    <div id="products-gallery2" class="group inner list-group-item "></div>
+                    <div id="products-gallery2" class="group inner  "></div>
                 </div>
             </div>
         </div>
@@ -319,9 +316,9 @@
 
     <div class="clearfix"></div>
 
-    <div>
-        <a href="${contextPath}/Ideas/create" class="btn btn-success">Add Idea</a>
-    </div>
+    <%--<div>--%>
+        <%--<a href="${contextPath}/Ideas/create" class="btn btn-success">Add Idea</a>--%>
+    <%--</div>--%>
 
 </div>
 <div class="footer">

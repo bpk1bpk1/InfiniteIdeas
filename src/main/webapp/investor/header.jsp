@@ -362,8 +362,8 @@
                         </li>
 
 
-                        <li class="fadeInDown animated d2">
-                            <a href="${contextPath}/investor/contactus" menuid="1">Contact Us</a></li>
+                        <%--<li class="fadeInDown animated d2">--%>
+                            <%--<a href="${contextPath}/investor/contactus" menuid="1">Contact Us</a></li>--%>
 
                         
                         <li class="fadeInDown animated d2"><a href="${contextPath}/contactus">Contact Us</a></li>

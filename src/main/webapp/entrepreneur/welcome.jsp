@@ -14,13 +14,15 @@
 <div class="myDiv">
     <div class="bg"></div>
 <jsp:include page="header.jsp"></jsp:include>
-<div class="container">
-    <div class="row horizontal-strip">
-        <div class="heading">
-            INVESTORS NEAR YOU
+<div class="container" style ="padding-bottom: 100px">
+    <div class="container">
+        <div class="row horizontal-strip">
+            <div class="heading">
+                INVESTORS NEAR YOU
+            </div>
+            <jsp:include page="${contextPath}/templates/map.jsp"></jsp:include>
+            <div id="map_div"></div>
         </div>
-        <jsp:include page="${contextPath}/templates/map.jsp"></jsp:include>
-        <div id="map_div"></div>
     </div>
 </div>
 <div class="footer">
