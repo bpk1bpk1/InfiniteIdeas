@@ -9,6 +9,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="${contextPath}/resources/images/favicon.ico">
     <link rel="stylesheet" href="${contextPath}/resources/css/homepage.css">
+    <style>
+        .container {
+            height: 72%;
+        }
+    </style>
 </head>
 <body>
 <div class="myDiv">

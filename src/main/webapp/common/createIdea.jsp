@@ -10,6 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="${contextPath}/resources/images/favicon.ico">
     <link rel="stylesheet" href="${contextPath}/resources/css/common.css">
+    <style>
+        .container {
+            height: 72%;
+        }
+    </style>
 </head>
 <script type="application/javascript">
     function test() {
@@ -59,15 +64,15 @@
 
 
         <spring:bind path="category">
-            <div class="dropdown form-group ${status.error ? 'has-error' : ''}">
+            <div style="color: white" class="dropdown form-group ${status.error ? 'has-error' : ''}">
                 Select Category:
                 <form:select path="category">
-                    <form:option value="">-Select Option-</form:option>
-                    <form:option value="Food">Food</form:option>
-                    <form:option value="Technology">Technology</form:option>
-                    <form:option value="Art">Art</form:option>
-                    <form:option value="Design">Design</form:option>
-                    <form:option value="Games">Games</form:option>
+                    <form:option cssStyle="color: black" value="">-Select Option-</form:option>
+                    <form:option cssStyle="color: black" value="Food">Food</form:option>
+                    <form:option cssStyle="color: black" value="Technology">Technology</form:option>
+                    <form:option cssStyle="color: black" value="Art">Art</form:option>
+                    <form:option cssStyle="color: black" value="Design">Design</form:option>
+                    <form:option cssStyle="color: black" value="Games">Games</form:option>
                 </form:select>
                 <form:errors path="category"></form:errors>
             </div>

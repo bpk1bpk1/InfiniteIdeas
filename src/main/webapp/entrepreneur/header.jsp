@@ -337,7 +337,7 @@
                         <span class="icon-bar"></span>
                     </button>
 
-                    <a id="closepage" menuid="0" class="navbar-brand visible-lg visible-md" href="${contextPath}/investor/">
+                    <a id="closepage" menuid="0" class="navbar-brand visible-lg visible-md" href="${contextPath}/entrepreneur/">
                         <img src="${contextPath}/resources/images/logo.png"/>
                     </a>
 

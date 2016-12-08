@@ -55,7 +55,7 @@
 }
 
 .navbar .nav > li,
-.navbar .nav > li > a:hover,{
+.navbar .nav > li > a:hover {
     font-family: "Gotham SSm A", "Gotham SSm B", sans-serif; !important;
 }
 .navbar .nav > li > a:focus,
@@ -71,7 +71,7 @@
 .navbar .nav > li > a {
     color: #9e9e9e !important;
     float: none;
-    font-family: ""Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif" !important;
+    font-family: "Helvetica Neue", Roboto, Arial, "Droid Sans", sans-serif !important;
     line-height: 70px;
     padding: 0 15px;
     text-decoration: none;

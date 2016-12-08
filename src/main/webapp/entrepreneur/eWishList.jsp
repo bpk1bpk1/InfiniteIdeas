@@ -17,17 +17,17 @@
 
     var allItems = {};
     var itemsID = {};
-    var searchSpace = []
-    var cart = {}
+    var searchSpace = [];
+    var cart = {};
 
 
 
     $(document).ready(function() {
 
-        console.log('${role}')
+        console.log('${role}');
 
-        preReq()
-        loadCart()
+        preReq();
+        loadCart();
         //showFilters()
         loadWishList(itemsID)
 
@@ -37,14 +37,14 @@
     function loadWishList(finalFilterItems)
     {
 
-        var gallery = ""
-        console.log(finalFilterItems)
+        var gallery = "";
+        console.log(finalFilterItems);
 
         jQuery.each( finalFilterItems, function( key, value ) {
 
-            console.log(key)
+            console.log(key);
 
-            var ideaName = allItems[key]['name']
+            var ideaName = allItems[key]['name'];
             var image = allItems[key]['image'];
 
             gallery += "<div class='item thumbnail col-xs-4 col-lg-4'>" +
@@ -92,7 +92,7 @@
         <div style="float: left ; padding-top: 40px" >
             <div class="row group inner item  col-xs-4 col-lg-4 ">
                 <div style="width: 850px; padding-left: 30px;">
-                    <div id="products-gallery2" class="group inner list-group-item "></div>
+                    <div id="products-gallery2"></div>
                 </div>
             </div>
         </div>
