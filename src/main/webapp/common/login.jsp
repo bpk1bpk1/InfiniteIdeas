@@ -249,7 +249,7 @@
                 <ul class="timeline">
                     <li>
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="${contextPath}/resources/images/about/1.jpg" alt="">
+                            <img class="img-circle img-responsive" src="${contextPath}/resources/images/about/Infinity-Symbol.jpg" alt="">
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -263,7 +263,7 @@
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="${contextPath}/resources/images/about/2.jpg" alt="">
+                            <img class="img-circle img-responsive" src="${contextPath}/resources/images/about/fall.jpg" alt="">
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -291,7 +291,7 @@
                     </li>
                     <li class="timeline-inverted">
                         <div class="timeline-image">
-                            <img class="img-circle img-responsive" src="${contextPath}/resources/images/about/4.jpg" alt="">
+                            <img class="img-circle img-responsive" src="${contextPath}/resources/images/about/Group.jpeg" alt="">
                         </div>
                         <div class="timeline-panel">
                             <div class="timeline-heading">
@@ -417,7 +417,7 @@
         </div>
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 text-center">
-                <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p>
+                <p class="large text-muted">We are pleased you have visited us. Invest! Become an entrepreneur! Be a part of the InfiniteIdeas. </p>
             </div>
         </div>
     </div>
