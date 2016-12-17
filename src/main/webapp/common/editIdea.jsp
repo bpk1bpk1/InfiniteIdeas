@@ -17,7 +17,7 @@
         .identifier{
             padding-top: 25px;
             position: absolute;
-            color: white;
+            color: #122b40;
         }
         .value{
             padding-top: 5px;
@@ -85,6 +85,18 @@
                 </span>
             </spring:bind>
 
+            <spring:bind path="subCategory">
+                <span class="col-md-4 identifier">
+                    <form:label path="subCategory">Sub-Category: </form:label>
+                </span>
+                <span class="col-md-8 value">
+                    <div class="form-group ${status.error ? 'has-error' : ''}">
+                        <form:input type="text" path="subCategory" class="form-control"
+                                    placeholder="Sub-category" id="subCategory"></form:input>
+                        <form:errors path="subCategory"></form:errors>
+                    </div>
+                </span>
+            </spring:bind>
 
 
             <spring:bind path="category">
@@ -104,18 +116,6 @@
                         <form:errors path="category"></form:errors>
                     </span>
                 </div>
-            </spring:bind>
-            <spring:bind path="subCategory">
-            <span class="col-md-2 identifier">
-                            <form:label path="subCategory">Sub: </form:label>
-                </span>
-            <span class="col-md-10 value">
-                <div class="form-group ${status.error ? 'has-error' : ''}">
-                    <form:input type="text" path="subCategory" class="form-control"
-                                placeholder="Sub-category" id="subCategory"></form:input>
-                    <form:errors path="subCategory"></form:errors>
-                </div>
-            </span>
             </spring:bind>
 
             <spring:bind path="id">
