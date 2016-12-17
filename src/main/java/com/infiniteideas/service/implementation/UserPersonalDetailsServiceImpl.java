@@ -82,6 +82,7 @@ public class UserPersonalDetailsServiceImpl implements UserPersonalDetailsServic
     private void getCoordinates(Hashtable<String, String> locations, UserPersonalDetails s) {
         String[] latLong = geoConverter.getLocation(s.getStreet() + "," + s.getCity() +
                 "," + s.getState() + "," + s.getCountry());
-        locations.put(latLong[0], latLong[1]);
+        if (latLong[0] != null && latLong[1] != null)
+            locations.put(latLong[0], latLong[1]);
     }
 }
