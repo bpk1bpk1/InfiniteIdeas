@@ -92,7 +92,7 @@
                         </form>
                     </div>
                     <div class="panel-footer">
-                        Not Registred? <a href="${contextPath}/registration">Register here</a></div>
+                        Not Registered? <a href="${contextPath}/registration">Register here</a></div>
                 </div>
             </div>
         </div>
